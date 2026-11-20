@@ -1,0 +1,92 @@
+{
+  "status": "EXPERIMENTAL_FUTURE_DRAFT_PROJECTIONS_NOT_GAME_TESTED",
+  "source": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/rosters/csv/cfb_rosters_2026.csv",
+  "baseYear": 2020,
+  "baseRosterPlayers": 2293,
+  "preservedV9Records": 5173,
+  "projectedYears": {
+    "2027": {
+      "source_candidates": 12671,
+      "projected_real_college_players": 480,
+      "fictional_added": 0,
+      "position_counts": {
+        "C": 16,
+        "CB": 50,
+        "DE": 30,
+        "DT": 30,
+        "EDGE": 30,
+        "K": 12,
+        "LB": 36,
+        "OG": 32,
+        "OT": 36,
+        "P": 14,
+        "QB": 30,
+        "RB": 42,
+        "S": 36,
+        "TE": 26,
+        "WR": 60
+      },
+      "ranked_2027_candidates_included": 16,
+      "class_year_rule": "junior/senior"
+    },
+    "2028": {
+      "source_candidates": 6167,
+      "projected_real_college_players": 480,
+      "fictional_added": 0,
+      "position_counts": {
+        "C": 16,
+        "CB": 50,
+        "DE": 30,
+        "DT": 30,
+        "EDGE": 30,
+        "K": 12,
+        "LB": 36,
+        "OG": 32,
+        "OT": 36,
+        "P": 14,
+        "QB": 30,
+        "RB": 42,
+        "S": 36,
+        "TE": 26,
+        "WR": 60
+      },
+      "ranked_2027_candidates_included": null,
+      "class_year_rule": "sophomore"
+    },
+    "2029": {
+      "source_candidates": 9147,
+      "projected_real_college_players": 480,
+      "fictional_added": 0,
+      "position_counts": {
+        "C": 16,
+        "CB": 50,
+        "DE": 30,
+        "DT": 30,
+        "EDGE": 30,
+        "K": 12,
+        "LB": 36,
+        "OG": 32,
+        "OT": 36,
+        "P": 14,
+        "QB": 30,
+        "RB": 42,
+        "S": 36,
+        "TE": 26,
+        "WR": 60
+      },
+      "ranked_2027_candidates_included": null,
+      "class_year_rule": "freshman"
+    }
+  },
+  "sevenClassTotal": 5653,
+  "nineClassTotal": 6613,
+  "limitations": [
+    "2027, 2028, 2029 NFL draft declarations and exact eligibility are not known",
+    "College 2026 class standing is an imperfect projection of future NFL entry year",
+    "All attributes, scouting quality and hidden progression of future prospects are modeled, not authentic Madden or guaranteed future outcomes",
+    "Only the 2027 projected early tier uses contemporary pre-draft scouting evidence",
+    "Game might ignore years beyond six; must verify via disposable-save season progression",
+    "No future NFL destination or pick order is forced",
+    "Every 2021-2026 V9 player record, portrait, rating and hidden development setting preserved unchanged"
+  ]
+}
