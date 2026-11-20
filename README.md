@@ -85,6 +85,23 @@ The initial successful V6 generation reported **1,431/2,293 starting roster play
 
 
 
+## V11 — 2027 consensus prospect repair and importer warning fixes (latest test)
+
+User successfully created a 2020 **nine-class V10 test save**, and the game exposed 2021–2029 prospects, but V10 imported with one Dylan Stewart estimated-OVR warning and one Desmond Watson body-weight correction. The user also noticed 2027 consensus prospects missing or assigned to 2028 and Arch Manning's cartoon face appearing visually inappropriate.
+
+**New, versioned V11 exports** resolve the identified data issues. Old V6–V10 files are frozen; the 2020 NFL clubs, starters, historic attributes, existing draft classes 2021–2026, contracts and hidden development data remain unchanged, except the one identified 2024 prospect Desmond Watson weight cap to 400 pounds.
+
+- [Players V11 — Nine classes through 2029](preview/players-2020-nine-class-mockfix-v11.json): **6,613 players**, comprising 2,293 historical 2020 rostered players plus nine classes of 480.
+- [Players V11 — Seven classes through 2027](preview/players-2020-seven-class-mockfix-v11.json): **5,653 players**, for a narrower disposable test.
+- [Teams V2](preview/teams-2020-roofs-v2.json): SAME accepted teams file, Staff = Default.
+- [Spoiler-free V11 repair report](preview/v11-draft-corrections-report.json): documents prospect-year corrections, portrait-source method, warning repairs and limitations, without individual hidden potential.
+
+**What changed:** all 32 names in the Nov 2026 2027 mock-draft first-round coverage audit are now in projected 2027, including **Charlie Becker, Drew Mestemaker, Darian Mensah, CJ Carr, Nick Marsh, Trey'Dez Green, Colin Simmons and Jeremiah Smith**. Names absent from the source dataset are sourced from published 2027 mock and scouting reports; their rookie attributes are expressly modeled rather than taken from historical Madden files. Four previously projected 2028 names are moved into the *prospective* 2027 class; other real college sophomores refill 2028 to keep exactly 480 per year. Every 2021–2029 year remains populated with real college-player identities. No team or pick order is fixed.
+
+**Cartoon portraits:** Arch Manning, Drew Mestemaker and CJ Carr use already validated QB-position cartoon portraits from V9 as approximate appearance-based replacements. These are not real headshots or exact facial likenesses and should be assessed in game. More portrait corrections can be made from screenshots without inventing portrait IDs.
+
+**Game test requested:** In a *new disposable save*, import Nine-Class V11 with Teams V2 and default Staff. Expand the Players import warning details: verify the two warnings from V10 are gone. Then look at Menu → Edit Players 2027 and Market → Draft → 2027 Board; validate the specifically named prospects and assess Arch's portrait. Structural CI passed, but CapForge in-game acceptance and season-to-season persistence beyond 2021 remain unconfirmed. Do not overwrite the working V9/V10 game or touch Project Ice.
+
 ## V10 projected 2027–2029 draft classes (experimental; in-game test pending)
 
 The user confirmed in-game that V9's 2021 draft board is believable and no longer led by generated fictional players. All six V9 seasons have 480 documented real-player identities, but only 2021 has been inspected in-game; availability after season advance remains untested.
