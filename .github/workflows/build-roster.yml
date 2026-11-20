@@ -30,9 +30,13 @@ jobs:
           python-version: '3.12'
       - name: Generate import candidates
         run: python scripts/build_2020.py
+      - name: Expand verified college prospects into full V9 classes
+        run: python scripts/expand_v9_drafts.py
       - name: Check generated JSON
         run: |
-          python scripts/validate_capforge_roster.py preview/players-2020-three-class.json preview/players-2020-four-class-test.json preview/players-2020-extended-experimental.json preview/players-2020-four-class-history-v8.json preview/players-2020-six-class-history-v8.json
+          python scripts/validate_capforge_roster.py preview/players-2020-three-class.json preview/players-2020-four-class-test.json preview/players-2020-extended-experimental.json preview/players-2020-four-class-history-v8.json preview/players-2020-six-class-history-v8.json preview/players-2020-four-class-authentic-v9.json preview/players-2020-six-class-authentic-v9.json
+      - name: Check V9 unchanged base roster and full 480-player draft classes
+        run: python scripts/validate_v9_drafts.py
       - name: Audit historical NFL draft coverage (spoiler-free)
         run: python scripts/audit_draft_classes.py
       - name: Publish preview files to repo
