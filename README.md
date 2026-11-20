@@ -4,7 +4,7 @@ A fan-made experimental **2020 NFL historical roster** with Madden-style attribu
 
 ## Status
 
-**Experimental V8 preview.** V4 league creation and V6 portraits were tested in CapForge; V8 and the fourth-through-sixth future draft-class persistence have not yet been confirmed. The first imported candidate produced thousands of warnings; calibrated v2 is designed to address its portrait and OVR warnings, but must be revalidated in-game. Starting rosters use a Madden NFL 21 (2020) ratings snapshot and reconstructed 2020 team identities. Contracts are **temporary approximations**, not authenticated 2020 cap hits. Rookie class coverage and exact 2020 Week 1 lineups require further review.
+**Experimental V9 draft-preview test.** V8 has successfully imported into a playable 2020 league and shown 2021 prospects, but the new complete V9 classes still require direct game import and future-season validation. The first imported candidate produced thousands of warnings; calibrated v2 is designed to address its portrait and OVR warnings, but must be revalidated in-game. Starting rosters use a Madden NFL 21 (2020) ratings snapshot and reconstructed 2020 team identities. Contracts are **temporary approximations**, not authenticated 2020 cap hits. Rookie class coverage and exact 2020 Week 1 lineups require further review.
 
 ## Once the build workflow succeeds
 
@@ -85,7 +85,20 @@ The initial successful V6 generation reported **1,431/2,293 starting roster play
 
 
 
-## V8 draft-reconciled test (latest, not yet in-game verified)
+## V9 real-first, complete draft-class test (next disposable in-game test)
+
+**V9 fixes the 480-prospect filler problem observed on the 2021 big board in the successful 2020 V8 import.** V8 supplied only 286 named 2021 prospects; CapForge displayed 480 with high-ranked generic names. V9 imports **exactly 480 independently documented real-player identities in each 2021–2026 class**, from the existing historic Madden-based records, verified NFL draft picks, NFL.com undrafted signings, and published combine/pro-day records. All previously supplied 4,180 V8 player records (including portraits, ratings, contracts and private progression) are preserved unchanged.
+
+- [Players V9 — 2021–2024, four draft years](preview/players-2020-four-class-authentic-v9.json): **4,213 players including 2020 starters**.
+- [Players V9 — 2021–2026, six draft years](preview/players-2020-six-class-authentic-v9.json): **5,173 players including 2020 starters**.
+- [Teams V2](preview/teams-2020-roofs-v2.json): same accepted 32 historical teams. Staff: default.
+- [Prospect source coverage and limitations](preview/v9-draft-pool-report.json), [NFL drafted-name audit](preview/v9-draft-coverage-report.json): both spoiler-free.
+
+**How to test:** In CapForge New Game → Import, use **six-class V9 Players** plus **Teams V2**; choose Sep Reg Season with default staff and create a new disposable 2020 save. Confirm 2,293 starting roster players and 32 teams are accepted; then Market → Draft → Board for 2021, inspect whether the old generated big-board names are gone. Menu → Edit Players shows year tabs 2021–2026; those tabs alone don't confirm future-year survival. Verify later years through a throwaway advance before committing to a permanent career.
+
+**Ratings provenance:** All added identities are real and draft-year documented, but **additional prospect attributes are position-based, conservative models** inferred from available physical/scouting data and position-specific imported attributes. They are NOT historical Madden 2021–2026 attribute exports. No historical pick outcomes or teams are forced, and actual per-player potential remains private. The app may still apply its own scouting/projections, and clean GitHub CI does not imply CapForge in-game acceptance. Versioned V9 exports are frozen after publication; older V6/V7/V8 files and Project Ice stay intact.
+
+## V8 draft-reconciled test (older in-game checkpoint)
 
 A new **history V8** backfill repairs 27 historically drafted prospects using evidence from later Madden entries or verified matching 2026 community records. It contains the same 2,293-player starting roster and preserves the previously approved V6 cartoon portrait checkpoint. Other missing picks are not fabricated without reliable attribute data.
 
