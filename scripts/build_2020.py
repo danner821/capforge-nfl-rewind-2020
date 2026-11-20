@@ -4,7 +4,8 @@ Fan-made research preview, NOT a verified in-game import.
 Never print hidden per-player potential / retrospectively ranked players.
 """
 from __future__ import annotations
-import csv,hashlib,io,json,math,re,urllib.request,uuid
+import csv,hashlib,io,json,math,re,time,urllib.request,uuid
+from urllib.error import HTTPError,URLError
 from collections import Counter,defaultdict
 from pathlib import Path
 from capforge_ovr import calibrate, estimate
@@ -19,7 +20,16 @@ SOURCES={
 }
 def get(url):
  req=urllib.request.Request(url,headers={"User-Agent":"CapForge-NFL-Rewind-2020/preview"})
- with urllib.request.urlopen(req,timeout=120) as r:return r.read().decode("utf-8-sig")
+ for attempt in range(4):
+  try:
+   with urllib.request.urlopen(req,timeout=120) as r:
+    return r.read().decode("utf-8-sig")
+  except (HTTPError,URLError,TimeoutError) as exc:
+   if isinstance(exc,HTTPError) and exc.code not in (429,500,502,503,504):
+    raise
+   if attempt==3:raise
+   time.sleep(2**attempt)
+
 def rows(url):
  content=get(url)
  data=list(csv.DictReader(io.StringIO(content)))
@@ -394,7 +404,7 @@ def main():
              and abs(estimate(p["position"],p["ratings"])-p["development"]["ovr"])>2]
  assert not misaligned,f"Ratings/OVR mismatch: {len(misaligned)}"
  results={}
- for label,end in (("three-class",2023),("four-class-test",2024),("four-class-calibrated-v2",2024),("four-class-position-v3",2024),("four-class-personnel-v4",2024),("four-class-portraits-v5",2024),("extended-experimental",2026)):
+ for label,end in (("three-class",2023),("four-class-test",2024),("four-class-calibrated-v2",2024),("four-class-position-v3",2024),("four-class-personnel-v4",2024),("four-class-portraits-v5",2024),("four-class-portraits-v6",2024),("extended-experimental",2026)):
   out=starters+[p for p in draft if p["bio"]["draftSeason"]<=end]
   payload={"schemaVersion":3,"meta":{"baseSeason":2020},"players":out,"deadCap":[]}
   path=OUT/("players-2020-"+label+".json")
