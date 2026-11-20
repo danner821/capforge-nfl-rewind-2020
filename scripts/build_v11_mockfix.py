@@ -169,6 +169,7 @@ def main():
     current={yr:[p for p in existing if p["bio"]["draftSeason"]==yr]
              for yr in PROJECTED_YEARS}
     assert all(len(current[yr])==480 for yr in PROJECTED_YEARS)
+    original_2028_positions=Counter(p['position'] for p in current[2028])
     source_rows=download()
     normalized=[normalize_candidate(row) for row in source_rows]
     college=[p for p in normalized if p is not None]
@@ -248,8 +249,7 @@ def main():
     # Replace 2028 players who were moved to 2027 with real 2026 college
     # sophomores rather than retroactively forcing 2027 entries into 2028.
     used={canonical(fullname(p)) for p in base+year2027+current[2028]+current[2029]}
-    needed_by_position=Counter(p["position"] for p in original_by_key.values()
-                              if p["bio"]["draftSeason"]==2028)
+    needed_by_position=original_2028_positions
     have_by_position=Counter(p["position"] for p in current[2028])
     for pos,nwant in needed_by_position.items():
         deficit=nwant-have_by_position[pos]
