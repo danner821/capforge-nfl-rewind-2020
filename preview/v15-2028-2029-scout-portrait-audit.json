@@ -1,0 +1,213 @@
+{
+  "status": "V15_STRUCTURAL_SCOUTING_AND_PORTRAIT_AUDIT_PASS_GAME_IMPORT_UNTESTED",
+  "baseSeason": 2020,
+  "totalPlayers": 6613,
+  "startingRoster": 2293,
+  "classSizes": {
+    "2021": 480,
+    "2022": 480,
+    "2023": 480,
+    "2024": 480,
+    "2025": 480,
+    "2026": 480,
+    "2027": 480,
+    "2028": 480,
+    "2029": 480
+  },
+  "baseline": "V12 nine-class published import",
+  "preservedApproved2020Through2027": 5653,
+  "source_2028_board": "https://ultimatebigboard.com/nfl/2028/big-board/",
+  "source_2028_devy": "https://www.firstballotff.com/rookie-rankings/2028",
+  "source_2029_freshman_recruiting": "https://www.thedepthchartcfb.com/recruiting",
+  "source_2029_jared_curtis_college": "https://vucommodores.com/sports/football/roster/player/jared-curtis-2",
+  "source_2026_college_roster": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/rosters/csv/cfb_rosters_2026.csv",
+  "source_scope": "2028 tentative scouting board and devy; 2029 actual 2026 freshmen as provisional draft-eligible candidates",
+  "coverageTargets": {
+    "2028": 54,
+    "2029": 46
+  },
+  "newProspects": {
+    "2028": 16,
+    "2029": 33
+  },
+  "prospectsMovedBetweenFutureYears": {
+    "2028": 2,
+    "2029": 0
+  },
+  "positionCorrections": {
+    "2028": 1,
+    "2029": 3
+  },
+  "current2026CollegeCorrections": {
+    "2028": 0,
+    "2029": 1
+  },
+  "newProspectSourceProvenance": {
+    "2026_college_roster": 47,
+    "published_draft_board_only": 2
+  },
+  "rebalancingRemovedNonPriority": {
+    "2028": 18,
+    "2029": 31
+  },
+  "rebalancingAddedFrom2026Roster": {
+    "2028": 0,
+    "2029": 0
+  },
+  "beforeCoverageMissing": {
+    "2028": [
+      "Hayden Lowe",
+      "Malachi Toney",
+      "Caleb Hawkins",
+      "JJ Buchanan",
+      "Nate Sheppard",
+      "Malik Washington",
+      "Jaron-Keawe Sagapolutele",
+      "JonAnthony Hall",
+      "TaRon Francis",
+      "Andrew Marsh",
+      "Kiotti Armstrong",
+      "Kamario Taylor",
+      "Vernell Brown III",
+      "Nate Roberts",
+      "Dierre Hill Jr.",
+      "Linkon Cure",
+      "DaSaahn Brame",
+      "Jordon Davison"
+    ],
+    "2029": [
+      "Lamar Brown",
+      "Zion Elee",
+      "Luke Wafle",
+      "Brandon Arrington",
+      "Carter Meadows",
+      "Faizon Brandon",
+      "Tristen Keys",
+      "EJ Crowell",
+      "Cincere Johnson",
+      "Richard Anderson",
+      "Jalen Lott",
+      "John Meredith III",
+      "Ian Premer",
+      "Kelvin Obot",
+      "Xavier Griffin",
+      "Khary Adams",
+      "Jay Timmons",
+      "Kodi Greene",
+      "LaDamion Guyton",
+      "Jorden Edmonds",
+      "Mark Bowman",
+      "Tyler Atkinson",
+      "Kendre Harrison",
+      "Jaimeon Winfield",
+      "Ekene Ogboko",
+      "Julian Walker",
+      "Kaiden Prothro",
+      "Jett Washington",
+      "Ethan Feaster",
+      "Cederian Morgan",
+      "Jerquaden Guilford",
+      "Bralan Womack",
+      "Felix Ojo"
+    ]
+  },
+  "portraitAuditBefore": {
+    "2028": {
+      "class_players": 480,
+      "explicit_cartoon_portrait_ids": 0,
+      "default_game_generated_portraits": 480,
+      "featured_names_with_explicit_cartoon_portraits": 0,
+      "featured_names_needing_visual_review": 54,
+      "face_likeness_verified_by_app": false
+    },
+    "2029": {
+      "class_players": 480,
+      "explicit_cartoon_portrait_ids": 0,
+      "default_game_generated_portraits": 480,
+      "featured_names_with_explicit_cartoon_portraits": 0,
+      "featured_names_needing_visual_review": 46,
+      "face_likeness_verified_by_app": false
+    }
+  },
+  "portraitAuditAfter": {
+    "2028": {
+      "class_players": 480,
+      "explicit_cartoon_portrait_ids": 0,
+      "default_game_generated_portraits": 480,
+      "featured_names_with_explicit_cartoon_portraits": 0,
+      "featured_names_needing_visual_review": 54,
+      "face_likeness_verified_by_app": false
+    },
+    "2029": {
+      "class_players": 480,
+      "explicit_cartoon_portrait_ids": 0,
+      "default_game_generated_portraits": 480,
+      "featured_names_with_explicit_cartoon_portraits": 0,
+      "featured_names_needing_visual_review": 46,
+      "face_likeness_verified_by_app": false
+    }
+  },
+  "portraitReviewQueue": {
+    "2028": [
+      "Bryce Underwood",
+      "Michael Fasusi",
+      "Tavien St Clair",
+      "Quincy Porter",
+      "Will Black",
+      "Elijah Griffin",
+      "Lance Jackson",
+      "David Sanders Jr.",
+      "Keelon Russell",
+      "DJ Pickett",
+      "Justus Terry",
+      "Tylon Lee",
+      "Jerome Myles",
+      "Na'eem Offord",
+      "Michael Carroll",
+      "Talyn Taylor",
+      "Isaiah Gibson",
+      "Andrew Babalola",
+      "Deuce Knight",
+      "Amare Adams",
+      "Devin Sanchez",
+      "Jonah Williams",
+      "Carius Curne",
+      "Harlem Berry"
+    ],
+    "2029": [
+      "Keisean Henderson",
+      "Jackson Cantwell",
+      "Lamar Brown",
+      "Jared Curtis",
+      "Zion Elee",
+      "Luke Wafle",
+      "Rodney Dunham",
+      "Brandon Arrington",
+      "Carter Meadows",
+      "Faizon Brandon",
+      "Immanuel Iheanacho",
+      "Savion Hiter",
+      "Tristen Keys",
+      "Chris Henry Jr.",
+      "EJ Crowell",
+      "Cincere Johnson",
+      "Richard Anderson",
+      "Dia Bell",
+      "Jalen Lott",
+      "John Meredith III",
+      "Ian Premer",
+      "Kelvin Obot",
+      "Xavier Griffin",
+      "Khary Adams"
+    ]
+  },
+  "portraitMethod": "Preserve known game-compatible cartoon IDs; default-generated faces for unmatched players. Never assign unverified skin-tone/face IDs from metadata.",
+  "limitations": [
+    "2028/29 final declarations and actual NFL draft board/rankings remain unknown",
+    "2029 ranking is 2026 incoming college recruiting, not 2029 NFL mock consensus",
+    "Draft placement and modeled attributes are estimates, not authenticated Madden grades",
+    "Cartoon face resemblance cannot be established from JSON; screenshot review required",
+    "Automated GitHub validation cannot prove CapForge importer warning count or future season persistence"
+  ],
+  "privacy": "No hidden individual potentials, developmental curves or NFL draft destinations reported"
+}
