@@ -59,3 +59,13 @@ Use game validation feedback to fix importer incompatibilities first. If the 4-c
 - NEW LINK for next user validation: `https://github.com/danner821/capforge-nfl-rewind-2020/blob/main/preview/players-2020-four-class-calibrated-v2.json`. Use `preview/teams-2020.json` for teams; previous screenshot showed teams field pointed at other creator's link, possibly 2026 identities.
 - Next immediate action: user pastes new versioned link and checks warnings. Do not start permanent save yet; still outstanding historical contracts, staff, exact Week 1 rosters, and verification of 4+ imported draft classes.
 - Project Ice untouched.
+
+## 2026-11-19: V3 import correction after user screenshot
+- Calibrated v2 reduced Players import warnings to TWO, at players[12] and players[22]. Source-order mapping points to Khalil Mack and Chandler Jones; both were incorrectly modeled as coverage LB instead of pass-rush EDGE.
+- User Teams import rejected with three roof enum errors. Valid values are open, dome, retractable (not fixed).
+- scripts/build_2020.py now maps Madden 3-4 pass-rush LOLB/ROLB to CapForge EDGE using skill profiles, and converts fixed-roof stadiums to dome.
+- Latest GitHub Actions run 44679699544 completed successfully; 32 valid teams, 0 estimated OVR mismatches >2, no explicit portrait IDs.
+- Next Players link: https://github.com/danner821/capforge-nfl-rewind-2020/blob/main/preview/players-2020-four-class-position-v3.json
+- Next Teams link: https://github.com/danner821/capforge-nfl-rewind-2020/blob/main/preview/teams-2020-roofs-v2.json
+- Next step: user validates both V3/V2 files in CapForge, confirms error and warning count. Successful CI is NOT proof of in-game compatibility. Only then start disposable test save to test 4th class.
+- Never disclose hidden player potential, never touch Project Ice.
