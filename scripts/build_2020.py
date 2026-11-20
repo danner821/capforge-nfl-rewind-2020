@@ -46,7 +46,7 @@ def position(p):
  "hb":"RB","halfback":"RB","fb":"RB","fullback":"RB","runningback":"RB",
  "lt":"OT","rt":"OT","lefttackle":"OT","righttackle":"OT",
  "lg":"OG","rg":"OG","leftguard":"OG","rightguard":"OG",
- "le":"EDGE","re":"EDGE","rightedge":"EDGE","leftedge":"EDGE",
+ "le":"DE","re":"DE","rightedge":"EDGE","leftedge":"EDGE",
  "mlb":"LB","lolb":"LB","rolb":"LB","middlelinebacker":"LB","leftoutsidelinebacker":"LB","rightoutsidelinebacker":"LB",
  "fs":"S","ss":"S","freesafety":"S","strongsafety":"S",
  "quarterback":"QB","widereceiver":"WR","tightend":"TE","center":"C",
@@ -191,6 +191,74 @@ def build_player(r,year,group,teams,peaks):
   if not t:raise RuntimeError("Unmapped 2020 team "+field(r,"Team")+" for "+name)
   entry.update(teamAbbr=t["abbr"],teamId=t["teamId"])
  return entry
+def balance_defensive_positions(starters, original_rows):
+ """Ensure all required CapForge defensive positions exist per club.
+
+ Madden has LE/RE and LOLB/ROLB, but CapForge models DE and EDGE separately.
+ We reclassify only using existing players and preserve each player's intended
+ OVR with position-specific calibration. No fictional additions or FA moves.
+ """
+ groups=defaultdict(list)
+ source={}
+ for r in original_rows:
+  source[(field(r,"Team").lower(),normal(fullname(r)))]=r
+ for p in starters:
+  groups[p["teamAbbr"]].append(p)
+ new_count=Counter()
+ for t,teamplayers in groups.items():
+  # Source team lookup uses the Madden team name, so reconstruct source by player name.
+  source_by_name={nm:rr for (original_team,nm),rr in source.items()
+                  if original_team in {"redskins" if t=="WAS" else "raiders" if t=="LV" else "unused"}}
+  all_src={nm:rr for (_,nm),rr in source.items()}
+  def src(p):return all_src.get(normal(p["forename"]+" "+p["surname"]),{})
+  def count(k):return sum(p["position"]==k for p in teamplayers)
+  def switch(p,k):
+   if p["position"]==k:return
+   previous=p["development"]["ovr"]
+   p["position"]=k
+   p["ratings"],p["development"]["ovr"],_,_=calibrate(k,p["ratings"],previous)
+   p["development"]["potential"]=max(p["development"]["potential"],p["development"]["ovr"])
+   new_count[k]+=1
+  # Keep at least two true interior defenders and two DEs, converting
+  # the heaviest original DEs when Madden's DT bucket is too thin.
+  if count("DT")<2:
+   choices=sorted((p for p in teamplayers if p["position"]=="DE"),key=lambda p:(num(src(p),"Weight",default=p["bio"]["weightLbs"]),p["ratings"].get("strength",50)),reverse=True)
+   while count("DT")<2 and count("DE")>2 and choices:
+    switch(choices.pop(0),"DT")
+  # Pass-rush LOLB and ROLB were preconverted to EDGE. Where there are
+  # fewer than three EDGE players, promote best-fit defensive ends first.
+  # Preserve at least 2 DE while filling EDGE.
+  if count("EDGE")<3:
+   choices=sorted((p for p in teamplayers if p["position"]=="DE"),
+       key=lambda p:(p["ratings"].get("speed",50)*.45+
+           max(num(src(p),"Finesse Moves",default=40),num(src(p),"Power Moves",default=40))*.4-
+           p["bio"]["weightLbs"]*.12),reverse=True)
+   while count("EDGE")<3 and count("DE")>2 and choices:
+    switch(choices.pop(0),"EDGE")
+  # If not enough EDGE candidates from defensive ends, select outside
+  # linebackers who have a pass-rush role in Madden and leave 3+ off-ball LBs.
+  if count("EDGE")<3:
+   choices=sorted((p for p in teamplayers if p["position"]=="LB" and
+         field(src(p),"Position") in ("LOLB","ROLB")),
+         key=lambda p:max(num(src(p),"Finesse Moves"),num(src(p),"Power Moves")),reverse=True)
+   while count("EDGE")<3 and count("LB")>3 and choices:
+    switch(choices.pop(0),"EDGE")
+  # Center/guard: use one interior lineman if Madden only provided 1 center.
+  if count("C")<2:
+   choices=sorted((p for p in teamplayers if p["position"]=="OG"),
+     key=lambda p:(p["ratings"].get("awareness",50),p["ratings"].get("passBlock",50)),reverse=True)
+   while count("C")<2 and count("OG")>3 and choices:
+    switch(choices.pop(0),"C")
+  missing={p:count(p) for p in ("QB","RB","WR","TE","OT","OG","C","DE","DT","EDGE","LB","CB","S","K","P") if count(p)==0}
+  if missing:raise RuntimeError(f"Required position entirely missing for {t}: {missing}")
+  if count("DE")<2 or count("EDGE")<3 or count("DT")<2:
+   raise RuntimeError(f"Defensive depth short for {t}: DE {count('DE')} EDGE {count('EDGE')} DT {count('DT')}")
+ return {"reclassifications":dict(new_count),"teamCount":len(groups),
+         "teamsWithMissingPosition":0,
+         "minimumDE":min(sum(p["position"]=="DE" for p in v) for v in groups.values()),
+         "minimumEDGE":min(sum(p["position"]=="EDGE" for p in v) for v in groups.values()),
+         "minimumDT":min(sum(p["position"]=="DT" for p in v) for v in groups.values())}
+
 def main():
  rawteams=json.loads(get(SOURCES["teams"]))
  assert rawteams["schemaVersion"]==3
@@ -223,6 +291,7 @@ def main():
  for r in all_madden[2020]:
   p=build_player(r,2020,"roster",tm,peaks)
   if p:starters.append(p)
+ personnel=balance_defensive_positions(starters,all_madden[2020])
  # Scale estimated Madden salaries so preview clubs don't trivially exceed a $300M model cap.
  byteam=defaultdict(list)
  for p in starters:byteam[p["teamAbbr"]].append(p)
@@ -274,7 +343,7 @@ def main():
              and abs(estimate(p["position"],p["ratings"])-p["development"]["ovr"])>2]
  assert not misaligned,f"Ratings/OVR mismatch: {len(misaligned)}"
  results={}
- for label,end in (("three-class",2023),("four-class-test",2024),("four-class-calibrated-v2",2024),("four-class-position-v3",2024),("extended-experimental",2026)):
+ for label,end in (("three-class",2023),("four-class-test",2024),("four-class-calibrated-v2",2024),("four-class-position-v3",2024),("four-class-personnel-v4",2024),("extended-experimental",2026)):
   out=starters+[p for p in draft if p["bio"]["draftSeason"]<=end]
   payload={"schemaVersion":3,"meta":{"baseSeason":2020},"players":out,"deadCap":[]}
   path=OUT/("players-2020-"+label+".json")
@@ -282,7 +351,7 @@ def main():
   assert len(json.loads(path.read_text())["players"])==len(out)
   results[label]={"players":len(out),"bytes":path.stat().st_size}
  report={"status":"PREVIEW_NOT_GAME_VALIDATED","baseSeason":2020,"rosteredPlayers":len(starters),
-  "teams":32,"draftClassSizes":dict(sorted(cc.items())),"duplicateNameRowsRemoved":dupes,"exports":results,
+  "teams":32,"personnelAudit":personnel,"draftClassSizes":dict(sorted(cc.items())),"duplicateNameRowsRemoved":dupes,"exports":results,
   "warnings":["Madden 21 launch teams; not independently verified Week 1","2020 contracts are provisional",
   "2025 Madden 26 roster may be a later snapshot, not confirmed launch",
   "2026 rookies from fan-made Madden 27 conversion; not verified as complete",
