@@ -1,0 +1,51 @@
+{
+  "status": "SIX_480_CLASSES_HISTORIC_DRAFT_NAMES_VERIFIED_NOT_APP_TESTED",
+  "source": "https://github.com/7LayerLabs/nfldraft/blob/main/nfl-drafts-2017-2026.csv",
+  "playersFile": "preview/players-2020-six-class-authentic-v9.json",
+  "by_year": {
+    "2021": {
+      "actual_NFL_draft_picks": 259,
+      "real_picks_represented": 257,
+      "missing_rounds_1_to_3": 0,
+      "missing_late_round": 2,
+      "total_class": 480
+    },
+    "2022": {
+      "actual_NFL_draft_picks": 262,
+      "real_picks_represented": 262,
+      "missing_rounds_1_to_3": 0,
+      "missing_late_round": 0,
+      "total_class": 480
+    },
+    "2023": {
+      "actual_NFL_draft_picks": 259,
+      "real_picks_represented": 259,
+      "missing_rounds_1_to_3": 0,
+      "missing_late_round": 0,
+      "total_class": 480
+    },
+    "2024": {
+      "actual_NFL_draft_picks": 257,
+      "real_picks_represented": 257,
+      "missing_rounds_1_to_3": 0,
+      "missing_late_round": 0,
+      "total_class": 480
+    },
+    "2025": {
+      "actual_NFL_draft_picks": 257,
+      "real_picks_represented": 257,
+      "missing_rounds_1_to_3": 0,
+      "missing_late_round": 0,
+      "total_class": 480
+    },
+    "2026": {
+      "actual_NFL_draft_picks": 257,
+      "real_picks_represented": 257,
+      "missing_rounds_1_to_3": 0,
+      "missing_late_round": 0,
+      "total_class": 480
+    }
+  },
+  "method": "Name + draft year; real NFL draft destinations not assigned",
+  "privacy": "No potential or progression information included"
+}

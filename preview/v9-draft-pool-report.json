@@ -1,0 +1,105 @@
+{
+  "status": "EXPERIMENTAL_NOT_VERIFIED_IN_CAPFORGE",
+  "baseSeason": 2020,
+  "startingRosterPlayers": 2293,
+  "sourceURLs": {
+    "combine": "https://raw.githubusercontent.com/array-carpenter/nfl-draft-data/master/data/combine_pro_day.csv",
+    "espn": "https://raw.githubusercontent.com/JackLich10/nfl-draft-data/main/nfl_draft_prospects.csv",
+    "draft": "https://raw.githubusercontent.com/7LayerLabs/nfldraft/main/nfl-drafts-2017-2026.csv",
+    "nfl_undrafted": {
+      "2021": "https://www.nfl.com/news/undrafted-rookie-free-agents-team-signings-after-2021-nfl-draft",
+      "2022": "https://www.nfl.com/news/undrafted-rookie-free-agents-team-signings-after-2022-nfl-draft",
+      "2023": "https://www.nfl.com/news/undrafted-rookie-free-agents-team-signings-after-2023-nfl-draft",
+      "2024": "https://www.nfl.com/news/undrafted-rookie-free-agents-team-signings-after-2024-nfl-draft",
+      "2025": "https://www.nfl.com/news/undrafted-rookie-free-agents-team-signings-after-2025-nfl-draft",
+      "2026": "https://www.nfl.com/news/undrafted-free-agent-signings-tracker-every-team-s-udfas-after-the-2026-nfl-draft"
+    }
+  },
+  "nflUndraftedSourceCounts": {
+    "2021": 239,
+    "2022": 429,
+    "2023": 430,
+    "2024": 384,
+    "2025": 466,
+    "2026": 358
+  },
+  "nflUndraftedSourceErrors": {},
+  "method": "Keep all V8 players byte-equivalent at record level; append independently documented college prospects with conservative, modeled ratings; fictional low-tier depth only where required",
+  "classTarget": 480,
+  "classes": {
+    "2021": {
+      "original_real_madden_based": 286,
+      "sourced_combine_added": 134,
+      "sourced_espn_added": 0,
+      "nfl_documented_undrafted_added": 60,
+      "verified_draft_picks_modeled_without_measurements": 0,
+      "fictional_depth_added": 0,
+      "total": 480,
+      "source_candidates_after_name_dedup": 269,
+      "documented_real_prospects": 480
+    },
+    "2022": {
+      "original_real_madden_based": 318,
+      "sourced_combine_added": 28,
+      "sourced_espn_added": 0,
+      "nfl_documented_undrafted_added": 134,
+      "verified_draft_picks_modeled_without_measurements": 0,
+      "fictional_depth_added": 0,
+      "total": 480,
+      "source_candidates_after_name_dedup": 385,
+      "documented_real_prospects": 480
+    },
+    "2023": {
+      "original_real_madden_based": 346,
+      "sourced_combine_added": 18,
+      "sourced_espn_added": 0,
+      "nfl_documented_undrafted_added": 115,
+      "verified_draft_picks_modeled_without_measurements": 1,
+      "fictional_depth_added": 0,
+      "total": 480,
+      "source_candidates_after_name_dedup": 358,
+      "documented_real_prospects": 480
+    },
+    "2024": {
+      "original_real_madden_based": 289,
+      "sourced_combine_added": 40,
+      "sourced_espn_added": 0,
+      "nfl_documented_undrafted_added": 151,
+      "verified_draft_picks_modeled_without_measurements": 0,
+      "fictional_depth_added": 0,
+      "total": 480,
+      "source_candidates_after_name_dedup": 384,
+      "documented_real_prospects": 480
+    },
+    "2025": {
+      "original_real_madden_based": 346,
+      "sourced_combine_added": 27,
+      "sourced_espn_added": 0,
+      "nfl_documented_undrafted_added": 103,
+      "verified_draft_picks_modeled_without_measurements": 4,
+      "fictional_depth_added": 0,
+      "total": 480,
+      "source_candidates_after_name_dedup": 410,
+      "documented_real_prospects": 480
+    },
+    "2026": {
+      "original_real_madden_based": 302,
+      "sourced_combine_added": 93,
+      "sourced_espn_added": 0,
+      "nfl_documented_undrafted_added": 77,
+      "verified_draft_picks_modeled_without_measurements": 8,
+      "fictional_depth_added": 0,
+      "total": 480,
+      "source_candidates_after_name_dedup": 497,
+      "documented_real_prospects": 480
+    }
+  },
+  "total": 5173,
+  "importantCaveats": [
+    "Combine/pro-day names establish real draft-year college prospect identity, not Madden-validated attributes",
+    "New prospect OVR and development are conservative estimates, not authenticated rookie ratings",
+    "The actual CapForge app must confirm it does not generate more filler or alter draft-board projections",
+    "No historical NFL team is preassigned to future prospects",
+    "Previous versions and all V8 records are unchanged; hidden potential is not printed"
+  ]
+}
