@@ -1,0 +1,251 @@
+{
+  "QB": {
+    "b": -87.7192,
+    "w": {
+      "acceleration": 0.0991,
+      "agility": 0.0556,
+      "awareness": 0.2284,
+      "ballSecurity": 0.051,
+      "dPassAcc": 0.2263,
+      "decisions": 0.1546,
+      "mPassAcc": 0.326,
+      "pocketPresence": 0.0052,
+      "sPassAcc": 0.3881,
+      "speed": 0.1372,
+      "strength": 0.0243,
+      "throwOnRun": 0.0608,
+      "throwPower": 0.0984,
+      "vision": 0.1362
+    }
+  },
+  "RB": {
+    "b": -81.5691,
+    "w": {
+      "acceleration": 0.2424,
+      "agility": 0.1574,
+      "awareness": 0.1017,
+      "ballSecurity": 0.0141,
+      "catchTraffic": 0.0237,
+      "catching": 0.0753,
+      "changeOfDirection": 0.0294,
+      "decisions": 0.0753,
+      "elusiveness": 0.1021,
+      "jumping": 0.0251,
+      "passBlock": 0.3531,
+      "returnSkill": -0.0504,
+      "routeRun": 0.0737,
+      "speed": 0.256,
+      "strength": 0.2788,
+      "trucking": 0.0963,
+      "vision": 0.0733
+    }
+  },
+  "WR": {
+    "b": -86.6155,
+    "w": {
+      "acceleration": 0.2732,
+      "agility": 0.109,
+      "awareness": 0.092,
+      "ballSecurity": 0.0485,
+      "catchTraffic": 0.1194,
+      "catching": 0.3725,
+      "decisions": 0.0705,
+      "elusiveness": 0.0327,
+      "jumping": 0.1269,
+      "returnSkill": 0.043,
+      "routeRun": 0.1964,
+      "speed": 0.2687,
+      "strength": 0.152,
+      "vision": 0.0656
+    }
+  },
+  "TE": {
+    "b": -83.9359,
+    "w": {
+      "acceleration": 0.1517,
+      "agility": 0.1067,
+      "awareness": 0.1406,
+      "catchTraffic": 0.0324,
+      "catching": 0.102,
+      "changeOfDirection": -0.0063,
+      "decisions": 0.1046,
+      "elusiveness": -0.0279,
+      "jumping": 0.0307,
+      "passBlock": 0.3276,
+      "routeRun": 0.045,
+      "runBlock": 0.3106,
+      "speed": 0.1928,
+      "strength": 0.3412,
+      "vision": 0.101
+    }
+  },
+  "OT": {
+    "b": -72.1567,
+    "w": {
+      "acceleration": 0.1146,
+      "agility": 0.0955,
+      "awareness": 0.1432,
+      "decisions": 0.1024,
+      "passBlock": 0.3787,
+      "runBlock": 0.3861,
+      "speed": 0.1589,
+      "strength": 0.3502,
+      "vision": 0.1077
+    }
+  },
+  "OG": {
+    "b": -69.2504,
+    "w": {
+      "acceleration": 0.0995,
+      "agility": 0.0927,
+      "awareness": 0.1312,
+      "decisions": 0.101,
+      "passBlock": 0.3945,
+      "runBlock": 0.3879,
+      "speed": 0.1407,
+      "strength": 0.3458,
+      "vision": 0.1004
+    }
+  },
+  "C": {
+    "b": -71.2611,
+    "w": {
+      "acceleration": 0.1139,
+      "agility": 0.0931,
+      "awareness": 0.1285,
+      "decisions": 0.0987,
+      "jumping": -0.007,
+      "passBlock": 0.3795,
+      "runBlock": 0.4053,
+      "speed": 0.1487,
+      "strength": 0.3619,
+      "vision": 0.1004
+    }
+  },
+  "EDGE": {
+    "b": -81.7401,
+    "w": {
+      "acceleration": 0.1099,
+      "agility": 0.0403,
+      "awareness": 0.1744,
+      "blockShedding": 0.5004,
+      "decisions": 0.1328,
+      "hitPower": -0.0052,
+      "speed": 0.1587,
+      "strength": 0.5326,
+      "tackle": 0.1384,
+      "vision": 0.1293,
+      "zoneCover": 0.0072
+    }
+  },
+  "DE": {
+    "b": -82.2288,
+    "w": {
+      "acceleration": 0.1165,
+      "agility": 0.0406,
+      "awareness": 0.1788,
+      "blockShedding": 0.5163,
+      "decisions": 0.1299,
+      "hitPower": 0.0067,
+      "speed": 0.1854,
+      "strength": 0.5779,
+      "tackle": 0.0378,
+      "vision": 0.13
+    }
+  },
+  "DT": {
+    "b": -81.2222,
+    "w": {
+      "acceleration": 0.1332,
+      "agility": 0.0458,
+      "awareness": 0.1824,
+      "blockShedding": 0.5577,
+      "decisions": 0.1368,
+      "speed": 0.1367,
+      "strength": 0.5487,
+      "tackle": 0.0386,
+      "vision": 0.1334
+    }
+  },
+  "LB": {
+    "b": -81.6422,
+    "w": {
+      "acceleration": 0.1516,
+      "agility": 0.0588,
+      "awareness": 0.1872,
+      "blockShedding": 0.363,
+      "decisions": 0.1403,
+      "manCover": 0.02,
+      "pursuit": 0.0051,
+      "speed": 0.2006,
+      "stamina": -0.0067,
+      "strength": 0.4109,
+      "tackle": 0.2334,
+      "vision": 0.145,
+      "zoneCover": 0.0313
+    }
+  },
+  "CB": {
+    "b": -84.6226,
+    "w": {
+      "acceleration": 0.1116,
+      "agility": 0.0478,
+      "awareness": 0.1977,
+      "catching": 0.0186,
+      "decisions": 0.1012,
+      "elusiveness": 0.0133,
+      "hitPower": 0.0578,
+      "jumping": 0.0364,
+      "manCover": 0.2141,
+      "returnSkill": 0.0596,
+      "speed": 0.2606,
+      "strength": 0.1369,
+      "tackle": 0.3558,
+      "vision": 0.1561,
+      "zoneCover": 0.1918
+    }
+  },
+  "S": {
+    "b": -84.5894,
+    "w": {
+      "acceleration": 0.1196,
+      "agility": 0.0617,
+      "awareness": 0.1946,
+      "catching": 0.0143,
+      "decisions": 0.0953,
+      "hitPower": 0.06,
+      "jumping": 0.037,
+      "manCover": 0.2122,
+      "pursuit": 0.0091,
+      "speed": 0.2777,
+      "strength": 0.1667,
+      "tackle": 0.3538,
+      "vision": 0.1517,
+      "zoneCover": 0.1988
+    }
+  },
+  "K": {
+    "b": -70.249,
+    "w": {
+      "acceleration": -0.0069,
+      "agility": -0.0096,
+      "decisions": -0.0088,
+      "jumping": 0.0128,
+      "kickAccuracy": 1.0869,
+      "legPower": 0.308,
+      "stamina": 0.0123,
+      "strength": 0.3714
+    }
+  },
+  "P": {
+    "b": -64.4988,
+    "w": {
+      "acceleration": 0.0076,
+      "agility": -0.0053,
+      "discipline": 0.008,
+      "kickAccuracy": 0.596,
+      "legPower": 0.4936,
+      "strength": 0.6082
+    }
+  }
+}
