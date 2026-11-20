@@ -83,3 +83,18 @@ The initial successful V6 generation reported **1,431/2,293 starting roster play
 
 **Import test:** New Game → Import → use the V6 players file and [2020 Teams roofs V2](preview/teams-2020-roofs-v2.json); staff blank. Press Validate and inspect for any portrait warning. If accepted, start only a disposable save and examine recognizable players to see whether the choices are actually better. Bulk player imports do not replace players in an existing save. Do not start the permanent career yet; historical contracts and the fourth-class persistence test remain open.
 
+
+## V7 six-class preview and historical-draft coverage audit
+
+User tested V6 portraits across multiple teams and reported that the cartoon portrait assignments look good. **Do not replace the working V6 file**; it remains the confirmed portrait version. The portrait database can be improved later using verified same-position matches. Do not invent portrait IDs or inject real-world images.
+
+The new optional **2020 + all six historical draft years** test file is [Players V7](preview/players-2020-six-class-draftfix-v7.json). It retains the 2020 roster, player portrait-matching rules, team mapping and historical-style ratings. It corrects Madden 26 player position labels ("Mike Backer", "Weak Backer", "Sam Backer", "Long Snapper") so 2025 rookie-class entries are no longer accidentally skipped.
+
+[Draft coverage report](preview/draft-coverage-report.json) checks the actual 2021-2026 NFL draft selection list against prospects by name, not their hidden potential. It verifies that **every player drafted in rounds 1-3** appears in the six-class import. Later-round selections are still under review and every class has fewer than 480 entries. The game may fill remaining prospects or require expansion; this has not been independently verified.
+
+### Next CapForge test (disposable save only)
+- Players: `https://github.com/danner821/capforge-nfl-rewind-2020/blob/main/preview/players-2020-six-class-draftfix-v7.json`
+- Teams: `https://github.com/danner821/capforge-nfl-rewind-2020/blob/main/preview/teams-2020-roofs-v2.json`
+- Staff: Default.
+- Verify both import links; open a *test* 2020 league if valid. Confirm future draft classes appear as their years approach. A successful URL validation alone **does not establish the game can use year 4-6 classes**.
+- Never expose player hidden potential/retrospective career rankings to the user. Do not use this preview for the permanent long-term 2020 save yet; contracts/FA/staff/history still need work.
