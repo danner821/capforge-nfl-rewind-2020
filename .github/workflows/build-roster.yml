@@ -7,6 +7,10 @@ on:
     paths:
       - 'scripts/**'
       - '.github/workflows/build-roster.yml'
+  pull_request:
+    paths:
+      - 'scripts/**'
+      - '.github/workflows/build-roster.yml'
 
 permissions:
   contents: write
@@ -28,10 +32,11 @@ jobs:
         run: python scripts/build_2020.py
       - name: Check generated JSON
         run: |
-          python scripts/validate_capforge_roster.py preview/players-2020-three-class.json preview/players-2020-four-class-test.json preview/players-2020-extended-experimental.json
+          python scripts/validate_capforge_roster.py preview/players-2020-three-class.json preview/players-2020-four-class-test.json preview/players-2020-extended-experimental.json preview/players-2020-four-class-history-v8.json preview/players-2020-six-class-history-v8.json
       - name: Audit historical NFL draft coverage (spoiler-free)
         run: python scripts/audit_draft_classes.py
       - name: Publish preview files to repo
+        if: github.event_name != 'pull_request'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

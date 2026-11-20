@@ -4,7 +4,7 @@ A fan-made experimental **2020 NFL historical roster** with Madden-style attribu
 
 ## Status
 
-**Preview only — not validated inside CapForge.** The first imported candidate produced thousands of warnings; calibrated v2 is designed to address its portrait and OVR warnings, but must be revalidated in-game. Starting rosters use a Madden NFL 21 (2020) ratings snapshot and reconstructed 2020 team identities. Contracts are **temporary approximations**, not authenticated 2020 cap hits. Rookie class coverage and exact 2020 Week 1 lineups require further review.
+**Experimental V8 preview.** V4 league creation and V6 portraits were tested in CapForge; V8 and the fourth-through-sixth future draft-class persistence have not yet been confirmed. The first imported candidate produced thousands of warnings; calibrated v2 is designed to address its portrait and OVR warnings, but must be revalidated in-game. Starting rosters use a Madden NFL 21 (2020) ratings snapshot and reconstructed 2020 team identities. Contracts are **temporary approximations**, not authenticated 2020 cap hits. Rookie class coverage and exact 2020 Week 1 lineups require further review.
 
 ## Once the build workflow succeeds
 
@@ -83,6 +83,18 @@ The initial successful V6 generation reported **1,431/2,293 starting roster play
 
 **Import test:** New Game → Import → use the V6 players file and [2020 Teams roofs V2](preview/teams-2020-roofs-v2.json); staff blank. Press Validate and inspect for any portrait warning. If accepted, start only a disposable save and examine recognizable players to see whether the choices are actually better. Bulk player imports do not replace players in an existing save. Do not start the permanent career yet; historical contracts and the fourth-class persistence test remain open.
 
+
+
+## V8 draft-reconciled test (latest, not yet in-game verified)
+
+A new **history V8** backfill repairs 27 historically drafted prospects using evidence from later Madden entries or verified matching 2026 community records. It contains the same 2,293-player starting roster and preserves the previously approved V6 cartoon portrait checkpoint. Other missing picks are not fabricated without reliable attribute data.
+
+- [Players V8 — 2021–2024 drafts](preview/players-2020-four-class-history-v8.json): **3,532 records**. Test 2020 league construction and the fourth class in a disposable save.
+- [Players V8 — 2021–2026 drafts](preview/players-2020-six-class-history-v8.json): **4,180 records**. Optional six-year disposable-save test; game acceptance and persistence of later classes remain unverified.
+- [Teams V2](preview/teams-2020-roofs-v2.json): 2020 historical teams and importer-accepted roof values; use default Staff.
+- [Spoiler-free draft coverage](preview/draft-coverage-report.json): V8 pick-name audit against independent 2021–2026 draft lists; no development potentials disclosed.
+
+The V8 source-backed repair does **not** establish that all late-round players, the full 480 prospects per draft year, exact 2020 Week 1 contracts, or historical staff are complete. If V8 fails, continue with the user-approved V6 roster. Do not use any preview to overwrite a working long-term save, and do not open the raw player files to inspect hidden progression.
 
 ## V7 six-class preview and historical-draft coverage audit
 
