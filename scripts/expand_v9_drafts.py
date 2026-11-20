@@ -43,7 +43,7 @@ SOURCES = {
 # into a random NFL position when their exact role isn't established.
 POS_MAP = {
     "QB":"QB", "RB":"RB", "HB":"RB", "FB":"RB", "WR":"WR", "TE":"TE",
-    "OT":"OT", "T":"OT", "LT":"OT", "RT":"OT", "OG":"OG", "G":"OG", "LG":"OG", "RG":"OG",
+    "OT":"OT", "T":"OT", "OL":"OG", "IOL":"OG", "LT":"OT", "RT":"OT", "OG":"OG", "G":"OG", "LG":"OG", "RG":"OG",
     "C":"C", "OC":"C", "DE":"DE", "DL":"DE", "DT":"DT", "NT":"DT",
     "EDGE":"EDGE", "ED":"EDGE", "OLB":"LB", "ILB":"LB", "MLB":"LB", "LB":"LB",
     "CB":"CB", "DB":"CB", "S":"S", "FS":"S", "SS":"S", "SAF":"S",
