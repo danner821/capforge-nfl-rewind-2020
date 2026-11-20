@@ -102,3 +102,13 @@ Use game validation feedback to fix importer incompatibilities first. If the 4-c
 - Keep Teams link `https://github.com/danner821/capforge-nfl-rewind-2020/blob/main/preview/teams-2020-roofs-v2.json`, Staff default.
 - Have user validate V6 and check any portrait incompatibility warnings. Starting a *new disposable save* required to test portraits in roster, not an existing save. Do NOT claim actual NFL headshots can be imported or exact likenesses obtained.
 - Still need verify the fourth class truly survives after advancing to 2024; future draft completeness, contracts, and historical staffs remain unfinished. Project Ice unchanged.
+
+## 2026-11-19: Approved V6 portraits and repaired 2025 Madden rookies
+- User checked multiple NFL franchises and likes the approximate CapForge cartoon portraits from V6; wants every player matched as closely as available, NOT true photo headshots. Keep V6 as working checkpoint; do not disturb player's existing save.
+- Historical-prospect QA discovered 2025 Madden 26 data contains 340 rookie entries, but 39 2025 LBs labeled "Mike Backer", "Weak Backer", and "Sam Backer", plus 3 "Long Snapper" rows, were skipped by position normalizer. Repaired mapping to LB/C. Six-class preview now contains 2025: 340 prospects (previously 298).
+- New six-class link: https://github.com/danner821/capforge-nfl-rewind-2020/blob/main/preview/players-2020-six-class-draftfix-v7.json
+- Tests: GitHub Actions build and JSON checks succeeded; 4,153 total entries in V7 (2,293 2020 roster + 1,860 draft prospects 2021-26); at this point only 4-class V6 portrait version is user confirmed playable.
+- Added scripts/audit_draft_classes.py and CI step to compare historic draft picks against https://github.com/7LayerLabs/nfldraft/blob/main/nfl-drafts-2017-2026.csv with known historical name aliases, no potentials revealed.
+- Current audit: **all rounds 1-3 actual drafted players in 2021-26 covered**. Other drafted players still missing: 2021 23, 2022 4, 2023 3, 2024 2, 2025 19, 2026 23; audit source name aliases may explain some.
+- Individual prospects' 2020-26 hidden potential/curves remain only in raw import JSON; NEVER print them in user-facing drafts.
+- Next tests: user can try V7 disposable 2020 save and confirm 6 classes persist. Need real 2020 contracts and staff, exact Week 1 roster, late-round and undrafted draft completeness; avoid changes to Project Ice.
