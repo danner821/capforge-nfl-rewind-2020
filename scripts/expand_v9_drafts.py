@@ -221,7 +221,7 @@ def synthetic_depth_player(year,index,library,used):
     # The source report transparently counts these fictional slots.
     for attempt in range(6000):
         i=index+attempt
-        name=FIRST_NAMES[(i+year)%len(FIRST_NAMES)]+" "+LAST_NAMES[(i*7+year)%len(LAST_NAMES)]
+        name=FIRST_NAMES[(i+year)%len(FIRST_NAMES)]+" "+LAST_NAMES[((i//len(FIRST_NAMES))+year)%len(LAST_NAMES)]
         key=canonical(name)
         if key not in used:
             used.add(key)
