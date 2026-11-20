@@ -1,0 +1,80 @@
+{
+  "status": "AUDIT_ONLY_V12_IMPORT_UNCHANGED_HISTORICAL_ACCURACY_UNVERIFIED",
+  "baseSeason": 2020,
+  "auditedPlayerFile": "players-2020-nine-class-scoutfix-v12.json",
+  "historicalRosterCount": 2293,
+  "teamCount": 32,
+  "draftClassesUntouched": true,
+  "modeledContractWarnings": [
+    "2020 contract values come from a salary heuristic, not authenticated 2020 contract/cap-hit ledgers",
+    "Signed season is hard-coded to 2020; do not treat it as the player's real signature date",
+    "Flat annual salaries and zero bonus schedules are source-model placeholders",
+    "Any real 2020 salary cap comparisons require a verified per-player cap-hit/bonus source"
+  ],
+  "contractStructure": {
+    "rosteredContractsChecked": 2293,
+    "contractYearsHistogram": {
+      "1": 1983,
+      "2": 154,
+      "3": 74,
+      "4": 34,
+      "5": 48
+    },
+    "flatAnnualSalarySchedules": 2293,
+    "zeroBonusSchedules": 2293,
+    "guaranteeApproximately25PercentAnnualSalary": 2293,
+    "zeroFirstYearGuarantees": 0,
+    "teamSalarySumsRange": {
+      "min": 284999983,
+      "median": 284999998.0,
+      "max": 285000005
+    },
+    "teamSumsAreModeledSalaryNotNFL2020CapHits": true,
+    "teamModeledAnnualSalaryTotals": {
+      "ARI": 285000002,
+      "ATL": 284999983,
+      "BAL": 284999997,
+      "BUF": 285000001,
+      "CAR": 284999998,
+      "CHI": 284999994,
+      "CIN": 285000002,
+      "CLE": 285000000,
+      "DAL": 285000000,
+      "DEN": 284999998,
+      "DET": 284999992,
+      "GB": 285000001,
+      "HOU": 284999996,
+      "IND": 285000003,
+      "JAX": 284999996,
+      "KC": 285000001,
+      "LAC": 284999996,
+      "LAR": 284999995,
+      "LV": 285000005,
+      "MIA": 285000000,
+      "MIN": 284999998,
+      "NE": 285000000,
+      "NO": 284999997,
+      "NYG": 284999994,
+      "NYJ": 284999995,
+      "PHI": 284999997,
+      "PIT": 284999999,
+      "SEA": 284999997,
+      "SF": 285000003,
+      "TB": 285000002,
+      "TEN": 284999997,
+      "WAS": 284999995
+    }
+  },
+  "coachingStaff": {
+    "teamsWithEmbeddedStaffFields": [],
+    "currentImportRecommendation": "Default staff; no historical staff import validated",
+    "historical2020CoachAssignmentsVerified": false,
+    "staffSchemaVerified": false
+  },
+  "nextEvidenceRequired": [
+    "Source-verifiable historical 2020 NFL contracts, cap hits, remaining years and guarantees",
+    "A known CapForge-compatible historical coaching staff JSON schema",
+    "Disposable-game 2020 import, free agency and later season simulation validation"
+  ],
+  "privacy": "Only aggregates and team-level modeled salaries; no hidden potentials or progression disclosed"
+}
