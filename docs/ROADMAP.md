@@ -14,8 +14,8 @@ _Last reviewed: 2026-11-20. Single source of truth: current main branch, version
 | 1 | 2020 league shell, team identities, 2020 starter import | **APPROVED IN GAME (limited)** | User previously started 2020 test league; V4 personnel fix worked; 32 teams and 2,293 rostered players on V10 import | Audit authentic Week 1 depth charts separately |
 | 2 | 2021–2026 draft classes | **CI VERIFIED + 2021 BOARD APPROVED IN GAME** | V9 created 480 documented identities/year; user checked realistic 2021 board | Simulate to 2022–26 in a disposable game |
 | 3 | 2027 prospect board and Arch Manning portrait | **APPROVED IN GAME** | User 2026-11-20: 2027 board looks good and Arch's in-game cartoon portrait looks good | Preserve unchanged on V15 and later |
-| 4 | 2028–2029 top prospect coverage | **IN DEVELOPMENT (V15)** | V12 covered 30 2028 early mocks and 3 2029 QBs; V15 checks broader 2028 big board/devy and 2026 freshman recruits for prospective 2029 | CI pass; user verify 2028 and 2029 boards after disposable import |
-| 5 | 2028–2029 cartoon portraits | **BLOCKED ON GAME VISUAL TEST** | V15 audits explicit cartoon IDs vs game default; known IDs are retained, but JSON cannot prove appearance or likeness | Examine in-game top 2028/29 QB/WR/EDGE portraits; curate only position-compatible, game-known options using actual visual evidence |
+| 4 | 2028–2029 top prospect coverage | **CI VERIFIED, IN-GAME PENDING (V15)** | 54 sourced spotlight 2028 prospects, 46 projected 2029 candidates; 49 newly added; 2 moved to 2028; 480 per class; main-branch build passed | User verifies 2028 and 2029 big boards in a disposable save |
+| 5 | 2028–2029 cartoon portraits | **BLOCKED ON GAME VISUAL TEST** | All 960 future players use CapForge default faces; 0 explicitly matched portrait IDs; no verified likeness from JSON | Examine in-game top 2028/29 QB/WR/EDGE portraits; curate game-known faces using screenshots, not guessed visual traits |
 | 6 | Nine-class long-horizon persistence | **BLOCKED ON GAME TEST** | Future year tabs and early board display ≠ surviving season progression | Advance multiple years in disposable save; inspect drafts/players from 2022 to 2029, persistence and any crashes |
 | 7 | Authentic 2020 contracts and team salary caps (V14) | **IN DEVELOPMENT (research/audit done)** | V13 confirmed 2,293 placeholder contracts, all with flat salaries and zero bonuses; 32 nearly equal modeled payrolls around $285M | Match season-specific historical cap/contract data, model year-by-year schedules; new versioned export + game free-agency tests |
 | 8 | Authentic 2020 coaches and staff | **IN DEVELOPMENT (schema reference located)** | Real 2020 HC/OC/DC/ST verification not done; a community 2018 staff shape exists but its contents are mostly fictional | Build separate sourced 2020 staff, verify all team IDs and 7 roles, clean disposable import |
@@ -24,7 +24,7 @@ _Last reviewed: 2026-11-20. Single source of truth: current main branch, version
 | 11 | Final freeze for permanent 2020 dynasty | **NOT READY** | Requires all essential game validations and history realism, not just green CI | Versioned stable players+teams+staff URLs; preserve old working exports and backups |
 
 ## Current user action
-Test the newest *verified CI build* (currently V12, with V15 to be published once CI passes) in a disposable 2020 CapForge save with **Teams V2** and **Staff Default**. Check the warning panel and 2028/2029 boards. The user already approved the 2027 board and Arch Manning's portrait; do **not** ask them to reapprove it.
+Test the **published V15** nine-class player file `preview/players-2020-nine-class-scout-audit-v15.json` in a disposable 2020 CapForge save with **Teams V2** and **Staff Default**. V15 includes all 2020–2027 V12 records unchanged, including user-approved 2027 prospects and Arch's portrait. Check the warning panel and 2028/2029 boards. The user already approved the 2027 board and Arch Manning's portrait; do **not** ask them to reapprove it.
 
 ## Rules that remain locked
 1. Never overwrite or delete the working V6–V12 exports or user's saves.
@@ -35,3 +35,10 @@ Test the newest *verified CI build* (currently V12, with V15 to be published onc
 6. Keep hidden development/potential and progression curves out of user-facing reports.
 7. GitHub CI passing means structurally valid JSON, **not** that the game imported or simulated it without warnings.
 8. Do not modify **Project Ice**.
+
+## Latest verified build — V15
+- PR #9 merged and main-branch publication CI passed; [V15 report](../preview/v15-2028-2029-scout-portrait-audit.json) is generated and spoiler-free.
+- [Nine-class V15 Players](../preview/players-2020-nine-class-scout-audit-v15.json), [same V2 Teams](../preview/teams-2020-roofs-v2.json); **Staff Default**.
+- Automated audit: 2028 featured 54; 2029 featured 46; added 16 + 33 new real prospects, two moved to 2028, four positional fixes and one school correction; 2029 remains a *2026 freshman projection*.
+- **Portraits:** all 480 in 2028 and all 480 in 2029 use automatic game-generated cartoons. The game may display them, but accuracy is unverified until screenshot review. Do not claim all players' faces are accurate.
+- 2028/2029 boards and later years surviving actual season simulation remain **unverified in game**.
