@@ -14,7 +14,8 @@ SOURCES={
  "teams":"https://raw.githubusercontent.com/jmansfield96/capforge-custom-rosters/main/teams-files/2018-teams.json",
  "madden":"https://raw.githubusercontent.com/theedgepredictor/nfl-madden-data/main/data/madden/raw/{}.csv",
  "madden26":"https://raw.githubusercontent.com/thompgt/madden-analysis/master/data/processed/madden_clean.csv",
- "madden27":"https://raw.githubusercontent.com/jmansfield96/capforge-custom-rosters/main/player-files/madden-27-players.json"
+ "madden27":"https://raw.githubusercontent.com/jmansfield96/capforge-custom-rosters/main/player-files/madden-27-players.json",
+ "historical_portraits":"https://raw.githubusercontent.com/jmansfield96/capforge-custom-rosters/main/player-files/madden-2018-players.json"
 }
 def get(url):
  req=urllib.request.Request(url,headers={"User-Agent":"CapForge-NFL-Rewind-2020/preview"})
@@ -259,6 +260,52 @@ def balance_defensive_positions(starters, original_rows):
          "minimumEDGE":min(sum(p["position"]=="EDGE" for p in v) for v in groups.values()),
          "minimumDT":min(sum(p["position"]=="DT" for p in v) for v in groups.values())}
 
+def assign_reference_portraits(players, ref18, ref26):
+ """Copy only validated, same-position portrait IDs for recognized real players.
+
+ CapForge accepts portrait-#### from its own built-in cartoon catalog, not
+ real NFL headshot URLs. The two source packs were manually matched to
+ real players' photos (with acknowledged approximation). Don't assign a
+ position-incompatible portrait or invent one if we cannot match safely.
+ """
+ def index(reference):
+  keys=defaultdict(list)
+  for item in reference:
+   pid=item.get("bio",{}).get("portraitId")
+   pos=item.get("position")
+   nm=normal((item.get("forename","")+" "+item.get("surname","")).strip())
+   if nm and pos in SUPPORTED and isinstance(pid,str) and re.fullmatch(r"portrait-\\d{4}",pid):
+    keys[(nm,pos)].append(item)
+  return keys
+ idx18=index(ref18);idx26=index(ref26)
+ counts=Counter()
+ missing=Counter()
+ examples=[]
+ for p in players:
+  key=(normal(p["forename"]+" "+p["surname"]),p["position"])
+  when=p["bio"]["draftSeason"] if p["pool"]=="draftClass" else 2020
+  for label,idx,base in ((("2018",idx18,2018),("2026",idx26,2026))
+                        if p["pool"]=="roster"
+                        else (("2026",idx26,2026),)):
+   matches=idx.get(key,[])
+   # Some headshot rosters contain several people sharing a common name.
+   # Keep only references whose ages align with this player's draft/2020 age.
+   acceptable=[z for z in matches if abs((z.get("bio",{}).get("age",0)-(base-when))-p["bio"]["age"])<=2]
+   ids={z["bio"]["portraitId"] for z in acceptable}
+   if len(ids)==1:
+    p["bio"]["portraitId"]=next(iter(ids))
+    counts[label]+=1
+    if len(examples)<12 and p["pool"]=="roster":
+     examples.append({"player":p["forename"]+" "+p["surname"],"source":label})
+    break
+  if "portraitId" not in p["bio"]:
+   missing[p["pool"]]+=1
+ return {"matched_2018":counts["2018"],"matched_2026":counts["2026"],
+         "unmatched_roster":sum(p["pool"]=="roster" and "portraitId" not in p["bio"] for p in players),
+         "unmatched_draft":missing["draftClass"],
+         "method":"Exact normalized name, same CapForge position, age-aligned source; fallback for unmatched",
+         "limitation":"Matching built-in cartoon portraits, not actual NFL photos."}
+
 def main():
  rawteams=json.loads(get(SOURCES["teams"]))
  assert rawteams["schemaVersion"]==3
@@ -277,6 +324,9 @@ def main():
  all_madden={y:rows(SOURCES["madden"].format(y)) for y in range(2020,2025)}
  all_madden[2025]=rows(SOURCES["madden26"])
  src26=json.loads(get(SOURCES["madden27"]))
+ src18=json.loads(get(SOURCES["historical_portraits"]))
+ if isinstance(src18,dict):src18=src18.get("players",[])
+ assert isinstance(src18,list) and len(src18)>1000,"2018 headshot matched references unavailable"
  if isinstance(src26,dict):src26=src26.get("players",[])
  assert isinstance(src26,list) and len(src26)>1000,"Missing 2026 Madden source"
  peaks={}
@@ -337,13 +387,14 @@ def main():
  assert len(set(p["iden"] for p in unique))==len(unique),"Duplicate player IDs"
  assert len({p["teamAbbr"] for p in starters})==32
  assert len(starters)>=2000
+ portrait_audit=assign_reference_portraits(unique,src18,src26)
  cc=Counter(p["bio"]["draftSeason"] for p in draft)
  # Structural validation cannot guarantee in-game parity, but catch gross mismatches.
  misaligned=[p for p in unique if p["position"] in ("QB","RB","WR","TE","OT","OG","C","EDGE","DE","DT","LB","CB","S","K","P")
              and abs(estimate(p["position"],p["ratings"])-p["development"]["ovr"])>2]
  assert not misaligned,f"Ratings/OVR mismatch: {len(misaligned)}"
  results={}
- for label,end in (("three-class",2023),("four-class-test",2024),("four-class-calibrated-v2",2024),("four-class-position-v3",2024),("four-class-personnel-v4",2024),("extended-experimental",2026)):
+ for label,end in (("three-class",2023),("four-class-test",2024),("four-class-calibrated-v2",2024),("four-class-position-v3",2024),("four-class-personnel-v4",2024),("four-class-portraits-v5",2024),("extended-experimental",2026)):
   out=starters+[p for p in draft if p["bio"]["draftSeason"]<=end]
   payload={"schemaVersion":3,"meta":{"baseSeason":2020},"players":out,"deadCap":[]}
   path=OUT/("players-2020-"+label+".json")
@@ -351,7 +402,7 @@ def main():
   assert len(json.loads(path.read_text())["players"])==len(out)
   results[label]={"players":len(out),"bytes":path.stat().st_size}
  report={"status":"PREVIEW_NOT_GAME_VALIDATED","baseSeason":2020,"rosteredPlayers":len(starters),
-  "teams":32,"personnelAudit":personnel,"draftClassSizes":dict(sorted(cc.items())),"duplicateNameRowsRemoved":dupes,"exports":results,
+  "teams":32,"personnelAudit":personnel,"portraitReferenceAudit":portrait_audit,"draftClassSizes":dict(sorted(cc.items())),"duplicateNameRowsRemoved":dupes,"exports":results,
   "warnings":["Madden 21 launch teams; not independently verified Week 1","2020 contracts are provisional",
   "2025 Madden 26 roster may be a later snapshot, not confirmed launch",
   "2026 rookies from fan-made Madden 27 conversion; not verified as complete",
@@ -361,7 +412,8 @@ def main():
   "CapForge OVR prediction is calibrated from a separate game export and must be tested in-app",
   "Pass-rushing Madden outside LBs are now classified as CapForge EDGE; CapForge still controls its own validation"],
   "ovrQualityCheck":{"players_with_estimated_ovr_gap_over_2":len(misaligned)},
-  "portraitQualityCheck":{"explicit_portrait_ids":sum("portraitId" in p["bio"] for p in unique)}}
+  "portraitQualityCheck":{"explicit_portrait_ids":sum("portraitId" in p["bio"] for p in unique),
+  "matching_rules":"Position and age checked; game validator must still confirm allowed IDs"}}
  (OUT/"build-report.json").write_text(json.dumps(report,indent=2)+"\n")
  print(json.dumps(report,indent=2))
 if __name__=="__main__":main()
