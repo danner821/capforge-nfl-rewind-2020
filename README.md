@@ -2,6 +2,20 @@
 
 A fan-made experimental **2020 NFL historical roster** with Madden-style attributes and future real draft prospects. All files are separate from Project Ice.
 
+## Latest version: V15, 2028–2029 scouting audit (2026-11-20)
+
+The user approved **the 2027 draft board and Arch Manning's in-game cartoon portrait**. V15 preserves those and every 2020–2027 V12 player record **exactly**, while expanding prospective 2028 and 2029 scouting coverage. The verified main-branch CI report checks **54 featured 2028 prospects**, **46 early 2029 candidates** based on actual 2026 college freshmen, and 480 player identities in every draft year 2021–2029. This is NOT a forecast of future NFL declarations or final draft picks.
+
+- [Nine-class Players V15 — latest full 2020–2029 preview](preview/players-2020-nine-class-scout-audit-v15.json), **6,613 players**.
+- [2020 Teams V2](preview/teams-2020-roofs-v2.json), unchanged.
+- Staff: **Default**.
+- [V15 identity, cohort and portrait audit](preview/v15-2028-2029-scout-portrait-audit.json), spoiler-free.
+- [Ordered completion roadmap with evidence and acceptance gates](docs/ROADMAP.md).
+
+**In-game V15 import not yet verified.** Import only into a NEW disposable 2020 game, expand validation warnings, inspect the 2028/2029 boards and check game-rendered faces. **All 960 players in those two projected classes currently use CapForge's automatic cartoon portrait selection**; the JSON contains no separately curated portrait IDs for them. A displayed face alone does not establish an accurate resemblance. Curate built-in faces only after comparing actual in-game screenshots. Preserve previous V12 and working saves. Historical 2020 contracts and coaching staffs remain under review.
+
+## Prior V12 preview (preserved)
+
 ## Latest V12 scouting coverage extension — 2027–2029
 
 The user verified that **V10 imports all nine class-year tabs** into CapForge but reported an OVR warning, a body-weight correction, and generic/wrong cartoon portraits (most visibly Arch Manning). Versioned V11 corrected those two import issues, and provided **position-compatible existing game cartoon portraits** for Arch Manning, Drew Mestemaker, and CJ Carr. V11 is not yet independently in-game validated.
