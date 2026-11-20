@@ -64,3 +64,11 @@ Please use the newly versioned `preview/players-2020-four-class-calibrated-v2.js
 - Teams file was rejected with three roof errors: 'fixed' is invalid in CapForge. New teams v2 uses 'dome' for fixed roofs.
 - V3 classifies pass-rush Madden outside linebackers as CapForge EDGE and recalibrates their attributes.
 - Use both new, versioned links from the table above. Automated build succeeded, but the game still needs to validate these new links.
+
+## League construction: personnel fix (V4)
+
+The first clean V3 import still failed after Choose Your Path with a CapForge **Bad state**: all 32 teams were "short of required personnel" (the game's error explicitly reported no teams over cap). Root cause: the source Madden LE/RE players were all originally converted into CapForge `EDGE`, leaving every NFL club with zero `DE`. CapForge requires separate DE and EDGE groups.
+
+The **current test file** is [2020 Players + 2021–2024 — Personnel V4](preview/players-2020-four-class-personnel-v4.json). It restores DE/EDGE separation, preserves player-specific Madden OVR targets and keeps a defensive depth floor (2 DE, 3 EDGE, 2 DT) plus every required position on all 32 teams. The report verifies 32 teams with no missing positional groups; these floors are inferred, not claimed as CapForge's official minimums.
+
+Use [2020 Teams roofs V2](preview/teams-2020-roofs-v2.json) and default staff. Revalidate in-game, then try a *disposable* league with the 2020 regular-season kickoff. Please report whether Choose Your Path builds the league. Do not start the permanent save until both construction and class persistence are verified.
