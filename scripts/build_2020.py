@@ -417,10 +417,10 @@ def main():
   payload={"schemaVersion":3,"meta":{"baseSeason":2020},"players":out,"deadCap":[]}
   path=OUT/("players-2020-"+label+".json")
   if label in ("four-class-history-v8","six-class-history-v8"):
-   path.write_text(json.dumps(payload,separators=(",",":"))+"\\n")
+   path.write_text(json.dumps(payload,separators=(",",":"))+chr(10))
   # Earlier versions remain immutable to protect user-validated V6 and V7.
   elif not path.exists():
-   path.write_text(json.dumps(payload,separators=(",",":"))+"\\n")
+   path.write_text(json.dumps(payload,separators=(",",":"))+chr(10))
   stored=json.loads(path.read_text())
   results[label]={"players":len(stored["players"]),"bytes":path.stat().st_size}
  report={"status":"PREVIEW_NOT_GAME_VALIDATED","baseSeason":2020,"rosteredPlayers":len(starters),
