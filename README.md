@@ -2,6 +2,19 @@
 
 A fan-made experimental **2020 NFL historical roster** with Madden-style attributes and future real draft prospects. All files are separate from Project Ice.
 
+## Latest V12 scouting coverage extension — 2027–2029
+
+The user verified that **V10 imports all nine class-year tabs** into CapForge but reported an OVR warning, a body-weight correction, and generic/wrong cartoon portraits (most visibly Arch Manning). Versioned V11 corrected those two import issues, and provided **position-compatible existing game cartoon portraits** for Arch Manning, Drew Mestemaker, and CJ Carr. V11 is not yet independently in-game validated.
+
+**V12 is a separate immutable, experimental extension of V11** (not a replacement to working saves). It crosschecks the top 50 prospects of the current November 18, 2026 [2027 scouting consensus](https://www.thedraftroom.app/2027-nfl-draft-big-board), 30 names in an [early 2028 board](https://ultimatebigboard.com/nfl/2028/) with limited scouting coverage, and three 2026 freshmen from contemporary devy evaluations. Year assignments after 2026 remain *projections*, not known future NFL declarations. It keeps **480 prospects for every year from 2021 through 2029**, sourced from published prospect records and the verified 2026 college roster. Modeled ratings are NOT historical Madden ratings.
+
+- [Nine-class Players V12](preview/players-2020-nine-class-scoutfix-v12.json): **6,613 players** (2,293 2020 players + nine 480-player draft classes)
+- [Seven-class Players V12](preview/players-2020-seven-class-scoutfix-v12.json): **5,653 players** (same starting roster + seven 480-player draft classes)
+- [Teams V2](preview/teams-2020-roofs-v2.json): unchanged, use default Staff
+- [V12 spoiler-free coverage audit](preview/v12-scouting-coverage-audit.json): class counts, provenance and QA checkpoints without private player potentials
+
+**Test only in a new disposable save**: CapForge → New Game → Import, Players V12 + Teams V2 + default Staff. Check the green 2,293/32 indicators, expand the Players/Teams warning panels (target zero warnings and zero fixed values), start a 2020 temporary league, inspect Arch Manning's portrait and the 2027 QB/WR prospect list, and confirm the 2028–29 tabs. Class appearance is NOT proof these years survive simulation; that requires later throwaway-season progression. Preserve previous V9–V11 files and Project Ice. Contracts, historical coaching staffs and exact opening-week lineups remain provisional.
+
 ## Status
 
 **Experimental V10 future draft-preview test (V9 remains the verified 2021-board checkpoint).** V8 has successfully imported into a playable 2020 league and shown 2021 prospects, but the new complete V9 classes still require direct game import and future-season validation. The first imported candidate produced thousands of warnings; calibrated v2 is designed to address its portrait and OVR warnings, but must be revalidated in-game. Starting rosters use a Madden NFL 21 (2020) ratings snapshot and reconstructed 2020 team identities. Contracts are **temporary approximations**, not authenticated 2020 cap hits. Rookie class coverage and exact 2020 Week 1 lineups require further review.
