@@ -125,7 +125,11 @@ def source_candidate(r,origin):
         forty=number(r.get("40 Yard"))
         grade=None
         rank=None
-    elif origin=="nfl_udfa":
+    elif origin in ("nfl_udfa","nfl_draft"):
+        if origin=="nfl_draft":
+            r={"year":r.get("Year"),"name":r.get("Selection"),
+               "pos":r.get("Position"),"college":r.get("College","")}
+        
         year=integer(r.get("year"))
         name=r.get("name","")
         pos=to_position(r.get("pos"))
@@ -293,6 +297,13 @@ def main():
         year=integer(r.get("Year"))
         if year in YEARS:
             actual[year].add(canonical(r.get("Selection","")))
+    # Guaranteed genuine names in the independent NFL draft results can
+    # supplement combine/UDFA records even when no physical measurement was
+    # published. Attributes remain explicitly estimated, not invented data.
+    for row in picks:
+        c=source_candidate(row,"nfl_draft")
+        if c and c["key"] not in pool[c["year"]]:
+            pool[c["year"]][c["key"]]=c
     library=template_library(original)
     output=list(original)
     counts={}
@@ -307,7 +318,7 @@ def main():
         fresh.sort(key=lambda c:(0 if c["key"] in actual[year] else 1,
                                   c["rank"] if c["rank"] is not None and c["rank"]>0 else 99999,
                                   -(c["grade"] or 0),c["key"]))
-        added={"combine":0,"espn":0,"nfl_udfa":0}
+        added={"combine":0,"espn":0,"nfl_udfa":0,"nfl_draft":0}
         picked=[]
         for c in fresh:
             if len(original_rows)+len(picked)>=TARGET: break
@@ -324,6 +335,7 @@ def main():
             "sourced_combine_added":added["combine"],
             "sourced_espn_added":added["espn"],
             "nfl_documented_undrafted_added":added["nfl_udfa"],
+            "verified_draft_picks_modeled_without_measurements":added["nfl_draft"],
             "fictional_depth_added":len(fill),
             "total":len(original_rows)+len(picked)+len(fill),
             "source_candidates_after_name_dedup":len(fresh),
