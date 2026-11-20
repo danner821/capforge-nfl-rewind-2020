@@ -15,15 +15,15 @@
   "exports": {
     "three-class": {
       "players": 3223,
-      "bytes": 3534574
+      "bytes": 3498510
     },
     "four-class-test": {
       "players": 3511,
-      "bytes": 3811826
+      "bytes": 3772483
     },
     "extended-experimental": {
       "players": 4111,
-      "bytes": 4328053
+      "bytes": 4277273
     }
   },
   "warnings": [
@@ -33,6 +33,13 @@
     "2026 rookies from fan-made Madden 27 conversion; not verified as complete",
     "Real draft pick order, staff and full 480-player classes not yet implemented",
     "Fourth and later imported classes must be tested in-game",
-    "No individual potential figures included in this report"
-  ]
+    "No individual potential figures included in this report",
+    "CapForge OVR prediction is calibrated from a separate game export and must be tested in-app"
+  ],
+  "ovrQualityCheck": {
+    "players_with_estimated_ovr_gap_over_2": 0
+  },
+  "portraitQualityCheck": {
+    "explicit_portrait_ids": 0
+  }
 }
