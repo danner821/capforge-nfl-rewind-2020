@@ -24,7 +24,7 @@ jobs:
         run: python scripts/build_2020.py
       - name: Check generated JSON
         run: |
-          python scripts/validate_capforge_roster.py preview/players-2020-three-class.json preview/players-2020-extended-experimental.json
+          python scripts/validate_capforge_roster.py preview/players-2020-three-class.json preview/players-2020-four-class-test.json preview/players-2020-extended-experimental.json
       - name: Publish preview files to repo
         run: |
           git config user.name "github-actions[bot]"
