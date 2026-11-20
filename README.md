@@ -4,7 +4,7 @@ A fan-made experimental **2020 NFL historical roster** with Madden-style attribu
 
 ## Status
 
-**Preview only — not validated inside CapForge.** Starting rosters use a Madden NFL 21 (2020) ratings snapshot and reconstructed 2020 team identities. Contracts are **temporary approximations**, not authenticated 2020 cap hits. Rookie class coverage and exact 2020 Week 1 lineups require further review.
+**Preview only — not validated inside CapForge.** The first imported candidate produced thousands of warnings; calibrated v2 is designed to address its portrait and OVR warnings, but must be revalidated in-game. Starting rosters use a Madden NFL 21 (2020) ratings snapshot and reconstructed 2020 team identities. Contracts are **temporary approximations**, not authenticated 2020 cap hits. Rookie class coverage and exact 2020 Week 1 lineups require further review.
 
 ## Once the build workflow succeeds
 
@@ -12,7 +12,7 @@ A fan-made experimental **2020 NFL historical roster** with Madden-style attribu
 | --- | --- |
 | [2020 Teams](preview/teams-2020.json) | 2020 NFL team names, colors, stadiums |
 | [2020 Players + 2021–2023 Classes](preview/players-2020-three-class.json) | Conservative initial import test |
-| [2020 Players + 2021–2024 Classes](preview/players-2020-four-class-test.json) | Isolated test for a fourth historical draft class |
+| [2020 Players + 2021–2024 Classes — Calibrated v2](preview/players-2020-four-class-calibrated-v2.json) | **Recommended current test**: portraits removed, OVR recalibrated against CapForge model |\n| [Previous 4-class test](preview/players-2020-four-class-test.json) | Earlier candidate kept only for comparison; do not start a game with it |
 | [2020 Players + 2021–2026 Classes](preview/players-2020-extended-experimental.json) | Experimental six-class test; additional future years **not verified** |
 | [Spoiler-free Build Report](preview/build-report.json) | Team and draft-class counts, known limitations |
 
@@ -49,3 +49,9 @@ These are independent community data sources, not official historical league exp
 python scripts/build_2020.py
 python scripts/validate_capforge_roster.py preview/players-2020-three-class.json preview/players-2020-extended-experimental.json
 ```
+
+## Import warnings / calibrated second test
+
+A prior tester's screenshot showed 4,324+ warnings: random portrait identifiers were invalid for many positions and Madden's base OVR was incompatible with CapForge's formula (for instance, some 99 OVR stars were scored far lower from the individual attributes). **V2 removes explicit portraitId fields and recalibrates the underlying Madden-derived attributes** using approximate CapForge OVR coefficients inferred from a 2035 game-generated roster. The build report checks count of absent portraits and 2+ point estimated OVR mismatches; this is **not** equivalent to CapForge's actual validator.
+
+Please use the newly versioned `preview/players-2020-four-class-calibrated-v2.json` URL (not the old URL) to avoid stale URL caching. Use **our** `preview/teams-2020.json` for 2020 identities, not the other roster creator's 2026 team file. Leave staff blank for testing. Observe and report the exact warning count, not just the green checkmark.
