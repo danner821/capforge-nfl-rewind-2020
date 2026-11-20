@@ -9,6 +9,7 @@ from urllib.error import HTTPError,URLError
 from collections import Counter,defaultdict
 from pathlib import Path
 from capforge_ovr import calibrate, estimate
+from historical_draft_backfill import backfill_drafted_prospects
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/"preview";OUT.mkdir(exist_ok=True)
 SOURCES={
@@ -16,7 +17,8 @@ SOURCES={
  "madden":"https://raw.githubusercontent.com/theedgepredictor/nfl-madden-data/main/data/madden/raw/{}.csv",
  "madden26":"https://raw.githubusercontent.com/thompgt/madden-analysis/master/data/processed/madden_clean.csv",
  "madden27":"https://raw.githubusercontent.com/jmansfield96/capforge-custom-rosters/main/player-files/madden-27-players.json",
- "historical_portraits":"https://raw.githubusercontent.com/jmansfield96/capforge-custom-rosters/main/player-files/madden-2018-players.json"
+ "historical_portraits":"https://raw.githubusercontent.com/jmansfield96/capforge-custom-rosters/main/player-files/madden-2018-players.json",
+ "draft_reference":"https://raw.githubusercontent.com/7LayerLabs/nfldraft/main/nfl-drafts-2017-2026.csv"
 }
 def get(url):
  req=urllib.request.Request(url,headers={"User-Agent":"CapForge-NFL-Rewind-2020/preview"})
@@ -387,6 +389,10 @@ def main():
   p["development"]["potential"]=max(p["development"]["ovr"],p["development"]["potential"])
   p["contract"]={"salary":0,"guarantee":0,"years":0,"extension":{"salary":0,"guarantee":0,"years":0}}
   draft.append(p)
+ draft_reconciliation=backfill_drafted_prospects(
+  draft,all_madden,src26,get(SOURCES["draft_reference"]),
+  build_player,tm,peaks,field,num,cut,calibrate,development,fullname,normal
+ )
  # Prevent duplicate IDs and duplicate people within a class.
  found=set();unique=[];dupes=0
  for p in starters+draft:
@@ -406,19 +412,24 @@ def main():
              and abs(estimate(p["position"],p["ratings"])-p["development"]["ovr"])>2]
  assert not misaligned,f"Ratings/OVR mismatch: {len(misaligned)}"
  results={}
- for label,end in (("three-class",2023),("four-class-test",2024),("four-class-calibrated-v2",2024),("four-class-position-v3",2024),("four-class-personnel-v4",2024),("four-class-portraits-v5",2024),("four-class-portraits-v6",2024),("six-class-draftfix-v7",2026),("extended-experimental",2026)):
+ for label,end in (("three-class",2023),("four-class-test",2024),("four-class-calibrated-v2",2024),("four-class-position-v3",2024),("four-class-personnel-v4",2024),("four-class-portraits-v5",2024),("four-class-portraits-v6",2024),("six-class-draftfix-v7",2026),("four-class-history-v8",2024),("six-class-history-v8",2026),("extended-experimental",2026)):
   out=starters+[p for p in draft if p["bio"]["draftSeason"]<=end]
   payload={"schemaVersion":3,"meta":{"baseSeason":2020},"players":out,"deadCap":[]}
   path=OUT/("players-2020-"+label+".json")
-  path.write_text(json.dumps(payload,separators=(",",":"))+"\n")
-  assert len(json.loads(path.read_text())["players"])==len(out)
-  results[label]={"players":len(out),"bytes":path.stat().st_size}
+  if label in ("four-class-history-v8","six-class-history-v8"):
+   path.write_text(json.dumps(payload,separators=(",",":"))+"\\n")
+  # Earlier versions remain immutable to protect user-validated V6 and V7.
+  elif not path.exists():
+   path.write_text(json.dumps(payload,separators=(",",":"))+"\\n")
+  stored=json.loads(path.read_text())
+  results[label]={"players":len(stored["players"]),"bytes":path.stat().st_size}
  report={"status":"PREVIEW_NOT_GAME_VALIDATED","baseSeason":2020,"rosteredPlayers":len(starters),
-  "teams":32,"personnelAudit":personnel,"portraitReferenceAudit":portrait_audit,"draftClassSizes":dict(sorted(cc.items())),"duplicateNameRowsRemoved":dupes,"exports":results,
+  "teams":32,"personnelAudit":personnel,"portraitReferenceAudit":portrait_audit,"draftReconciliation":draft_reconciliation,"draftClassSizes":dict(sorted(cc.items())),"duplicateNameRowsRemoved":dupes,"exports":results,
   "warnings":["Madden 21 launch teams; not independently verified Week 1","2020 contracts are provisional",
   "2025 Madden 26 roster may be a later snapshot, not confirmed launch",
   "2026 rookies from fan-made Madden 27 conversion; not verified as complete",
   "Real draft pick order, staff and full 480-player classes not yet implemented",
+  "New v8 prospect backfills use conservative inferred rookie OVR; verify against historical tape",
   "Fourth and later imported classes must be tested in-game",
   "No individual potential figures included in this report",
   "Madden 26 2025 source now maps Mike/Weak/Sam Backer to LB and Long Snapper to C",
