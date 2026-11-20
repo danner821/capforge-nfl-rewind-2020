@@ -80,3 +80,13 @@ Use game validation feedback to fix importer incompatibilities first. If the 4-c
 - Next test: User taps Choose Your Path, selects a disposable test franchise in Dynasty if available, confirms start season 2020 regular season, checks that 2021 is populated, and advances a throwaway save sufficiently to verify 2024 class appears (without inspecting hidden potentials).
 - If user chooses to share screen captures, never ask to reveal individual player potential. Historical contracts and staff still provisional.
 - Do not modify Project Ice, and do not advertise these previews as final.
+
+## 2026-11-19: V4 corrects failed league construction (after clean V3 import)
+- User's Choose Your Path screenshot: `Could not build the league: Bad state: new-league construction could not satisfy both hard invariants — over cap: {}, stuck (dead cap blocks relief): {}, short of required personnel: [all 32 teams]`. Mode shown: Arcade, no save constructed.
+- Root cause grounded in 2020 Madden and 2035 real game export: original converter mapped **all Madden LE/RE to EDGE**, leaving **zero DE players on all 32 teams**. CapForge has separate 15 positions including DE and EDGE.
+- Fixed builder: Madden LE/RE maps to DE; pass rushing LOLB/ROLB eligible for EDGE; team-wide balancing selectively reclassifies extra DEs to EDGE and heavy DE to DT where needed; OG to C if team has only one center. Each move recalibrates OVR to new position, preserving underlying target as closely as possible.
+- CI run `44680479166` finished successfully. Spoiler-free report: 32 clubs, zero team with missing position, minimum 2 DE, 3 EDGE, 2 DT, no predicted OVR mismatch >2.
+- V4 test Players: https://github.com/danner821/capforge-nfl-rewind-2020/blob/main/preview/players-2020-four-class-personnel-v4.json
+- Teams remains https://github.com/danner821/capforge-nfl-rewind-2020/blob/main/preview/teams-2020-roofs-v2.json
+- Strengthened `scripts/validate_capforge_roster.py` with 15-position presence + DE/EDGE/DT minimums.
+- Still must validate actual game league construction and 2024 fourth-class persistence. Contracts provisional; hidden potentials remain private. Do not change Project Ice.
