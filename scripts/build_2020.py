@@ -61,6 +61,7 @@ def position(p):
  "mlb":"LB","lolb":"LB","rolb":"LB","middlelinebacker":"LB","leftoutsidelinebacker":"LB","rightoutsidelinebacker":"LB",
  "fs":"S","ss":"S","freesafety":"S","strongsafety":"S",
  "quarterback":"QB","widereceiver":"WR","tightend":"TE","center":"C",
+ "mikebacker":"LB","weakbacker":"LB","sambacker":"LB","longsnapper":"C",
  "defensivetackle":"DT","linebacker":"LB","cornerback":"CB",
  "kicker":"K","punter":"P"
  }.get(p,p.upper())
@@ -399,12 +400,13 @@ def main():
  assert len(starters)>=2000
  portrait_audit=assign_reference_portraits(unique,src18,src26)
  cc=Counter(p["bio"]["draftSeason"] for p in draft)
+ assert cc[2025]>=335, f"2025 class missing Madden 26 Mike/Weak/Sam linebackers: only {cc[2025]} prospects"
  # Structural validation cannot guarantee in-game parity, but catch gross mismatches.
  misaligned=[p for p in unique if p["position"] in ("QB","RB","WR","TE","OT","OG","C","EDGE","DE","DT","LB","CB","S","K","P")
              and abs(estimate(p["position"],p["ratings"])-p["development"]["ovr"])>2]
  assert not misaligned,f"Ratings/OVR mismatch: {len(misaligned)}"
  results={}
- for label,end in (("three-class",2023),("four-class-test",2024),("four-class-calibrated-v2",2024),("four-class-position-v3",2024),("four-class-personnel-v4",2024),("four-class-portraits-v5",2024),("four-class-portraits-v6",2024),("extended-experimental",2026)):
+ for label,end in (("three-class",2023),("four-class-test",2024),("four-class-calibrated-v2",2024),("four-class-position-v3",2024),("four-class-personnel-v4",2024),("four-class-portraits-v5",2024),("four-class-portraits-v6",2024),("six-class-draftfix-v7",2026),("extended-experimental",2026)):
   out=starters+[p for p in draft if p["bio"]["draftSeason"]<=end]
   payload={"schemaVersion":3,"meta":{"baseSeason":2020},"players":out,"deadCap":[]}
   path=OUT/("players-2020-"+label+".json")
@@ -419,6 +421,7 @@ def main():
   "Real draft pick order, staff and full 480-player classes not yet implemented",
   "Fourth and later imported classes must be tested in-game",
   "No individual potential figures included in this report",
+  "Madden 26 2025 source now maps Mike/Weak/Sam Backer to LB and Long Snapper to C",
   "CapForge OVR prediction is calibrated from a separate game export and must be tested in-app",
   "Pass-rushing Madden outside LBs are now classified as CapForge EDGE; CapForge still controls its own validation"],
   "ovrQualityCheck":{"players_with_estimated_ovr_gap_over_2":len(misaligned)},
