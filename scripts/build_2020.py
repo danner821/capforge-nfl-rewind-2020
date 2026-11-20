@@ -53,6 +53,20 @@ def position(p):
  "defensivetackle":"DT","linebacker":"LB","cornerback":"CB",
  "kicker":"K","punter":"P"
  }.get(p,p.upper())
+def position_for_player(row):
+ """Distinguish pass-rushing 3-4 outside linebackers from off-ball LBs.
+
+ Many Madden LOLB/ROLB players are CapForge EDGEs, not coverage LBs.
+ """
+ original=field(row,"Position","position")
+ if k(original) in ("lolb","rolb"):
+  rush=max(num(row,"Power Moves","stats/powerMoves/value"),
+           num(row,"Finesse Moves","stats/finesseMoves/value"))
+  zone=num(row,"Zone Coverage","stats/zoneCoverage/value")
+  man=num(row,"Man Coverage","stats/manCoverage/value")
+  if rush>=70 and rush-zone>=8 and rush-man>=8:
+   return "EDGE"
+ return position(original)
 SUPPORTED={"QB","RB","WR","TE","OT","OG","C","EDGE","DE","DT","LB","CB","S","K","P"}
 def stats(row,pos):
  def v(*args,d=50):return cut(num(row,*args,default=d))
@@ -147,7 +161,7 @@ def contract(r,ovr,group):
 def build_player(r,year,group,teams,peaks):
  name=fullname(r);original=field(r,"Position","position")
  if " " not in name:return None
- p=position(original)
+ p=position_for_player(r)
  if p not in SUPPORTED:return None
  source_ovr=cut(num(r,"Overall Rating","Overall","Rating","stats/overall/value",default=62),20,99)
  # Rookie readiness uplift is uniform by rating bracket, never hindsight-specific.
@@ -182,12 +196,14 @@ def main():
  assert rawteams["schemaVersion"]==3
  for t in rawteams["teams"]:
   a=t["abbr"]
-  if a=="OAK":t.update(abbr="LV",city="Las Vegas",name="Raiders",stadium="Allegiant Stadium",roof="fixed",logo="assets/logos/fictional/lv.png")
+  if a=="OAK":t.update(abbr="LV",city="Las Vegas",name="Raiders",stadium="Allegiant Stadium",roof="dome",logo="assets/logos/fictional/lv.png")
   elif a=="WAS":t.update(city="Washington",name="Football Team",stadium="FedExField")
-  elif a in ("LAR","LAC"):t.update(stadium="SoFi Stadium",roof="fixed")
+  elif a in ("LAR","LAC"):t.update(stadium="SoFi Stadium",roof="dome")
   elif a=="BUF":t["stadium"]="Bills Stadium"
  rawteams["note"]="EXPERIMENTAL 2020 NFL teams (2018 source updated); not final historical audit."
- (OUT/"teams-2020.json").write_text(json.dumps(rawteams,indent=2)+"\n")
+ assert all(t["roof"] in ("open","dome","retractable") for t in rawteams["teams"]), "Invalid CapForge roof value"
+ (OUT/"teams-2020.json").write_text(json.dumps(rawteams,indent=2)+chr(10))
+ (OUT/"teams-2020-roofs-v2.json").write_text(json.dumps(rawteams,indent=2)+chr(10))
  tm={t["name"].lower():t for t in rawteams["teams"]}
  tm["redskins"]=next(t for t in rawteams["teams"] if t["abbr"]=="WAS")
  all_madden={y:rows(SOURCES["madden"].format(y)) for y in range(2020,2025)}
@@ -258,7 +274,7 @@ def main():
              and abs(estimate(p["position"],p["ratings"])-p["development"]["ovr"])>2]
  assert not misaligned,f"Ratings/OVR mismatch: {len(misaligned)}"
  results={}
- for label,end in (("three-class",2023),("four-class-test",2024),("four-class-calibrated-v2",2024),("extended-experimental",2026)):
+ for label,end in (("three-class",2023),("four-class-test",2024),("four-class-calibrated-v2",2024),("four-class-position-v3",2024),("extended-experimental",2026)):
   out=starters+[p for p in draft if p["bio"]["draftSeason"]<=end]
   payload={"schemaVersion":3,"meta":{"baseSeason":2020},"players":out,"deadCap":[]}
   path=OUT/("players-2020-"+label+".json")
@@ -273,7 +289,8 @@ def main():
   "Real draft pick order, staff and full 480-player classes not yet implemented",
   "Fourth and later imported classes must be tested in-game",
   "No individual potential figures included in this report",
-  "CapForge OVR prediction is calibrated from a separate game export and must be tested in-app"],
+  "CapForge OVR prediction is calibrated from a separate game export and must be tested in-app",
+  "Pass-rushing Madden outside LBs are now classified as CapForge EDGE; CapForge still controls its own validation"],
   "ovrQualityCheck":{"players_with_estimated_ovr_gap_over_2":len(misaligned)},
   "portraitQualityCheck":{"explicit_portrait_ids":sum("portraitId" in p["bio"] for p in unique)}}
  (OUT/"build-report.json").write_text(json.dumps(report,indent=2)+"\n")
