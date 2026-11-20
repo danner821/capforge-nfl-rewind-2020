@@ -13,22 +13,22 @@
     "2022": {
       "actual_nfl_draft_picks": 262,
       "capforge_draft_prospects": 318,
-      "drafted_players_found": 258,
-      "drafted_players_not_found": 4,
+      "drafted_players_found": 262,
+      "drafted_players_not_found": 0,
       "round_1_to_3_missing": 0
     },
     "2023": {
       "actual_nfl_draft_picks": 259,
       "capforge_draft_prospects": 346,
-      "drafted_players_found": 256,
-      "drafted_players_not_found": 3,
+      "drafted_players_found": 257,
+      "drafted_players_not_found": 2,
       "round_1_to_3_missing": 0
     },
     "2024": {
       "actual_nfl_draft_picks": 257,
       "capforge_draft_prospects": 288,
-      "drafted_players_found": 255,
-      "drafted_players_not_found": 2,
+      "drafted_players_found": 256,
+      "drafted_players_not_found": 1,
       "round_1_to_3_missing": 0
     },
     "2025": {
@@ -41,8 +41,8 @@
     "2026": {
       "actual_nfl_draft_picks": 257,
       "capforge_draft_prospects": 302,
-      "drafted_players_found": 234,
-      "drafted_players_not_found": 23,
+      "drafted_players_found": 236,
+      "drafted_players_not_found": 21,
       "round_1_to_3_missing": 0
     }
   },
