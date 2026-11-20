@@ -12,6 +12,7 @@ A fan-made experimental **2020 NFL historical roster** with Madden-style attribu
 | --- | --- |
 | [2020 Teams](preview/teams-2020.json) | 2020 NFL team names, colors, stadiums |
 | [2020 Players + 2021–2023 Classes](preview/players-2020-three-class.json) | Conservative initial import test |
+| [2020 Players + 2021–2024 Classes](preview/players-2020-four-class-test.json) | Isolated test for a fourth historical draft class |
 | [2020 Players + 2021–2026 Classes](preview/players-2020-extended-experimental.json) | Experimental six-class test; additional future years **not verified** |
 | [Spoiler-free Build Report](preview/build-report.json) | Team and draft-class counts, known limitations |
 
