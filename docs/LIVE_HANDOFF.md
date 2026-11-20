@@ -49,3 +49,13 @@ Updated 2026-11-19 (America/Phoenix). This is the current state, not a declarati
 
 ## Engineering next action
 Use game validation feedback to fix importer incompatibilities first. If the 4-class test succeeds, test 6-class. Then audit 2020 contracts, Week 1 team assignments, historical staff, draft completeness and rating quality in that order. Keep changes confined to CapForge repository.
+## 2026-11-19: Calibrated import v2 after user screenshot
+- User tested `preview/players-2020-four-class-test.json`. CapForge showed 2,293 rostered players, 0 free agents and **4,324+ warnings**. Examples: generated random `portraitId` invalid for player's position; displayed OVR 99 disagreed with OVR recomputed from game attributes (example 99 -> 81).
+- The green check and 2,293 count mean roster file parsing succeeded; **do not interpret as proof that the fourth class persists or future seasons work**.
+- Root cause: CapForge per-position OVR weights are not equal to Madden's, and builder assigned arbitrary portrait IDs. We inferred approximate OVR coefficients across 15 positions from user's genuine 2035 CapForge export (no hidden player data included in coefficient file).
+- Changed `scripts/build_2020.py`: remove explicit player portraitIds, map defender/offensive-lineman vision to recognition instead of ball-carrier vision, fill DB secondary rating keys, calibrate imported 2020 and 2021–26 stats to the projected CapForge formula; retain Madden OVR target when reachable.
+- New helper `scripts/capforge_ovr.py` and `scripts/ovr_calibration_coefficients.json`. Coefficients are estimates, not official game source.
+- Latest verified automated roster build succeeded (workflow run `44679273858`). Report confirms **0 explicit portrait IDs and 0 estimated OVR mismatches greater than two**; game must confirm warning count.
+- NEW LINK for next user validation: `https://github.com/danner821/capforge-nfl-rewind-2020/blob/main/preview/players-2020-four-class-calibrated-v2.json`. Use `preview/teams-2020.json` for teams; previous screenshot showed teams field pointed at other creator's link, possibly 2026 identities.
+- Next immediate action: user pastes new versioned link and checks warnings. Do not start permanent save yet; still outstanding historical contracts, staff, exact Week 1 rosters, and verification of 4+ imported draft classes.
+- Project Ice untouched.
