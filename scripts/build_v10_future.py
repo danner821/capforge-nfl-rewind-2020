@@ -90,8 +90,10 @@ def download():
 def normalize_position(p,weight,height,tag):
     p=(p or "").strip().upper()
     if p in ("NA","", "ATH","ATHLETE","LS"):return None
-    if p=="DL":
-        return "DT" if weight>=290 else "DE"
+    if p in ("DL","DE"):
+        if weight<275 and tag[1]%3==0:
+            return "EDGE"  # undersized pass-rush DE/DL (positional projection)
+        return "DT" if p=="DL" and weight>=290 else "DE"
     if p=="OL":
         if weight>=310:return "OG" if tag[0]%4 else "C"
         return "OT" if tag[0]%2 else "OG"
