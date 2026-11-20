@@ -28,8 +28,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Survey future college cohort roster fields (research only)
-        run: python scripts/survey_v10_sources.py
       - name: Generate import candidates
         run: python scripts/build_2020.py
       - name: Expand verified college prospects into full V9 classes
