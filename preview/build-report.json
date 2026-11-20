@@ -17,9 +17,9 @@
   },
   "portraitReferenceAudit": {
     "matched_2018": 1231,
-    "matched_2026": 1277,
+    "matched_2026": 1305,
     "unmatched_roster": 862,
-    "unmatched_draft": 741,
+    "unmatched_draft": 755,
     "method": "Exact normalized name, same CapForge position, age-aligned source; fallback for unmatched",
     "limitation": "Matching built-in cartoon portraits, not actual NFL photos."
   },
@@ -28,7 +28,7 @@
     "2022": 318,
     "2023": 346,
     "2024": 288,
-    "2025": 298,
+    "2025": 340,
     "2026": 302
   },
   "duplicateNameRowsRemoved": 4,
@@ -61,9 +61,13 @@
       "players": 3511,
       "bytes": 3829718
     },
+    "six-class-draftfix-v7": {
+      "players": 4153,
+      "bytes": 4389115
+    },
     "extended-experimental": {
-      "players": 4111,
-      "bytes": 4349704
+      "players": 4153,
+      "bytes": 4389115
     }
   },
   "warnings": [
@@ -74,6 +78,7 @@
     "Real draft pick order, staff and full 480-player classes not yet implemented",
     "Fourth and later imported classes must be tested in-game",
     "No individual potential figures included in this report",
+    "Madden 26 2025 source now maps Mike/Weak/Sam Backer to LB and Long Snapper to C",
     "CapForge OVR prediction is calibrated from a separate game export and must be tested in-app",
     "Pass-rushing Madden outside LBs are now classified as CapForge EDGE; CapForge still controls its own validation"
   ],
@@ -81,7 +86,7 @@
     "players_with_estimated_ovr_gap_over_2": 0
   },
   "portraitQualityCheck": {
-    "explicit_portrait_ids": 2508,
+    "explicit_portrait_ids": 2536,
     "matching_rules": "Position and age checked; game validator must still confirm allowed IDs"
   }
 }
