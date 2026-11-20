@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Validate CapForge JSON structure without exposing hidden potential."""
-import collections,json,sys
+import collections,json,re,sys
 from pathlib import Path
 def audit(path):
  d=json.loads(Path(path).read_text())
@@ -28,6 +28,9 @@ def audit(path):
   assert p["position"] and p["forename"] and p["surname"]
   assert isinstance(p["ratings"],dict) and isinstance(p["development"],dict)
   assert isinstance(p["contract"],dict)
+  portrait=p["bio"].get("portraitId")
+  if portrait is not None:
+   assert re.fullmatch(r"portrait-\d{4}",portrait), f"Malformed portrait ID: {portrait}"
   if p["pool"]=="draftClass":
    y=p["bio"]["draftSeason"]
    assert y>2020
