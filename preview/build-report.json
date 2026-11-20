@@ -1,0 +1,34 @@
+{
+  "status": "PREVIEW_NOT_GAME_VALIDATED",
+  "baseSeason": 2020,
+  "rosteredPlayers": 2293,
+  "teams": 32,
+  "draftClassSizes": {
+    "2021": 266,
+    "2022": 318,
+    "2023": 346,
+    "2024": 288,
+    "2025": 298,
+    "2026": 302
+  },
+  "duplicateNameRowsRemoved": 4,
+  "exports": {
+    "three-class": {
+      "players": 3223,
+      "bytes": 3534574
+    },
+    "extended-experimental": {
+      "players": 4111,
+      "bytes": 4328053
+    }
+  },
+  "warnings": [
+    "Madden 21 launch teams; not independently verified Week 1",
+    "2020 contracts are provisional",
+    "2025 Madden 26 roster may be a later snapshot, not confirmed launch",
+    "2026 rookies from fan-made Madden 27 conversion; not verified as complete",
+    "Real draft pick order, staff and full 480-player classes not yet implemented",
+    "Fourth and later imported classes must be tested in-game",
+    "No individual potential figures included in this report"
+  ]
+}
