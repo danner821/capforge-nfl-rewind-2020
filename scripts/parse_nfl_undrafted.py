@@ -29,7 +29,7 @@ class ListCollector(HTMLParser):
         self.stack=[]
         self.items=[]
     def handle_starttag(self,tag,attrs):
-        if tag=="li":
+        if tag in ("li","p"):
             if self.depth==0:
                 self.stack=[]
             self.depth+=1
@@ -39,7 +39,7 @@ class ListCollector(HTMLParser):
         if self.depth:
             self.stack.append(data)
     def handle_endtag(self,tag):
-        if tag=="li":
+        if tag in ("li","p"):
             self.depth-=1
             if self.depth==0:
                 self.items.append(re.sub(r"\s+"," ","".join(self.stack)).strip())
