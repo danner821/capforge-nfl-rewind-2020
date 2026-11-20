@@ -39,6 +39,8 @@ jobs:
         run: python scripts/validate_v9_drafts.py
       - name: Audit historical NFL draft coverage (spoiler-free)
         run: python scripts/audit_draft_classes.py
+      - name: Audit V9 six full draft classes against real picks
+        run: python scripts/audit_v9_drafts.py
       - name: Publish preview files to repo
         if: github.event_name != 'pull_request'
         run: |
