@@ -1,0 +1,334 @@
+{
+  "status": "V11_STRUCTURALLY_VALIDATED_IN_GAME_NOT_TESTED",
+  "baseSeason": 2020,
+  "reference": "https://whynfl.com/2027-nfl-mock-draft-consensus-13-mocks-jeremiah-smith-drew-mestemaker-qb1-nine-arch-manning-november-2026/",
+  "secondary_reference": "https://www.pff.com/draft/big-board?custom=true",
+  "scope": "Nov 2026 consensus 2027 projected prospect identities; no future draft results asserted",
+  "2027_consensus_represented": 32,
+  "selected_adjustments": [
+    {
+      "name": "Jeremiah Smith",
+      "position": "WR",
+      "source": "v10_projected_college",
+      "from_year": 2027,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "Colin Simmons",
+      "position": "EDGE",
+      "source": "v10_projected_college",
+      "from_year": 2027,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "Leonard Moore",
+      "position": "CB",
+      "source": "v10_projected_college",
+      "from_year": 2027,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "Dylan Stewart",
+      "position": "EDGE",
+      "source": "v10_projected_college",
+      "from_year": 2027,
+      "to_year": 2027,
+      "position_corrected": true,
+      "portrait_curated": false
+    },
+    {
+      "name": "Drew Mestemaker",
+      "position": "QB",
+      "source": "v10_projected_college",
+      "from_year": 2028,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": true
+    },
+    {
+      "name": "Charlie Becker",
+      "position": "WR",
+      "source": "2026_college_roster",
+      "from_year": null,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "Darian Mensah",
+      "position": "QB",
+      "source": "v10_projected_college",
+      "from_year": 2027,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "Jordan Seaton",
+      "position": "OT",
+      "source": "v10_projected_college",
+      "from_year": 2027,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "Ellis Robinson IV",
+      "position": "CB",
+      "source": "2026_college_roster",
+      "from_year": null,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "Will Echoles",
+      "position": "DT",
+      "source": "2026_college_roster",
+      "from_year": null,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "Cam Coleman",
+      "position": "WR",
+      "source": "2026_college_roster",
+      "from_year": null,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "Trevor Goosby",
+      "position": "OT",
+      "source": "v10_projected_college",
+      "from_year": 2027,
+      "to_year": 2027,
+      "position_corrected": true,
+      "portrait_curated": false
+    },
+    {
+      "name": "Ashton Hampton",
+      "position": "CB",
+      "source": "v10_projected_college",
+      "from_year": 2028,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "Trey'Dez Green",
+      "position": "TE",
+      "source": "2026_college_roster",
+      "from_year": null,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "Trinidad Chambliss",
+      "position": "QB",
+      "source": "2026_college_roster",
+      "from_year": null,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "Nick Marsh",
+      "position": "WR",
+      "source": "2026_college_roster",
+      "from_year": null,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "Chris Cole",
+      "position": "LB",
+      "source": "v10_projected_college",
+      "from_year": 2027,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "CJ Carr",
+      "position": "QB",
+      "source": "v10_projected_college",
+      "from_year": 2028,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": true
+    },
+    {
+      "name": "Jadan Baugh",
+      "position": "RB",
+      "source": "v10_projected_college",
+      "from_year": 2027,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "Yhonzae Pierre",
+      "position": "EDGE",
+      "source": "2026_college_roster",
+      "from_year": null,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "Xavier Gilliam",
+      "position": "DT",
+      "source": "v10_projected_college",
+      "from_year": 2028,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "Kelley Jones",
+      "position": "CB",
+      "source": "2026_college_roster",
+      "from_year": null,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "Dante Moore",
+      "position": "QB",
+      "source": "v10_projected_college",
+      "from_year": 2027,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "KJ Bolden",
+      "position": "S",
+      "source": "v10_projected_college",
+      "from_year": 2027,
+      "to_year": 2027,
+      "position_corrected": true,
+      "portrait_curated": false
+    },
+    {
+      "name": "Greg Johnson",
+      "position": "OG",
+      "source": "v10_projected_college",
+      "from_year": 2027,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "Jamari Johnson",
+      "position": "TE",
+      "source": "2026_college_roster",
+      "from_year": null,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "Arch Manning",
+      "position": "QB",
+      "source": "v10_projected_college",
+      "from_year": 2027,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": true
+    },
+    {
+      "name": "David Stone",
+      "position": "DT",
+      "source": "2026_college_roster",
+      "from_year": null,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "KJ Duff",
+      "position": "WR",
+      "source": "2026_college_roster",
+      "from_year": null,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "Ryan Coleman-Williams",
+      "position": "WR",
+      "source": "2026_college_roster",
+      "from_year": null,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "Trevor Lauck",
+      "position": "OT",
+      "source": "2026_college_roster",
+      "from_year": null,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    },
+    {
+      "name": "Brauntae Johnson",
+      "position": "S",
+      "source": "2026_college_roster",
+      "from_year": null,
+      "to_year": 2027,
+      "position_corrected": false,
+      "portrait_curated": false
+    }
+  ],
+  "portrait_rule": "Three QB cartoon portrait IDs selected from user-approved position-compatible V9 player catalog; not actual photo headshots",
+  "import_reported_weight_fix": [
+    {
+      "name": "Desmond Watson",
+      "year": 2024,
+      "old": 425,
+      "new": 400
+    }
+  ],
+  "import_reported_ovr_fix": {
+    "name": "Dylan Stewart",
+    "previous": 79,
+    "requested_cap": 77
+  },
+  "class_counts": {
+    "2021": 480,
+    "2022": 480,
+    "2023": 480,
+    "2024": 480,
+    "2025": 480,
+    "2026": 480,
+    "2027": 480,
+    "2028": 480,
+    "2029": 480
+  },
+  "seven_class_total": 5653,
+  "nine_class_total": 6613,
+  "caveats": [
+    "Projected future draft eligibility is not verified and can change",
+    "Not every player in 2027\u20132029 is guaranteed to enter that year's NFL draft",
+    "Only named/position/college identities are independently documented; new attributes are modeled",
+    "No historically accurate 2020 staff/contract audit yet",
+    "2027+ year tab and season progression still require in-game verification",
+    "Every V9 record except the capped Desmond Watson weight remains unchanged",
+    "No individual future potential, hidden progression or forced NFL team assignments in reports"
+  ]
+}
