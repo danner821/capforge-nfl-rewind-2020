@@ -29,6 +29,15 @@ ALIASES={
   "jujubrents":"juliusbrents",
   "quanmartin":"jartaviusmartin",
   "olufashanu":"olumuyiwafashanu",
+  "cobiedurant":"decobiedurant",
+  "chigokonkwo":"chigoziemokonkwo",
+  "riqwoolen":"tariqwoolen",
+  "drewogletree":"andrewogletree",
+  "oluoluwatimi":"olusegunoluwatimi",
+  "natethomas":"nathanthomas",
+  "nicholassingleton":"nicksingleton",
+  "gabrielrubio":"gaberubio",
+
 }
 def get_source():
     request=urllib.request.Request(SOURCE_URL,headers={"User-Agent":"CapForge-Historical-Draft-Audit/1.0"})
