@@ -36,9 +36,11 @@ jobs:
         run: python scripts/build_v10_future.py
       - name: Generate V11 versioned 2027 prospect and portrait corrections
         run: python scripts/build_v11_mockfix.py
+      - name: Reconcile V11 scouting, portrait and CapForge importer issues
+        run: python scripts/repair_v11_future.py
       - name: Check generated JSON
         run: |
-          python scripts/validate_capforge_roster.py preview/players-2020-three-class.json preview/players-2020-four-class-test.json preview/players-2020-extended-experimental.json preview/players-2020-four-class-history-v8.json preview/players-2020-six-class-history-v8.json preview/players-2020-four-class-authentic-v9.json preview/players-2020-six-class-authentic-v9.json preview/players-2020-seven-class-projection-v10.json preview/players-2020-nine-class-projection-v10.json preview/players-2020-seven-class-mockfix-v11.json preview/players-2020-nine-class-mockfix-v11.json
+          python scripts/validate_capforge_roster.py preview/players-2020-three-class.json preview/players-2020-four-class-test.json preview/players-2020-extended-experimental.json preview/players-2020-four-class-history-v8.json preview/players-2020-six-class-history-v8.json preview/players-2020-four-class-authentic-v9.json preview/players-2020-six-class-authentic-v9.json preview/players-2020-seven-class-projection-v10.json preview/players-2020-nine-class-projection-v10.json preview/players-2020-seven-class-scoutfix-v11.json preview/players-2020-nine-class-scoutfix-v11.json preview/players-2020-seven-class-mockfix-v11.json preview/players-2020-nine-class-mockfix-v11.json
       - name: Check V9 unchanged base roster and full 480-player draft classes
         run: python scripts/validate_v9_drafts.py
       - name: Audit historical NFL draft coverage (spoiler-free)
@@ -47,6 +49,8 @@ jobs:
         run: python scripts/audit_v9_drafts.py
       - name: Validate V10 projected classes and unchanged V9
         run: python scripts/validate_v10_future.py
+      - name: Validate V11 projected scouting, portraits and history invariants
+        run: python scripts/validate_v11_future.py
       - name: Validate V11 consensus names, warnings and curated QB portraits
         run: python scripts/validate_v11_mockfix.py
       - name: Publish preview files to repo
