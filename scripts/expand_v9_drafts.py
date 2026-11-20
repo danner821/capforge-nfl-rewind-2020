@@ -23,6 +23,7 @@ from pathlib import Path
 from audit_draft_classes import norm, ALIASES
 from build_2020 import development
 from capforge_ovr import calibrate, estimate
+from parse_nfl_undrafted import load_undrafted_sources, URLS as NFL_UDFAS
 
 ROOT = Path(__file__).resolve().parents[1]
 PREVIEW = ROOT / "preview"
@@ -124,6 +125,16 @@ def source_candidate(r,origin):
         forty=number(r.get("40 Yard"))
         grade=None
         rank=None
+    elif origin=="nfl_udfa":
+        year=integer(r.get("year"))
+        name=r.get("name","")
+        pos=to_position(r.get("pos"))
+        college=r.get("college","")
+        height=None
+        weight=None
+        forty=None
+        grade=None
+        rank=None
     else:
         year=integer(r.get("year"))
         name=r.get("player_name","")
@@ -144,9 +155,9 @@ def source_candidate(r,origin):
             "height":height,"weight":weight,"forty":forty,"grade":grade,
             "rank":rank,"source":origin,"key":key}
 
-def source_pool(combine_rows,espn_rows):
+def source_pool(combine_rows,espn_rows,nfl_udfa_rows):
     found=defaultdict(dict)
-    for origin,rows in (("combine",combine_rows),("espn",espn_rows)):
+    for origin,rows in (("combine",combine_rows),("espn",espn_rows),("nfl_udfa",nfl_udfa_rows)):
         for raw in rows:
             c=source_candidate(raw,origin)
             if not c: continue
@@ -265,7 +276,9 @@ def main():
     combine=source_csv(SOURCES["combine"])
     espn=source_csv(SOURCES["espn"])
     picks=source_csv(SOURCES["draft"])
-    pool=source_pool(combine,espn)
+    nfl_udfas,nfl_errors=load_undrafted_sources()
+    udfa_rows=[r for year in YEARS for r in nfl_udfas.get(year,[])]
+    pool=source_pool(combine,espn,udfa_rows)
     actual=defaultdict(set)
     for r in picks:
         year=integer(r.get("Year"))
@@ -285,7 +298,7 @@ def main():
         fresh.sort(key=lambda c:(0 if c["key"] in actual[year] else 1,
                                   c["rank"] if c["rank"] is not None and c["rank"]>0 else 99999,
                                   -(c["grade"] or 0),c["key"]))
-        added={"combine":0,"espn":0}
+        added={"combine":0,"espn":0,"nfl_udfa":0}
         picked=[]
         for c in fresh:
             if len(original_rows)+len(picked)>=TARGET: break
@@ -301,6 +314,7 @@ def main():
             "original_real_madden_based":len(original_rows),
             "sourced_combine_added":added["combine"],
             "sourced_espn_added":added["espn"],
+            "nfl_documented_undrafted_added":added["nfl_udfa"],
             "fictional_depth_added":len(fill),
             "total":len(original_rows)+len(picked)+len(fill),
             "source_candidates_after_name_dedup":len(fresh),
@@ -320,7 +334,9 @@ def main():
     report={
         "status":"EXPERIMENTAL_NOT_VERIFIED_IN_CAPFORGE",
         "baseSeason":2020,"startingRosterPlayers":len(starters),
-        "sourceURLs":SOURCES,
+        "sourceURLs":{**SOURCES,"nfl_undrafted":NFL_UDFAS},
+        "nflUndraftedSourceCounts":{str(y):len(nfl_udfas.get(y,[])) for y in YEARS},
+        "nflUndraftedSourceErrors":{str(y):e for y,e in nfl_errors.items()},
         "method":"Keep all V8 players byte-equivalent at record level; append independently documented college prospects with conservative, modeled ratings; fictional low-tier depth only where required",
         "classTarget":TARGET,"classes":counts,
         "total":len(output),
