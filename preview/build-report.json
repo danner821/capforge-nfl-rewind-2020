@@ -17,6 +17,10 @@
       "players": 3223,
       "bytes": 3534574
     },
+    "four-class-test": {
+      "players": 3511,
+      "bytes": 3811826
+    },
     "extended-experimental": {
       "players": 4111,
       "bytes": 4328053
