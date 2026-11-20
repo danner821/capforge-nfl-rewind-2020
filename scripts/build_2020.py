@@ -235,7 +235,7 @@ def main():
  assert len(starters)>=2000
  cc=Counter(p["bio"]["draftSeason"] for p in draft)
  results={}
- for label,end in (("three-class",2023),("extended-experimental",2026)):
+ for label,end in (("three-class",2023),("four-class-test",2024),("extended-experimental",2026)):
   out=starters+[p for p in draft if p["bio"]["draftSeason"]<=end]
   payload={"schemaVersion":3,"meta":{"baseSeason":2020},"players":out,"deadCap":[]}
   path=OUT/("players-2020-"+label+".json")
