@@ -12,6 +12,17 @@ def audit(path):
  grouped=collections.Counter(p["pool"] for p in players)
  teams={p["teamAbbr"] for p in players if p["pool"]=="roster"}
  assert len(teams)==32
+ # Import parsing alone does not ensure the game can construct a legal
+ # lineup. Verify all fifteen CapForge position groups on every team.
+ by_team=collections.defaultdict(collections.Counter)
+ for p in players:
+  if p["pool"]=="roster":
+   by_team[p["teamAbbr"]][p["position"]]+=1
+ required=("QB","RB","WR","TE","OT","OG","C","DE","DT","EDGE","LB","CB","S","K","P")
+ for team,counts in by_team.items():
+  absent=[position for position in required if counts[position]==0]
+  assert not absent, f"{team} missing required positions: {absent}"
+  assert counts["DE"]>=2 and counts["EDGE"]>=3 and counts["DT"]>=2, f"{team} has insufficient defensive personnel"
  years=collections.Counter()
  for p in players:
   assert p["position"] and p["forename"] and p["surname"]
