@@ -4,7 +4,7 @@ A fan-made experimental **2020 NFL historical roster** with Madden-style attribu
 
 ## Status
 
-**Experimental V9 draft-preview test.** V8 has successfully imported into a playable 2020 league and shown 2021 prospects, but the new complete V9 classes still require direct game import and future-season validation. The first imported candidate produced thousands of warnings; calibrated v2 is designed to address its portrait and OVR warnings, but must be revalidated in-game. Starting rosters use a Madden NFL 21 (2020) ratings snapshot and reconstructed 2020 team identities. Contracts are **temporary approximations**, not authenticated 2020 cap hits. Rookie class coverage and exact 2020 Week 1 lineups require further review.
+**Experimental V10 future draft-preview test (V9 remains the verified 2021-board checkpoint).** V8 has successfully imported into a playable 2020 league and shown 2021 prospects, but the new complete V9 classes still require direct game import and future-season validation. The first imported candidate produced thousands of warnings; calibrated v2 is designed to address its portrait and OVR warnings, but must be revalidated in-game. Starting rosters use a Madden NFL 21 (2020) ratings snapshot and reconstructed 2020 team identities. Contracts are **temporary approximations**, not authenticated 2020 cap hits. Rookie class coverage and exact 2020 Week 1 lineups require further review.
 
 ## Once the build workflow succeeds
 
@@ -84,6 +84,21 @@ The initial successful V6 generation reported **1,431/2,293 starting roster play
 **Import test:** New Game → Import → use the V6 players file and [2020 Teams roofs V2](preview/teams-2020-roofs-v2.json); staff blank. Press Validate and inspect for any portrait warning. If accepted, start only a disposable save and examine recognizable players to see whether the choices are actually better. Bulk player imports do not replace players in an existing save. Do not start the permanent career yet; historical contracts and the fourth-class persistence test remain open.
 
 
+
+## V10 projected 2027–2029 draft classes (experimental; in-game test pending)
+
+The user confirmed in-game that V9's 2021 draft board is believable and no longer led by generated fictional players. All six V9 seasons have 480 documented real-player identities, but only 2021 has been inspected in-game; availability after season advance remains untested.
+
+**V10 extends this to nine seasons** while preserving **all 5,173 V9 player records unchanged**. New 2027–2029 names are sourced from real 2026 college-football rosters, with cohort year projected from their 2026 year in school (juniors/seniors → 2027, sophomores → 2028, freshmen → 2029). These classifications are estimates of when they might enter the draft, **not official future draft declarations**. Draft eligibility can shift due to redshirts, transfers, returning to school or early declarations. Imported 2027 prospects known to appear in published 2026 NFL scouting boards receive an appropriate pre-draft talent baseline; all their individual skill ratings and growth are modeled estimates. No future player is preassigned to his eventual NFL club.
+
+- [Players V10 — through 2027 (seven classes)](preview/players-2020-seven-class-projection-v10.json): **5,653 records**, including 2,293 2020 roster players and seven 480-player draft classes.
+- [Players V10 — through 2029 (nine classes)](preview/players-2020-nine-class-projection-v10.json): **6,613 records**, including 2,293 2020 roster players and nine 480-player classes.
+- [Teams V2 (unchanged)](preview/teams-2020-roofs-v2.json). Staff should remain default.
+- [Source and class-size report](preview/v10-projection-report.json) is spoiler-free; it does not print hidden individual player potential or career outcomes.
+
+**Next test:** Create a *new throwaway league* with **seven-class V10**, Sep Regular Season, Teams V2 and default Staff. Confirm that validation passes and the 2020 league starts, then inspect the 2027 year filter in Menu → Edit Players. This does **not yet prove** the class will survive season advancement. If seven-class import is accepted, test nine-class V10 in a second disposable new save and check that 2028 and 2029 tabs appear and the 2027 board is populated when the game progresses that far. Preserve all existing saves, Project Ice and previous V6–V9 preview files.
+
+**Do not treat V10 as a final long-term import yet.** CapForge's real year-limit, 2027–2029 draft-board behavior, contract accuracy, 2020 Week 1 assignments and historical coaches still require independent in-game verification.
 
 ## V9 real-first, complete draft-class test (next disposable in-game test)
 
