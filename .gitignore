@@ -1,0 +1,6 @@
+# Python caches and local development artifacts
+__pycache__/
+*.pyc
+.venv/
+.env
+.DS_Store
