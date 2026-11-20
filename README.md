@@ -72,3 +72,14 @@ The first clean V3 import still failed after Choose Your Path with a CapForge **
 The **current test file** is [2020 Players + 2021–2024 — Personnel V4](preview/players-2020-four-class-personnel-v4.json). It restores DE/EDGE separation, preserves player-specific Madden OVR targets and keeps a defensive depth floor (2 DE, 3 EDGE, 2 DT) plus every required position on all 32 teams. The report verifies 32 teams with no missing positional groups; these floors are inferred, not claimed as CapForge's official minimums.
 
 Use [2020 Teams roofs V2](preview/teams-2020-roofs-v2.json) and default staff. Revalidate in-game, then try a *disposable* league with the 2020 regular-season kickoff. Please report whether Choose Your Path builds the league. Do not start the permanent save until both construction and class persistence are verified.
+
+## V6 portrait-matched test (2020 league confirmed to launch with V4)
+
+The user confirmed in-game that V4 successfully starts a 2020 NFL league, but default-generated players' faces did not resemble the named NFL players. We cannot substitute actual headshots via the currently supported `portraitId` field; the game uses built-in cartoon portraits.
+
+The **current experimental portrait test** is [Players V6](preview/players-2020-four-class-portraits-v6.json). It reuses exact-name, position-compatible, age-aligned `portraitId` values from the original creator's 2018 and 2026 roster packs. Unmatched players intentionally keep default portraits. It does not alter ratings, contracts, team assignments, draft classes, or hidden potentials.
+
+The initial successful V6 generation reported **1,431/2,293 starting roster players** with matched community portrait assignments; **2,508 total assignments** including future draft classes through 2026. These are still approximate visual matches, not real NFL likenesses.
+
+**Import test:** New Game → Import → use the V6 players file and [2020 Teams roofs V2](preview/teams-2020-roofs-v2.json); staff blank. Press Validate and inspect for any portrait warning. If accepted, start only a disposable save and examine recognizable players to see whether the choices are actually better. Bulk player imports do not replace players in an existing save. Do not start the permanent career yet; historical contracts and the fourth-class persistence test remain open.
+
