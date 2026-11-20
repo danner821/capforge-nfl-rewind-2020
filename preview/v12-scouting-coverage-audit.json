@@ -1,0 +1,60 @@
+{
+  "status": "EXPERIMENTAL_V12_CHECKS_ONLY_CAPFORGE_IMPORT_UNVERIFIED",
+  "source_2027": "https://www.thedraftroom.app/2027-nfl-draft-big-board",
+  "source_2028": "https://ultimatebigboard.com/nfl/2028/",
+  "source_2029": "https://keeptradecal.com/devy-quarterback-rankings/",
+  "college_roster": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/rosters/csv/cfb_rosters_2026.csv",
+  "source_method": "Public pre-draft consensus used for identity, intended position and provisional year; 2026 NCAA roster used for actual biographical names when available; missing measurements are modeled",
+  "class_sizes": {
+    "2021": 480,
+    "2022": 480,
+    "2023": 480,
+    "2024": 480,
+    "2025": 480,
+    "2026": 480,
+    "2027": 480,
+    "2028": 480,
+    "2029": 480
+  },
+  "starting_roster_players": 2293,
+  "file_total_players": 6613,
+  "historical_records_protected": 5173,
+  "known_import_fixes": [
+    "V11 Desmond Watson game-compatible capped body weight preserved",
+    "V11 Dylan Stewart 2027 reachable OVR preserved"
+  ],
+  "manual_approximate_portrait_matches": [
+    "Arch Manning"
+  ],
+  "marquee_players_added": 31,
+  "marquee_prospects_reassigned_draft_year": 2,
+  "marquee_players_readiness_or_position_adjusted": {
+    "2027": 17,
+    "2028": 28,
+    "2029": 3
+  },
+  "new_record_provenance": {
+    "2026_college_roster": 29,
+    "published_draft_board_only": 2
+  },
+  "class_refill_after_rebalance": {},
+  "class_trim_after_rebalance": {
+    "2027": 14,
+    "2028": 16,
+    "2029": 1
+  },
+  "coverage_checked": {
+    "2027": 50,
+    "2028": 30,
+    "2029": 3
+  },
+  "limitations": [
+    "Future 2027-2029 declarations and rankings are projections, not known NFL results",
+    "2028 scouting lists have few contributing sources and are very uncertain",
+    "New and recalibrated ratings are estimated, not a verified Madden export",
+    "Portrait matching uses game-provided cartoons, not real portraits",
+    "Game must validate warning-free import and future-class persistence in a disposable save",
+    "Original 2020-2026 player attributes/development intact except game-required 2024 weight cap"
+  ],
+  "privacy": "No hidden individual potential or progression values are exported in this report"
+}
