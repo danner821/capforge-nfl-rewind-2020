@@ -16,10 +16,10 @@
     "minimumDT": 2
   },
   "portraitReferenceAudit": {
-    "matched_2018": 0,
-    "matched_2026": 0,
-    "unmatched_roster": 2293,
-    "unmatched_draft": 1818,
+    "matched_2018": 1231,
+    "matched_2026": 1277,
+    "unmatched_roster": 862,
+    "unmatched_draft": 741,
     "method": "Exact normalized name, same CapForge position, age-aligned source; fallback for unmatched",
     "limitation": "Matching built-in cartoon portraits, not actual NFL photos."
   },
@@ -35,31 +35,35 @@
   "exports": {
     "three-class": {
       "players": 3223,
-      "bytes": 3498231
+      "bytes": 3550837
     },
     "four-class-test": {
       "players": 3511,
-      "bytes": 3772182
+      "bytes": 3829718
     },
     "four-class-calibrated-v2": {
       "players": 3511,
-      "bytes": 3772182
+      "bytes": 3829718
     },
     "four-class-position-v3": {
       "players": 3511,
-      "bytes": 3772182
+      "bytes": 3829718
     },
     "four-class-personnel-v4": {
       "players": 3511,
-      "bytes": 3772182
+      "bytes": 3829718
     },
     "four-class-portraits-v5": {
       "players": 3511,
-      "bytes": 3772182
+      "bytes": 3829718
+    },
+    "four-class-portraits-v6": {
+      "players": 3511,
+      "bytes": 3829718
     },
     "extended-experimental": {
       "players": 4111,
-      "bytes": 4276972
+      "bytes": 4349704
     }
   },
   "warnings": [
@@ -77,7 +81,7 @@
     "players_with_estimated_ovr_gap_over_2": 0
   },
   "portraitQualityCheck": {
-    "explicit_portrait_ids": 0,
+    "explicit_portrait_ids": 2508,
     "matching_rules": "Position and age checked; game validator must still confirm allowed IDs"
   }
 }
