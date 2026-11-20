@@ -69,3 +69,14 @@ Use game validation feedback to fix importer incompatibilities first. If the 4-c
 - Next Teams link: https://github.com/danner821/capforge-nfl-rewind-2020/blob/main/preview/teams-2020-roofs-v2.json
 - Next step: user validates both V3/V2 files in CapForge, confirms error and warning count. Successful CI is NOT proof of in-game compatibility. Only then start disposable test save to test 4th class.
 - Never disclose hidden player potential, never touch Project Ice.
+
+## 2026-11-19: Green in-game importer validation
+- User provided screenshot of CapForge **New Game → Import** with both inputs green:
+  - PLAYERS: `preview/players-2020-four-class-position-v3.json`, checkmark and **2293** rostered players.
+  - TEAMS: `preview/teams-2020-roofs-v2.json`, checkmark and **32** teams.
+  - STAFF: DEFAULT.
+  - No warning or error panel visible, choose-your-path green and enabled.
+- This confirms CapForge validation acceptance of these specific imports. It does **NOT** prove that the 2024 fourth class will appear after progression, nor that 2021–2026 classes are historically complete.
+- Next test: User taps Choose Your Path, selects a disposable test franchise in Dynasty if available, confirms start season 2020 regular season, checks that 2021 is populated, and advances a throwaway save sufficiently to verify 2024 class appears (without inspecting hidden potentials).
+- If user chooses to share screen captures, never ask to reveal individual player potential. Historical contracts and staff still provisional.
+- Do not modify Project Ice, and do not advertise these previews as final.
