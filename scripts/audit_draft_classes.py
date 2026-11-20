@@ -12,8 +12,13 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE_URL="https://raw.githubusercontent.com/7LayerLabs/nfldraft/main/nfl-drafts-2017-2026.csv"
 SOURCE_PAGE="https://github.com/7LayerLabs/nfldraft/blob/main/nfl-drafts-2017-2026.csv"
-PACK=ROOT/"preview/players-2020-six-class-draftfix-v7.json"
+PACK=ROOT/"preview/players-2020-six-class-history-v8.json"
 REPORT=ROOT/"preview/draft-coverage-report.json"
+
+# 2026-11-19 V8 coverage baseline, independently reconciled against real
+# drafts. Prevent regressions while allowing unsourced late-round gaps.
+# These are counts of names, not player ability, potential or rankings.
+MIN_DRAFTED_MATCHES={2021:256,2022:262,2023:257,2024:257,2025:244,2026:236}
 
 def norm(value):
     s=unicodedata.normalize("NFKD",str(value).lower())
@@ -73,6 +78,7 @@ def main():
             "drafted_players_found":len(year_picks)-len(unmatched),
             "drafted_players_not_found":len(unmatched),
             "round_1_to_3_missing":len(early),
+            "round_4_to_7_missing":len(unmatched)-len(early),
         }
     summary={
         "source":SOURCE_PAGE,
@@ -81,10 +87,16 @@ def main():
         "by_year":stats,
         "verified":"All actual NFL draft selections in rounds 1-3 are present" if all(v["round_1_to_3_missing"]==0 for v in stats.values()) else "Some rounds 1-3 players missing",
         "future_development":"No individual player potentials, progression curves or hindsight rankings revealed",
-        "next_step":"Research unresolved rounds 4-7 players and add where reliable Madden attributes exist"
+        "next_step":"Research unresolved rounds 4-7 players and add only where reliable attribute sources exist",
+        "coverage_regression_floor":{str(y):MIN_DRAFTED_MATCHES[y] for y in range(2021,2027)}
     }
     REPORT.write_text(json.dumps(summary,indent=2)+"\n")
     print(json.dumps(summary,indent=2))
     if any(v["round_1_to_3_missing"] for v in stats.values()):
         raise SystemExit("Historical rounds 1-3 are incomplete: see coverage report")
+    regressions={y:(stats[str(y)]["drafted_players_found"],floor)
+                 for y,floor in MIN_DRAFTED_MATCHES.items()
+                 if stats[str(y)]["drafted_players_found"] < floor}
+    if regressions:
+        raise SystemExit(f"V8 historical draft coverage regressed: {regressions}")
 if __name__=="__main__":main()
