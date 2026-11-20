@@ -12,7 +12,9 @@ A fan-made experimental **2020 NFL historical roster** with Madden-style attribu
 | --- | --- |
 | [2020 Teams](preview/teams-2020.json) | 2020 NFL team names, colors, stadiums |
 | [2020 Players + 2021–2023 Classes](preview/players-2020-three-class.json) | Conservative initial import test |
-| [2020 Players + 2021–2024 Classes — Calibrated v2](preview/players-2020-four-class-calibrated-v2.json) | **Recommended current test**: portraits removed, OVR recalibrated against CapForge model |\n| [Previous 4-class test](preview/players-2020-four-class-test.json) | Earlier candidate kept only for comparison; do not start a game with it |
+| [2020 Players + 2021–2024 Classes — Positional v3](preview/players-2020-four-class-position-v3.json) | **Recommended current test**: proper EDGE/LB mapping + OVR calibration |
+| [2020 Teams — Valid roofs v2](preview/teams-2020-roofs-v2.json) | **Recommended current test**: accepted roof enum values |
+| [2020 Players + 2021–2024 Classes — Calibrated v2](preview/players-2020-four-class-calibrated-v2.json) | Previous test: portraits removed, OVR recalibrated against CapForge model |\n| [Previous 4-class test](preview/players-2020-four-class-test.json) | Earlier candidate kept only for comparison; do not start a game with it |
 | [2020 Players + 2021–2026 Classes](preview/players-2020-extended-experimental.json) | Experimental six-class test; additional future years **not verified** |
 | [Spoiler-free Build Report](preview/build-report.json) | Team and draft-class counts, known limitations |
 
@@ -55,3 +57,10 @@ python scripts/validate_capforge_roster.py preview/players-2020-three-class.json
 A prior tester's screenshot showed 4,324+ warnings: random portrait identifiers were invalid for many positions and Madden's base OVR was incompatible with CapForge's formula (for instance, some 99 OVR stars were scored far lower from the individual attributes). **V2 removes explicit portraitId fields and recalibrates the underlying Madden-derived attributes** using approximate CapForge OVR coefficients inferred from a 2035 game-generated roster. The build report checks count of absent portraits and 2+ point estimated OVR mismatches; this is **not** equivalent to CapForge's actual validator.
 
 Please use the newly versioned `preview/players-2020-four-class-calibrated-v2.json` URL (not the old URL) to avoid stale URL caching. Use **our** `preview/teams-2020.json` for 2020 identities, not the other roster creator's 2026 team file. Leave staff blank for testing. Observe and report the exact warning count, not just the green checkmark.
+
+## Latest validation response (2026-11-19)
+
+- Calibrated v2 showed only two warnings on 2,293 current players: positions 12 and 22 (Khalil Mack and Chandler Jones).
+- Teams file was rejected with three roof errors: 'fixed' is invalid in CapForge. New teams v2 uses 'dome' for fixed roofs.
+- V3 classifies pass-rush Madden outside linebackers as CapForge EDGE and recalibrates their attributes.
+- Use both new, versioned links from the table above. Automated build succeeded, but the game still needs to validate these new links.
