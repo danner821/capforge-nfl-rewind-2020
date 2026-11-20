@@ -61,6 +61,7 @@ def audit():
         assert abs(estimate(p["position"],p["ratings"])-p["development"]["ovr"])<=2
         assert p["development"]["potential"]>=p["development"]["ovr"]
     assert all(len({p["teamAbbr"] for p in six if p["pool"]=="roster"})==32 for _ in [0])
+    assert sum(row["fictional_depth_added"] for row in report["classes"].values())==0, "Real 480-player coverage regressed; no generated placeholders allowed"
     assert sum(row["fictional_depth_added"] for row in report["classes"].values())==sum(
         p["bio"]["college"]=="Fictional Depth Pool" for p in added
     )
