@@ -1,52 +1,66 @@
 {
   "source": "https://github.com/7LayerLabs/nfldraft/blob/main/nfl-drafts-2017-2026.csv",
-  "import_file": "preview/players-2020-six-class-draftfix-v7.json",
+  "import_file": "preview/players-2020-six-class-history-v8.json",
   "scope": "2021-2026 real NFL draft selections only; not a count of all eligible college prospects",
   "by_year": {
     "2021": {
       "actual_nfl_draft_picks": 259,
-      "capforge_draft_prospects": 266,
-      "drafted_players_found": 236,
-      "drafted_players_not_found": 23,
-      "round_1_to_3_missing": 0
+      "capforge_draft_prospects": 286,
+      "drafted_players_found": 256,
+      "drafted_players_not_found": 3,
+      "round_1_to_3_missing": 0,
+      "round_4_to_7_missing": 3
     },
     "2022": {
       "actual_nfl_draft_picks": 262,
       "capforge_draft_prospects": 318,
       "drafted_players_found": 262,
       "drafted_players_not_found": 0,
-      "round_1_to_3_missing": 0
+      "round_1_to_3_missing": 0,
+      "round_4_to_7_missing": 0
     },
     "2023": {
       "actual_nfl_draft_picks": 259,
       "capforge_draft_prospects": 346,
       "drafted_players_found": 257,
       "drafted_players_not_found": 2,
-      "round_1_to_3_missing": 0
+      "round_1_to_3_missing": 0,
+      "round_4_to_7_missing": 2
     },
     "2024": {
       "actual_nfl_draft_picks": 257,
-      "capforge_draft_prospects": 288,
-      "drafted_players_found": 256,
-      "drafted_players_not_found": 1,
-      "round_1_to_3_missing": 0
+      "capforge_draft_prospects": 289,
+      "drafted_players_found": 257,
+      "drafted_players_not_found": 0,
+      "round_1_to_3_missing": 0,
+      "round_4_to_7_missing": 0
     },
     "2025": {
       "actual_nfl_draft_picks": 257,
-      "capforge_draft_prospects": 340,
-      "drafted_players_found": 238,
-      "drafted_players_not_found": 19,
-      "round_1_to_3_missing": 0
+      "capforge_draft_prospects": 346,
+      "drafted_players_found": 244,
+      "drafted_players_not_found": 13,
+      "round_1_to_3_missing": 0,
+      "round_4_to_7_missing": 13
     },
     "2026": {
       "actual_nfl_draft_picks": 257,
       "capforge_draft_prospects": 302,
       "drafted_players_found": 236,
       "drafted_players_not_found": 21,
-      "round_1_to_3_missing": 0
+      "round_1_to_3_missing": 0,
+      "round_4_to_7_missing": 21
     }
   },
   "verified": "All actual NFL draft selections in rounds 1-3 are present",
   "future_development": "No individual player potentials, progression curves or hindsight rankings revealed",
-  "next_step": "Research unresolved rounds 4-7 players and add where reliable Madden attributes exist"
+  "next_step": "Research unresolved rounds 4-7 players and add only where reliable attribute sources exist",
+  "coverage_regression_floor": {
+    "2021": 256,
+    "2022": 262,
+    "2023": 257,
+    "2024": 257,
+    "2025": 244,
+    "2026": 236
+  }
 }
