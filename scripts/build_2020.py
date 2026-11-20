@@ -274,7 +274,7 @@ def assign_reference_portraits(players, ref18, ref26):
    pid=item.get("bio",{}).get("portraitId")
    pos=item.get("position")
    nm=normal((item.get("forename","")+" "+item.get("surname","")).strip())
-   if nm and pos in SUPPORTED and isinstance(pid,str) and re.fullmatch(r"portrait-\\d{4}",pid):
+   if nm and pos in SUPPORTED and isinstance(pid,str) and re.fullmatch(r"portrait-\d{4}",pid):
     keys[(nm,pos)].append(item)
   return keys
  idx18=index(ref18);idx26=index(ref26)
