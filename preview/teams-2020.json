@@ -260,7 +260,7 @@
       "name": "Chargers",
       "stadium": "SoFi Stadium",
       "market": 1,
-      "roof": "fixed",
+      "roof": "dome",
       "conference": "AFC",
       "division": "West",
       "colors": {
@@ -277,7 +277,7 @@
       "name": "Raiders",
       "stadium": "Allegiant Stadium",
       "market": 23,
-      "roof": "fixed",
+      "roof": "dome",
       "conference": "AFC",
       "division": "West",
       "colors": {
@@ -515,7 +515,7 @@
       "name": "Rams",
       "stadium": "SoFi Stadium",
       "market": 1,
-      "roof": "fixed",
+      "roof": "dome",
       "conference": "NFC",
       "division": "West",
       "colors": {

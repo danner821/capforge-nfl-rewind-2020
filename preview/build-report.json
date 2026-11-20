@@ -15,19 +15,23 @@
   "exports": {
     "three-class": {
       "players": 3223,
-      "bytes": 3498510
+      "bytes": 3498686
     },
     "four-class-test": {
       "players": 3511,
-      "bytes": 3772483
+      "bytes": 3772679
     },
     "four-class-calibrated-v2": {
       "players": 3511,
-      "bytes": 3772483
+      "bytes": 3772679
+    },
+    "four-class-position-v3": {
+      "players": 3511,
+      "bytes": 3772679
     },
     "extended-experimental": {
       "players": 4111,
-      "bytes": 4277273
+      "bytes": 4277469
     }
   },
   "warnings": [
@@ -38,7 +42,8 @@
     "Real draft pick order, staff and full 480-player classes not yet implemented",
     "Fourth and later imported classes must be tested in-game",
     "No individual potential figures included in this report",
-    "CapForge OVR prediction is calibrated from a separate game export and must be tested in-app"
+    "CapForge OVR prediction is calibrated from a separate game export and must be tested in-app",
+    "Pass-rushing Madden outside LBs are now classified as CapForge EDGE; CapForge still controls its own validation"
   ],
   "ovrQualityCheck": {
     "players_with_estimated_ovr_gap_over_2": 0
