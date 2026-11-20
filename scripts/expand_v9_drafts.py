@@ -263,6 +263,15 @@ def synthetic_depth_player(year,index,library,used):
     }
 
 def main():
+    # Versioned game-import files are immutable once GitHub Actions commits
+    # them to main. Never silently rewrite a user's tested V9 roster because
+    # a live scouting or NFL.com feed changed.
+    frozen=(OUTPUT_SIX,OUTPUT_FOUR,REPORT)
+    if any(p.exists() for p in frozen):
+        if not all(p.exists() for p in frozen):
+            raise RuntimeError("Partial V9 checkpoint: refusing to overwrite any old file")
+        print("V9 frozen preview assets already exist; reusing exactly as published")
+        return
     base=json.loads(INPUT.read_text())
     if base.get("schemaVersion")!=3 or base["meta"]["baseSeason"]!=2020:
         raise RuntimeError("V8 schema/base-season changed; stop before V9 generation")
