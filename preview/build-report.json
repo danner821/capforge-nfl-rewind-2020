@@ -17,18 +17,63 @@
   },
   "portraitReferenceAudit": {
     "matched_2018": 1231,
-    "matched_2026": 1305,
+    "matched_2026": 1317,
     "unmatched_roster": 862,
-    "unmatched_draft": 755,
+    "unmatched_draft": 770,
     "method": "Exact normalized name, same CapForge position, age-aligned source; fallback for unmatched",
     "limitation": "Matching built-in cartoon portraits, not actual NFL photos."
   },
+  "draftReconciliation": {
+    "source": "Actual draft picks cross-checked against 7LayerLabs 2017-2026 NFL drafts",
+    "method": "Earliest reliable follow-up Madden roster or same-year 2026 community player; draft-day OVR conservatively reconstructed",
+    "by_year": {
+      "2021": {
+        "added_from_later_madden": 20,
+        "added_from_community_2026": 0,
+        "unresolved_without_source": 1,
+        "unmodeled_long_snappers": 2
+      },
+      "2022": {
+        "added_from_later_madden": 0,
+        "added_from_community_2026": 0,
+        "unresolved_without_source": 0,
+        "unmodeled_long_snappers": 0
+      },
+      "2023": {
+        "added_from_later_madden": 0,
+        "added_from_community_2026": 0,
+        "unresolved_without_source": 2,
+        "unmodeled_long_snappers": 0
+      },
+      "2024": {
+        "added_from_later_madden": 0,
+        "added_from_community_2026": 1,
+        "unresolved_without_source": 0,
+        "unmodeled_long_snappers": 0
+      },
+      "2025": {
+        "added_from_later_madden": 0,
+        "added_from_community_2026": 6,
+        "unresolved_without_source": 13,
+        "unmodeled_long_snappers": 0
+      },
+      "2026": {
+        "added_from_later_madden": 0,
+        "added_from_community_2026": 0,
+        "unresolved_without_source": 21,
+        "unmodeled_long_snappers": 0
+      }
+    },
+    "total_added": 27,
+    "remaining_limitations": "Not all drafted prospects have suitable individual-attribute source data; no unsupported players fabricated",
+    "spoiler_policy": "No hidden player potential or future draft destinations in report"
+  },
   "draftClassSizes": {
-    "2021": 266,
+    "2021": 286,
     "2022": 318,
     "2023": 346,
-    "2024": 288,
-    "2025": 340,
+    "2024": 289,
+    "2025": 346,
     "2026": 302
   },
   "duplicateNameRowsRemoved": 4,
@@ -65,6 +110,14 @@
       "players": 4153,
       "bytes": 4389115
     },
+    "four-class-history-v8": {
+      "players": 3532,
+      "bytes": 3848982
+    },
+    "six-class-history-v8": {
+      "players": 4180,
+      "bytes": 4414245
+    },
     "extended-experimental": {
       "players": 4153,
       "bytes": 4389115
@@ -76,6 +129,7 @@
     "2025 Madden 26 roster may be a later snapshot, not confirmed launch",
     "2026 rookies from fan-made Madden 27 conversion; not verified as complete",
     "Real draft pick order, staff and full 480-player classes not yet implemented",
+    "New v8 prospect backfills use conservative inferred rookie OVR; verify against historical tape",
     "Fourth and later imported classes must be tested in-game",
     "No individual potential figures included in this report",
     "Madden 26 2025 source now maps Mike/Weak/Sam Backer to LB and Long Snapper to C",
@@ -86,7 +140,7 @@
     "players_with_estimated_ovr_gap_over_2": 0
   },
   "portraitQualityCheck": {
-    "explicit_portrait_ids": 2536,
+    "explicit_portrait_ids": 2548,
     "matching_rules": "Position and age checked; game validator must still confirm allowed IDs"
   }
 }
