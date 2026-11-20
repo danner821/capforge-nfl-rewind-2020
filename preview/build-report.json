@@ -3,6 +3,18 @@
   "baseSeason": 2020,
   "rosteredPlayers": 2293,
   "teams": 32,
+  "personnelAudit": {
+    "reclassifications": {
+      "EDGE": 50,
+      "C": 3,
+      "DT": 6
+    },
+    "teamCount": 32,
+    "teamsWithMissingPosition": 0,
+    "minimumDE": 2,
+    "minimumEDGE": 3,
+    "minimumDT": 2
+  },
   "draftClassSizes": {
     "2021": 266,
     "2022": 318,
@@ -15,23 +27,27 @@
   "exports": {
     "three-class": {
       "players": 3223,
-      "bytes": 3498686
+      "bytes": 3498231
     },
     "four-class-test": {
       "players": 3511,
-      "bytes": 3772679
+      "bytes": 3772182
     },
     "four-class-calibrated-v2": {
       "players": 3511,
-      "bytes": 3772679
+      "bytes": 3772182
     },
     "four-class-position-v3": {
       "players": 3511,
-      "bytes": 3772679
+      "bytes": 3772182
+    },
+    "four-class-personnel-v4": {
+      "players": 3511,
+      "bytes": 3772182
     },
     "extended-experimental": {
       "players": 4111,
-      "bytes": 4277469
+      "bytes": 4276972
     }
   },
   "warnings": [
