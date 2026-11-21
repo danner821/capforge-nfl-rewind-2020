@@ -350,6 +350,21 @@ def main():
     assert dict(payroll)==dict(collections.Counter(opening))
     assert max(payroll.values())<=MAX_OPENING_CHARGE+ROUND
     assert len({round(v/100_000)*100_000 for v in payroll.values()})>=8,"Team cap totals suspiciously uniform"
+    # Existing 2020 signings alone must not guarantee an impossible salary
+    # cap in later seasons. Future rookie/free-agent additions are separate.
+    projected_yearly={}
+    for offset in range(5):
+        annual=collections.Counter()
+        for p in result["players"]:
+            if p["pool"]!="roster":continue
+            c=p["contract"]
+            if c["years"]<=offset:continue
+            annual[p["teamAbbr"]]+=c["salaryByYear"][offset]+c["bonusByYear"][offset]
+        projected_yearly[str(2020+offset)]={
+            "minExistingRosterContractedCharge":min(annual.values()) if annual else 0,
+            "maxExistingRosterContractedCharge":max(annual.values()) if annual else 0
+        }
+        assert max(annual.values(),default=0)<=SIM_CAP,"Current 2020 contracts alone would exceed future game salary cap"
     result["players"]=[lookup[p["iden"]] for p in base["players"]]
     OUTPUT.write_text(json.dumps(result,separators=(",",":"))+"\n")
     report={
@@ -377,6 +392,7 @@ def main():
             "maximumOpeningTeamSalaryPlusBonus":MAX_OPENING_CHARGE,
             "openingSalaryPlusBonusByTeam":dict(sorted(payroll.items())),
             "openingSalaryPlusBonusRange":{"min":min(payroll.values()),"max":max(payroll.values())},
+            "futureExistingRosterContractedCharges":projected_yearly,
             "yearIndexConvention":"Every starting player begins at index 0 of REMAINING contract; signedSeason=2020 is importer normalization, not historical signed date",
             "sourceChargeMapping":"OTC million-dollar annual cap_number is converted to dollars; less prorated_bonus -> salaryByYear; prorated_bonus -> bonusByYear, never double counted; guarantees capped at salary",
             "fallbackTerms":"original V15 contract estimate; 2020 recent draft picks may receive remaining four-year rookie term; otherwise conservative salary model",
