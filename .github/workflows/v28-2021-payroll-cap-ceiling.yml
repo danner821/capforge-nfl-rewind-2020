@@ -1,0 +1,53 @@
+name: Reconcile actual 2021 CapForge team payroll and $330M ceiling (V28)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/v28-payroll-2021-team-observations.json'
+      - 'scripts/audit_v28_payroll_2021_cap_ceiling.py'
+      - 'scripts/validate_v28_payroll_2021_cap_ceiling.py'
+      - '.github/workflows/v28-2021-payroll-cap-ceiling.yml'
+  pull_request:
+    paths:
+      - 'data/v28-payroll-2021-team-observations.json'
+      - 'scripts/audit_v28_payroll_2021_cap_ceiling.py'
+      - 'scripts/validate_v28_payroll_2021_cap_ceiling.py'
+      - '.github/workflows/v28-2021-payroll-cap-ceiling.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capforge-v28-2021-payroll-cap
+  cancel-in-progress: false
+
+jobs:
+  reconcile-game-payroll:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Derive two teams' 2021 $330M payroll ceiling from game screenshots
+        run: python scripts/audit_v28_payroll_2021_cap_ceiling.py
+      - name: Test payroll reconciliation and protected V19 import checksum
+        run: python scripts/validate_v28_payroll_2021_cap_ceiling.py
+      - name: Publish V28 aggregate report only after success on main
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add preview/v28-payroll-cap-ceiling-reconciliation.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "audit: publish V28 real 2021 payroll ceiling and contract bridge"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 2
+          done
+          echo "V28 payroll report publication failed" >&2
+          exit 1

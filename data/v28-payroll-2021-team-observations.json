@@ -1,0 +1,49 @@
+{
+  "version": "V28_GAME_2021_PAYROLL_SCREEN_OBSERVATIONS",
+  "source": "User-supplied real CapForge 2021 Team > Players > Payroll screenshots, Nov 20 2026; transcribed aggregate values only, screenshots not distributed",
+  "season": 2021,
+  "teams": {
+    "BAL": {
+      "name": "Baltimore Ravens",
+      "committedMillions": 329.7,
+      "spaceMillions": 0.293,
+      "positionExamples": [
+        {
+          "position": "EDGE",
+          "amountMillions": 81.4,
+          "displayedPctOfCap": 24.7
+        },
+        {
+          "position": "OT",
+          "amountMillions": 34.4,
+          "displayedPctOfCap": 10.4
+        }
+      ]
+    },
+    "PIT": {
+      "name": "Pittsburgh Steelers",
+      "committedMillions": 211.7,
+      "spaceMillions": 118.3,
+      "freeTreemapTileMillions": 118.3,
+      "positionExamples": [
+        {
+          "position": "QB",
+          "amountMillions": 49.5,
+          "displayedPctOfCap": 15
+        },
+        {
+          "position": "DL",
+          "amountMillions": 72,
+          "displayedPctOfCap": 21.8
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Committed plus space implies approximately $330M ceiling for both teams in the shown 2021 save; exact hidden decimals are not shown.",
+    "The yellow FREE tile for PIT represents unused room rather than actual free-agent payroll; do not add FREE to committed again.",
+    "A displayed position tile represents grouped positional cap footprint, not necessarily a breakdown of base salary, signing bonus and dead money.",
+    "User did not swipe up into detailed cap breakdown. Do not infer precise bonus/dead-cap engine mechanics or transactions.",
+    "2020 $300M is the V19 import model assumption; not independently established by these two 2021 screenshots."
+  ]
+}

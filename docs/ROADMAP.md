@@ -2,6 +2,13 @@
 
 _Last reviewed: 2026-11-20. Single source of truth: current main branch, versioned exports, and actual in-game tester feedback. No silent changes to existing saves or Project Ice._
 
+## V28 — verified actual 2021 Payroll displays (new user evidence)
+- **NEW 2021 CAP FACT:** User screenshots from the existing playable 2021 test game show Baltimore **$329.7M committed and $293K available**, Pittsburgh **$211.7M committed and $118.3M available**. Both sum to **about $330.0M ceiling**; Baltimore sums to $329.993M because the committed value is rounded. Cap-by-position percentages (BAL EDGE $81.4M at 24.7%, PIT QB $49.5M at 15.0%) independently agree with a $330M denominator. PIT's yellow **FREE $118.3M** tile depicts unused space; it is NOT a player or added committed payroll expense.
+- **IMPORTANT CORRECTION:** Previous V19/V27 calculations assumed a $300M **2020 imported contract-model** cap. The game screenshots provide direct evidence of a $330M **2021** cap, $30M/10% above the old model number, but do not prove actual game 2020 cap or a guaranteed annual 10% escalator.
+- Pre-existing V19 contracts that hypothetically survived into 2021 were **$99.630M PIT vs $167.431M BAL** (salary+bonus per importer), a **$67.801M gap before any 2021 team transactions**. Their observed 2021 committed difference is **$118.0M**. The residual is *not proven free-agent spending*: roster changes, bonus accounting, releases and dead money could contribute. This substantially narrows the explanation without overclaiming the engine formula.
+- New **V28 read-only screenshot-to-source reconciliation** transcribes only the displayed aggregates in `data/v28-payroll-2021-team-observations.json`, audits in `scripts/audit_v28_payroll_2021_cap_ceiling.py`, validates with `scripts/validate_v28_payroll_2021_cap_ceiling.py`, and publishes `preview/v28-payroll-cap-ceiling-reconciliation.json` via isolated Actions. All V19/V2/V25 imports and Project Ice remain untouched.
+- **DO NOT publish a salary-adjusted new Players file on these screenshots alone.** No detailed salary vs bonus vs dead-money breakdown was opened (screen says swipe up). Before a protected optional contract test, reconcile the actual CapForge ledger and stress test 2020 initial cap, 2021 $330M and rookie-signing buffer. User's existing 2021 test save must not be replaced. After this economics gate, pursue 2022–29 multi-year simulation.
+  
 ## Status key
 - **APPROVED IN GAME:** user inspected the actual CapForge result; narrow claim only.
 - **CI VERIFIED:** scripts and build checks passed, but not confirmed by the game.
