@@ -2,6 +2,15 @@
 
 A fan-made experimental **2020 NFL historical roster** with Madden-style attributes and future real draft prospects. All files are separate from Project Ice.
 
+## Staff visual audit — V20 optional ages, no guessed portraits
+
+With V19 Players + Teams V2 + Staff V16, the user has confirmed **three green CapForge import checkmarks**. Some staff cartoons are not convincing likenesses. The source-backed 2020 coaching names are correct, but V16 retained fictional staff ages and uses default-generated cartoon faces.
+
+- [Optional Staff V20 with corrected real 2020 head-coach ages](preview/staff-2020-coaches-age-qa-v20.json): all 32 head-coach ages verified at 2020 kickoff, 31 values corrected. No coaching names, teams, UUIDs, skills, contracts or scouts/doctors changed.
+- [V20 spoiler-free age and portrait QA report](preview/v20-staff-portrait-qa-report.json): **zero face IDs curated** because the publicly available pack doesn't index CapForge's actual cartoon graphics by resemblance. The current coach face issue is **not fixed**. This file is an age improvement only.
+- Keep the already green [Staff V16](preview/staff-2020-coaching-v16.json) in existing saves. V20 needs a new disposable game import check before recommending it as replacement staff.
+- To curate closer faces, we need screenshots of the **incorrect coaches** and CapForge's portrait picker options / any displayed `portrait-####` IDs, so mapping is tied to actual on-screen likenesses rather than random ID guessing.
+
 ## New optional 2020 contract upgrade — V19 (CI verified, game test pending)
 
 **The updated historical 2020 player contracts have been molded to CapForge's simple structure.** This is a NEW experimental player-file version; no working files were overwritten.
