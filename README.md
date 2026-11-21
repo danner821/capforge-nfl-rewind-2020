@@ -2,6 +2,13 @@
 
 A fan-made experimental **2020 NFL historical roster** with Madden-style attributes and future real draft prospects. All files are separate from Project Ice.
 
+## Current checkpoint: V16 Staff accepted; V18 contract research verified
+
+- **User CapForge verification:** V16 staff import displays a green validation checkmark. Historical staff priorities are head coaches and coordinators; **scouts and doctors will not be customized**. Structural placeholders remain as required by CapForge.
+- **V18 source audit:** Real historical annual 2020 salary and bonus fields were recovered from nflverse's Parquet asset. [Audit results](preview/v18-parquet-contract-history-audit.json) show 1,574 plausible unique team/term player matches with 2020 annual records, but further ambiguity remains. Do not confuse this preliminary source match with a completed historical contract import.
+- Current playable player file remains [V15 Nine-Class](preview/players-2020-nine-class-scout-audit-v15.json). Contracts in it are **still modeled**, and long-term season progression needs testing.
+- [One ordered, evidence-based roadmap](docs/ROADMAP.md) tracks contracts, full-season history and final franchise readiness.
+
 ## Optional 2020 historical coaching staffs — V16
 
 V16 was published after passing main-branch CI. It is a **separate, optional Staff import**, not a revision to the user-approved V15 Players file.
