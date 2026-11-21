@@ -1,0 +1,53 @@
+name: Verify 2021 CapForge base cap and carryover from full Payroll screenshots (V29)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/v29-2021-expanded-payroll-screens.json'
+      - 'scripts/audit_v29_2021_carryover_cap.py'
+      - 'scripts/validate_v29_2021_carryover_cap.py'
+      - '.github/workflows/v29-2021-base-cap-carryover.yml'
+  pull_request:
+    paths:
+      - 'data/v29-2021-expanded-payroll-screens.json'
+      - 'scripts/audit_v29_2021_carryover_cap.py'
+      - 'scripts/validate_v29_2021_carryover_cap.py'
+      - '.github/workflows/v29-2021-base-cap-carryover.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capforge-v29-carryover-audit
+  cancel-in-progress: false
+
+jobs:
+  reconcile-payroll:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit real game base cap, max carryover, dead money and future commitments
+        run: python scripts/audit_v29_2021_carryover_cap.py
+      - name: Validate against original V19 and V28 sources
+        run: python scripts/validate_v29_2021_carryover_cap.py
+      - name: Publish V29 aggregate-only findings after green main tests
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add preview/v29-2021-carryover-cap-reconciliation.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "audit: publish V29 $300M base cap + $30M carryover evidence"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 2
+          done
+          echo "V29 audit publish failed" >&2
+          exit 1
