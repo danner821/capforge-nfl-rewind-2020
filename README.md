@@ -2,6 +2,16 @@
 
 A fan-made experimental **2020 NFL historical roster** with Madden-style attributes and future real draft prospects. All files are separate from Project Ice.
 
+## Latest experimental staff portraits — V21
+
+**The user reported an incorrect Matt LaFleur cartoon.** V21 is a small, versioned portrait-matching *trial*, not a final all-coach fix.
+
+- [V21 Staff-only pilot](preview/staff-2020-coach-portrait-proxies-v21.json): 672 staff; seven head coaches now reference known, explicitly numbered cartoon portrait IDs from the already game-accepted V19 NFL player pool. Matt LaFleur is provisionally mapped to Jimmy Garoppolo's `portrait-0798`.
+- [V21 audit and all seven references](preview/v21-coach-portrait-proxy-report.json).
+- [V19 Players](preview/players-2020-nine-class-contracts-v19.json) and [V2 Teams](preview/teams-2020-roofs-v2.json) are unchanged.
+
+**Important:** V21 has passed GitHub CI and has been published, but its Staff import and cartoons have **not** been tested in the game. A player portrait ID may render differently or fail in a coach slot. Start a new disposable game with V19 Players, V2 Teams and V21 Staff; check the green Staff validation and inspect Matt LaFleur's cartoon first. If the mismatch remains or a warning appears, revert to [in-game green V16 Staff](preview/staff-2020-coaching-v16.json). V21 is a seven-coach proof-of-concept, not coverage of all 128 leadership faces. [Ordered roadmap](docs/ROADMAP.md).
+
 ## Staff visual audit — V20 optional ages, no guessed portraits
 
 With V19 Players + Teams V2 + Staff V16, the user has confirmed **three green CapForge import checkmarks**. Some staff cartoons are not convincing likenesses. The source-backed 2020 coaching names are correct, but V16 retained fictional staff ages and uses default-generated cartoon faces.
