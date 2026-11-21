@@ -120,7 +120,7 @@ def main():
     assert expected2021["minimum53Fill"]>=0
 
     report={
-      "status":"V26_STATIC_OFFSEASON_PRELIGHT_CI_ONLY_NO_GAME_SIMULATION",
+      "status":"V26_STATIC_OFFSEASON_PREFLIGHT_CI_ONLY_NO_GAME_SIMULATION",
       "baseVersion":"V19 Players; V2 Teams + V25 Staff unchanged",
       "inputPlayerFile":PLAYERS.name,
       "inputSHA256":hashlib.sha256(before).hexdigest(),
@@ -145,7 +145,7 @@ def main():
           "all4320FutureClassProspectsIntact":True,
           "V25StaffAndV2TeamsNotWritten":True,
           "ProjectIceUnchanged":True,
-          "noPlayerSpecificOrHiddenPotentialDataInPublicReport":True
+          "noPlayerSpecificOrHiddenDevelopmentDataInPublicReport":True
       },
       "meaningOfExpirations":"Number of 2020 starting player contracts with only 1 remaining year, assuming no extension/trade/release before first 2021 offseason. NOT actual CapForge FA outcomes.",
       "scopeAndLimitations":[
