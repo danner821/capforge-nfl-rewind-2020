@@ -1,0 +1,81 @@
+{
+  "status": "V22_KNOWN_VALID_STAFF_POOL_IDS_CI_PASSED_VISUAL_LIKENESS_AND_V22_IMPORT_PENDING",
+  "inputStaff": "staff-2020-coaches-age-qa-v20.json",
+  "previousFailedStaff": "staff-2020-coach-portrait-proxies-v21.json",
+  "outputStaff": "staff-2020-valid-coach-portraits-v22.json",
+  "totalStaffRecords": 672,
+  "occupiedStaff": 224,
+  "teamCount": 32,
+  "knownPortraitIDsInGreenV16Staff": 73,
+  "rejectedV21PlayerPortraitIDs": 7,
+  "coachPortraitCandidatesReplaced": 7,
+  "remainingDefaultCoachFaces": 121,
+  "assignments": {
+    "GB:headCoach": {
+      "coach": "Matt LaFleur",
+      "portraitId": "portrait-0675",
+      "evidence": "explicit_id_present_in_user_accepted_V16_staff_file",
+      "roleAndAgeMatch": "approximate_only",
+      "visualLikeness": "NOT_VERIFIED"
+    },
+    "LAR:headCoach": {
+      "coach": "Sean McVay",
+      "portraitId": "portrait-0689",
+      "evidence": "explicit_id_present_in_user_accepted_V16_staff_file",
+      "roleAndAgeMatch": "approximate_only",
+      "visualLikeness": "NOT_VERIFIED"
+    },
+    "ARI:headCoach": {
+      "coach": "Kliff Kingsbury",
+      "portraitId": "portrait-0670",
+      "evidence": "explicit_id_present_in_user_accepted_V16_staff_file",
+      "roleAndAgeMatch": "approximate_only",
+      "visualLikeness": "NOT_VERIFIED"
+    },
+    "SF:headCoach": {
+      "coach": "Kyle Shanahan",
+      "portraitId": "portrait-0296",
+      "evidence": "explicit_id_present_in_user_accepted_V16_staff_file",
+      "roleAndAgeMatch": "approximate_only",
+      "visualLikeness": "NOT_VERIFIED"
+    },
+    "CLE:headCoach": {
+      "coach": "Kevin Stefanski",
+      "portraitId": "portrait-0677",
+      "evidence": "explicit_id_present_in_user_accepted_V16_staff_file",
+      "roleAndAgeMatch": "approximate_only",
+      "visualLikeness": "NOT_VERIFIED"
+    },
+    "CIN:headCoach": {
+      "coach": "Zac Taylor",
+      "portraitId": "portrait-0699",
+      "evidence": "explicit_id_present_in_user_accepted_V16_staff_file",
+      "roleAndAgeMatch": "approximate_only",
+      "visualLikeness": "NOT_VERIFIED"
+    },
+    "NYG:headCoach": {
+      "coach": "Joe Judge",
+      "portraitId": "portrait-0660",
+      "evidence": "explicit_id_present_in_user_accepted_V16_staff_file",
+      "roleAndAgeMatch": "approximate_only",
+      "visualLikeness": "NOT_VERIFIED"
+    }
+  },
+  "preserved": {
+    "all672StaffIdentityRecords": true,
+    "rolesTeamsNamesCoachAges": true,
+    "skillsAndContracts": true,
+    "other121CoachFaceAssignments": true,
+    "96ScoutsAndDoctors": true,
+    "448FreeAgentStaff": true,
+    "V19PlayersV2TeamsDraftClasses": true
+  },
+  "limitations": [
+    "The seven IDs appeared in V16 Staff that received a green CapForge checkmark; this is strong staff-pool compatibility evidence, not V22 in-game validation.",
+    "We have not inspected the game-rendered face for these portrait IDs and cannot promise any specific resemblance, facial feature or skin tone.",
+    "Matt LaFleur is prioritized but his originally reported incorrect default face is not confirmed fixed until gameplay screenshot.",
+    "Age-matched community-template head-coach portrait proxies are an approximation, not actual real 2020 coach portraits.",
+    "No player-only IDs are reused; V19 Players, Teams V2, Staff V16/V20 and any user saves remain untouched."
+  ],
+  "testPlan": "NEW disposable game V19 Players + V2 Teams + V22 Staff, confirm zero Staff warnings and inspect Matt LaFleur and six other head-coach cartoons."
+}
