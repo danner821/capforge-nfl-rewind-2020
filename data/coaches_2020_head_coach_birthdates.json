@@ -1,0 +1,136 @@
+{
+  "season": 2020,
+  "asOf": "2020-09-10",
+  "source": "https://en.wikipedia.org/wiki/List_of_NFL_head_coaches",
+  "sourceDetail": "Public historical coach birthdates cross-checked against individual coaching biographies and 2020 season sources. Ages calculated at first 2020 NFL regular-season game, not current date.",
+  "teams": {
+    "ARI": {
+      "name": "Kliff Kingsbury",
+      "birthDate": "1979-08-09"
+    },
+    "ATL": {
+      "name": "Dan Quinn",
+      "birthDate": "1970-09-11"
+    },
+    "BAL": {
+      "name": "John Harbaugh",
+      "birthDate": "1962-09-23"
+    },
+    "BUF": {
+      "name": "Sean McDermott",
+      "birthDate": "1974-03-21"
+    },
+    "CAR": {
+      "name": "Matt Rhule",
+      "birthDate": "1975-01-31"
+    },
+    "CHI": {
+      "name": "Matt Nagy",
+      "birthDate": "1978-04-24"
+    },
+    "CIN": {
+      "name": "Zac Taylor",
+      "birthDate": "1983-05-10"
+    },
+    "CLE": {
+      "name": "Kevin Stefanski",
+      "birthDate": "1982-05-08"
+    },
+    "DAL": {
+      "name": "Mike McCarthy",
+      "birthDate": "1963-11-10"
+    },
+    "DEN": {
+      "name": "Vic Fangio",
+      "birthDate": "1958-08-22"
+    },
+    "DET": {
+      "name": "Matt Patricia",
+      "birthDate": "1974-09-13"
+    },
+    "GB": {
+      "name": "Matt LaFleur",
+      "birthDate": "1979-11-03"
+    },
+    "HOU": {
+      "name": "Bill O'Brien",
+      "birthDate": "1969-10-23"
+    },
+    "IND": {
+      "name": "Frank Reich",
+      "birthDate": "1961-12-04"
+    },
+    "JAX": {
+      "name": "Doug Marrone",
+      "birthDate": "1964-07-25"
+    },
+    "KC": {
+      "name": "Andy Reid",
+      "birthDate": "1958-03-19"
+    },
+    "LAC": {
+      "name": "Anthony Lynn",
+      "birthDate": "1968-12-21"
+    },
+    "LAR": {
+      "name": "Sean McVay",
+      "birthDate": "1986-01-24"
+    },
+    "LV": {
+      "name": "Jon Gruden",
+      "birthDate": "1963-08-17"
+    },
+    "MIA": {
+      "name": "Brian Flores",
+      "birthDate": "1981-02-24"
+    },
+    "MIN": {
+      "name": "Mike Zimmer",
+      "birthDate": "1956-06-05"
+    },
+    "NE": {
+      "name": "Bill Belichick",
+      "birthDate": "1952-04-16"
+    },
+    "NO": {
+      "name": "Sean Payton",
+      "birthDate": "1963-12-29"
+    },
+    "NYG": {
+      "name": "Joe Judge",
+      "birthDate": "1981-12-31"
+    },
+    "NYJ": {
+      "name": "Adam Gase",
+      "birthDate": "1978-03-29"
+    },
+    "PHI": {
+      "name": "Doug Pederson",
+      "birthDate": "1968-01-31"
+    },
+    "PIT": {
+      "name": "Mike Tomlin",
+      "birthDate": "1972-03-15"
+    },
+    "SEA": {
+      "name": "Pete Carroll",
+      "birthDate": "1951-09-15"
+    },
+    "SF": {
+      "name": "Kyle Shanahan",
+      "birthDate": "1979-12-14"
+    },
+    "TB": {
+      "name": "Bruce Arians",
+      "birthDate": "1952-10-03"
+    },
+    "TEN": {
+      "name": "Mike Vrabel",
+      "birthDate": "1975-08-14"
+    },
+    "WAS": {
+      "name": "Ron Rivera",
+      "birthDate": "1962-01-07"
+    }
+  }
+}

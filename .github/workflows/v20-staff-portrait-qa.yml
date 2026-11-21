@@ -1,0 +1,55 @@
+name: Build evidence-gated 2020 coach ages and portrait audit (V20)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/coaches_2020_head_coach_birthdates.json'
+      - 'data/coaches_2020_portrait_overrides.json'
+      - 'scripts/build_v20_staff_portrait_qa.py'
+      - 'scripts/validate_v20_staff_portrait_qa.py'
+      - '.github/workflows/v20-staff-portrait-qa.yml'
+  pull_request:
+    paths:
+      - 'data/coaches_2020_head_coach_birthdates.json'
+      - 'data/coaches_2020_portrait_overrides.json'
+      - 'scripts/build_v20_staff_portrait_qa.py'
+      - 'scripts/validate_v20_staff_portrait_qa.py'
+      - '.github/workflows/v20-staff-portrait-qa.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capforge-v20-staff-fidelity
+  cancel-in-progress: false
+
+jobs:
+  age-and-portrait-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build optional V20 staff with verified kickoff ages and evidence-gated portrait IDs
+        run: python scripts/build_v20_staff_portrait_qa.py
+      - name: Validate coach names, ages, faces, 672-staff shape and V16 preservation
+        run: python scripts/validate_v20_staff_portrait_qa.py
+      - name: Publish only new versioned staff file and privacy-safe portrait audit
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add preview/staff-2020-coaches-age-qa-v20.json preview/v20-staff-portrait-qa-report.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "build: publish V20 sourced 2020 coach ages and staff portrait audit"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 2
+          done
+          echo "Unable to publish V20 staff preview" >&2
+          exit 1
