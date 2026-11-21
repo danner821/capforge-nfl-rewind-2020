@@ -1,0 +1,51 @@
+name: Validate temporary staff portrait reference catalog (V23)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build_v23_staff_portrait_visual_catalog.py'
+      - 'scripts/validate_v23_staff_portrait_visual_catalog.py'
+      - '.github/workflows/v23-staff-portrait-visual-catalog.yml'
+  pull_request:
+    paths:
+      - 'scripts/build_v23_staff_portrait_visual_catalog.py'
+      - 'scripts/validate_v23_staff_portrait_visual_catalog.py'
+      - '.github/workflows/v23-staff-portrait-visual-catalog.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capforge-v23-staff-gallery
+  cancel-in-progress: false
+
+jobs:
+  catalog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate disposable 73-avatar gallery labels in head-coach free agent market
+        run: python scripts/build_v23_staff_portrait_visual_catalog.py
+      - name: Validate all real coaches and original historical roster preserved
+        run: python scripts/validate_v23_staff_portrait_visual_catalog.py
+      - name: Publish TEST-ONLY staff reference gallery and mapping (never a playable release)
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add preview/staff-portrait-reference-gallery-v23-TEST-ONLY.json preview/v23-staff-portrait-gallery-map.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "qa: publish V23 disposable staff-avatar reference labels"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 2
+          done
+          echo "Could not publish V23 diagnostic pack" >&2
+          exit 1
