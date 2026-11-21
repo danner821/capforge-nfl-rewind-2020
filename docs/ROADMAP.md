@@ -17,7 +17,7 @@ _Last reviewed: 2026-11-20. Single source of truth: current main branch, version
 | 4 | 2028–2029 top prospect coverage | **APPROVED IN GAME (spotlight visual check V15)** | User confirmed V15 looked good; 54 sourced spotlight 2028 prospects, 46 provisional 2029 candidates, 480 per year in CI | Retain V15 unchanged; full-year survival still requires sim test |
 | 5 | 2028–2029 cartoon portraits | **APPROVED IN GAME (user-inspected sample, not all 960)** | User confirmed V15 looks good; 960 game-generated default portraits, no individual manual likeness confirmation across entire class | Preserve approved visuals; refine only newly reported outliers from actual screenshots |
 | 6 | Nine-class long-horizon persistence | **BLOCKED ON GAME TEST** | Future year tabs and early board display ≠ surviving season progression | Advance multiple years in disposable save; inspect drafts/players from 2022 to 2029, persistence and any crashes |
-| 7 | Authentic-ish 2020 contracts simplified for CapForge (V19) | **V19 EXPERIMENTAL IMPORT IN CI; GAME TEST PENDING** | V18 proved source has annual cap numbers; V19 maps usable 2020 deals into simple salary, remaining years, bonuses and guarantees with disclosed fallback and uniform league cap scale | Pass V19 CI without changing V15 attributes; test CapForge importer warnings, team cap headroom and 2021 free agency in new disposable league |
+| 7 | CapForge-style historical 2020 contracts (V19) | **CI VERIFIED & PUBLISHED; GAME TEST PENDING** | 1,570 sourced annual matches + 723 documented modeled fallbacks; 2,293 contracts rebuilt; 2020 payrolls vary by team ($186.9M–$279.2M); forward contract-only cap tests passed 2021–2024 | NEW disposable game: Players V19 + Teams V2 + Staff V16; check import warnings, team cap room, future season free agency and contracts |
 | 8 | 2020 head coaches and coordinators (V16) | **CAPFORGE IMPORT CHECK PASSED; IN-GAME NAME REVIEW OPTIONAL** | User reports green Staff checkmark; 32 clubs × 4 sourced preseason leadership chairs, including 4 labeled functional proxies | Keep V16; optionally inspect a few coach/team assignments, not another entire staff rebuild |
 | 9 | Accurate 2020 Week 1 depth, injuries and transactions | **NOT STARTED** | Madden 21-derived snapshot is not guaranteed exact Week 1 | Audit 32 rosters against contemporary 2020 team records, preserve cap legality |
 | 10 | Season history, free agency, scouting, draft and contracts regression | **NOT STARTED** | CapForge franchise is not our codebase; only imports can be controlled | Simulate long-horizon save; measure draft quality, no generic top-ranked prospects, legal team personnel, rookie deals, free agency |
@@ -28,11 +28,21 @@ _Last reviewed: 2026-11-20. Single source of truth: current main branch, version
 - Staff V16 is separate and experimental, with all 128 lead coaching chair names from 2020 preseason public sources, 4 clearly labeled proxies where teams had no formal coordinator, and non-coaching roles retained as fictional placeholders. No player roster is changed.
 - 2020 contract replacement remains open issue #8. Do not advance to final franchise freeze without sourced contracts and multi-season validation.
 
+## Latest V19 publication — automated verification complete
+
+- Main-branch GitHub Actions build **passed and published** [Nine-Class V19 Players](../preview/players-2020-nine-class-contracts-v19.json) and [V19 spoiler-free contract audit](../preview/v19-simplified-contracts-audit.json).
+- 1,570/2,293 starting contracts use a plausible historical 2020 annual OTC source match (1,246 annual-and-team, 242 disambiguated, 82 team-level), 723 rely on explicitly labeled game-modeled fallback. The source-based numbers are **CapForge-scaled**, not exact 2020 NFL dollars.
+- Remaining-years profile is 943 one-year, 521 two-year, 447 three-year, 358 four-year, 24 five-year. Prior V15 placeholder had 1,983 one-year deals.
+- Simulated 2020 salary+bonus charges across all clubs range **$186.855M–$279.159M** under the modeled $300M cap, rather than artificially matching at $285M. Future existing-roster contract obligations through 2024 were validated under the cap before rookies/free-agent additions.
+- Every non-contract 2020 player field, all 4,320 original 2021–2029 prospects, their portraits, ratings and hidden development are identical to approved V15. Teams V2 and V16 Staff untouched. Both V19 and historical regression builds passed in CI.
+- **Not yet approved in CapForge app**: V19 Players needs a separate disposable new-save validation, plus 2021 free agency and later-year progression. Never overwrite the user's verified V15 save.
+- Recommended trial: **Players V19** + **Teams V2** + **Staff V16**. Use Reg Season 2020. Existing Staff V16 is already green in-game; do not spend any work on scouts or doctors.
+
 ## Current acceptance checkpoint
 
 **V16 Staff import now has the user's green CapForge checkmark.** Mark importer acceptance as passed; do not infer that every coach identity, modeled skill, or season-long behavior has been inspected. No additional scout, team-doctor, or free-agent staff customization is requested; leave the structural placeholders required by CapForge.
 
-The **next engineering focus is authentic 2020 player contracts**. V18 independently tests whether the OTC historical Parquet file exposes annual 2020 cap, base salary and bonuses. No source data gets written to the approved V15 Players import until reconciled with 2020 rules and CapForge constraints. A separate disposable game still needs multi-year class and free-agency simulation; do not ask for repeat board/Arch approval.
+The **next user acceptance gate is the published V19 contract import** in a new disposable 2020 CapForge game (same Teams V2 and green V16 Staff). Validate players warnings, team cap headroom and 2021 free agency, then long-term draft class persistence. V15 remains the preserved working fallback. Do not require repeated board/Arch approval or scout/doctor changes.
 
 ## Rules that remain locked
 1. Never overwrite or delete the working V6–V12 exports or user's saves.
