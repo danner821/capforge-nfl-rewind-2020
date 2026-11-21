@@ -2,6 +2,16 @@
 
 A fan-made experimental **2020 NFL historical roster** with Madden-style attributes and future real draft prospects. All files are separate from Project Ice.
 
+## V22 — staff-only portrait IDs (NEW, compatibility fix for V21 warnings)
+
+The user-tested V21 Staff import produced **seven warnings** because V21 tried to reuse **player-only** `portrait-####` IDs. CapForge rejected those seven coach portraits and substituted faces from staff identity IDs. V22 addresses that schema mismatch.
+
+- **[V22 Staff-only trial](preview/staff-2020-valid-coach-portraits-v22.json):** seven coaching IDs drawn exclusively from 73 unique portrait IDs present in the user's previously green V16 Staff import. Matt LaFleur is tentatively assigned **`portrait-0675`**. All 2020 age corrections from V20 remain. This is a new separate import, never an overwrite of V16 or V21.
+- **[V22 source, selection and safety audit](preview/v22-valid-staff-portrait-audit.json):** all seven V21 rejected player IDs blocked in CI; all other 665 staff records, scouts, doctors, free agents, V19 players and V2 teams unchanged.
+- **Game test needed:** NEW disposable 2020 save with [V19 Players](preview/players-2020-nine-class-contracts-v19.json), [V2 Teams](preview/teams-2020-roofs-v2.json), **V22 Staff**. Confirm Staff 672 with **zero portrait warnings**, then open Green Bay head coach Matt LaFleur's card to inspect the actual face. A green import doesn't prove cartoon likeness or skin tone; update only after the avatar is visually checked. **V16 Staff remains the known green fallback.**
+
+## Previous failed V21 player-portrait experiment (do not use)
+
 ## Latest experimental staff portraits — V21
 
 **The user reported an incorrect Matt LaFleur cartoon.** V21 is a small, versioned portrait-matching *trial*, not a final all-coach fix.
