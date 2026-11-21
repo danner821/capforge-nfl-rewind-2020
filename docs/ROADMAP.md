@@ -17,8 +17,8 @@ _Last reviewed: 2026-11-20. Single source of truth: current main branch, version
 | 4 | 2028–2029 top prospect coverage | **APPROVED IN GAME (spotlight visual check V15)** | User confirmed V15 looked good; 54 sourced spotlight 2028 prospects, 46 provisional 2029 candidates, 480 per year in CI | Retain V15 unchanged; full-year survival still requires sim test |
 | 5 | 2028–2029 cartoon portraits | **APPROVED IN GAME (user-inspected sample, not all 960)** | User confirmed V15 looks good; 960 game-generated default portraits, no individual manual likeness confirmation across entire class | Preserve approved visuals; refine only newly reported outliers from actual screenshots |
 | 6 | Nine-class long-horizon persistence | **BLOCKED ON GAME TEST** | Future year tabs and early board display ≠ surviving season progression | Advance multiple years in disposable save; inspect drafts/players from 2022 to 2029, persistence and any crashes |
-| 7 | Authentic 2020 contracts and team salary caps (V14) | **V17 SOURCE AUDIT COMPLETE; V14 NOT BUILT** | V13 shows placeholder 2020 payrolls; V17 found 1,721 plausible unique 2020 OTC contract matches, 473 ambiguous, 99 unmatched by this initial method; CSV annual history unavailable | Read nested Parquet annual-history fields, verify 2020 team/ID matches and 2020 cap scaling; only then build separate contract export and test free agency |
-| 8 | Authentic 2020 coaches and staff | **CI VERIFIED (V16), GAME IMPORT PENDING** | 32 clubs × 4 sourced preseason leadership chairs; 4 disclosed functional proxies; published 672-record staff file, 96 scout/doctor chairs + 448 free-agent staff still modeled | Test optional V16 Staff import and game coach/club assignments in a new disposable league |
+| 7 | Authentic 2020 contracts and team salary caps (V14) | **V18 PARQUET AUDIT IN PROGRESS; V14 NOT BUILT** | V13 placeholder 2020 payroll; V17 1,721 plausible candidate matches, 473 ambiguous and 99 missing; annual CSV histories empty | Inspect yearly Parquet source, verify 2020 salary/proration and unique identity matches; build separate contract import only after source checks |
+| 8 | 2020 head coaches and coordinators (V16) | **CAPFORGE IMPORT CHECK PASSED; IN-GAME NAME REVIEW OPTIONAL** | User reports green Staff checkmark; 32 clubs × 4 sourced preseason leadership chairs, including 4 labeled functional proxies | Keep V16; optionally inspect a few coach/team assignments, not another entire staff rebuild |
 | 9 | Accurate 2020 Week 1 depth, injuries and transactions | **NOT STARTED** | Madden 21-derived snapshot is not guaranteed exact Week 1 | Audit 32 rosters against contemporary 2020 team records, preserve cap legality |
 | 10 | Season history, free agency, scouting, draft and contracts regression | **NOT STARTED** | CapForge franchise is not our codebase; only imports can be controlled | Simulate long-horizon save; measure draft quality, no generic top-ranked prospects, legal team personnel, rookie deals, free agency |
 | 11 | Final freeze for permanent 2020 dynasty | **NOT READY** | Requires all essential game validations and history realism, not just green CI | Versioned stable players+teams+staff URLs; preserve old working exports and backups |
@@ -28,8 +28,11 @@ _Last reviewed: 2026-11-20. Single source of truth: current main branch, version
 - Staff V16 is separate and experimental, with all 128 lead coaching chair names from 2020 preseason public sources, 4 clearly labeled proxies where teams had no formal coordinator, and non-coaching roles retained as fictional placeholders. No player roster is changed.
 - 2020 contract replacement remains open issue #8. Do not advance to final franchise freeze without sourced contracts and multi-season validation.
 
-## Current user action
-The user approved the visible V15 2027–2029 draft boards and portraits. The **next CapForge test** is a NEW disposable 2020 save using **V15 Nine-Class Players + Teams V2 + optional V16 Staff** after its CI publication. Check V16 Staff import warnings and the 2020 club coaching names. If V16 Staff fails, switch back to **Staff Default** without changing the approved V15 players. Separately, the nine-season progression test remains unverified; do not require another 2027/2028/2029 initial board review unless the importer changes.
+## Current acceptance checkpoint
+
+**V16 Staff import now has the user's green CapForge checkmark.** Mark importer acceptance as passed; do not infer that every coach identity, modeled skill, or season-long behavior has been inspected. No additional scout, team-doctor, or free-agent staff customization is requested; leave the structural placeholders required by CapForge.
+
+The **next engineering focus is authentic 2020 player contracts**. V18 independently tests whether the OTC historical Parquet file exposes annual 2020 cap, base salary and bonuses. No source data gets written to the approved V15 Players import until reconciled with 2020 rules and CapForge constraints. A separate disposable game still needs multi-year class and free-agency simulation; do not ask for repeat board/Arch approval.
 
 ## Rules that remain locked
 1. Never overwrite or delete the working V6–V12 exports or user's saves.
@@ -60,3 +63,9 @@ The user approved the visible V15 2027–2029 draft boards and portraits. The **
 - All **31,893 CSV `season_history` values are empty**. The CSV is not suitable for reconstructing 2020 annual base salaries, bonus/proration, cap numbers or guarantees. Next use the Parquet asset's nested annual histories, and specifically audit duplicated years before any write.
 - The assumed CapForge $300M / actual NFL 2020 $198.2M scale is about **1.513623×**, but actual implementation also requires legal payroll headroom and dead cap, not automatic blind scaling.
 - No V15 player contracts or approved draft-class/portrait data were changed in V17. No import candidate is ready until this source limitation is solved.
+
+## Current user scope decision — V16 Staff accepted (2026-11-20)
+- User explicitly reports **Staff green checkmark** in CapForge. This proves the V16 Staff import was accepted by the game's validation UI; it does not independently prove all 128 coach/team assignments or coach abilities are correct.
+- User explicitly says **skip scouts and doctors**. Do not attempt to research, rename, tune or replace the 96 modeled scout/doctor team positions, or the 448 free-agent staff entries; preserve them only to satisfy the current CapForge staff schema.
+- Focus staff historical accuracy work only on 2020 HC/OC/DC/special teams if clear errors are reported. Treat staff importer milestone as complete, with optional future visual spot-check.
+- New V18 contract source audit runs in its own workflow, not the roster importer build. It tests the richer nflverse historical Parquet `season_history` field and duplicate-year structure and publishes aggregates only. V15 Players and V16 Staff remain frozen.
