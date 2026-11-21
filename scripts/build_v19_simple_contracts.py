@@ -159,9 +159,12 @@ def source_contract_candidates(player,contracts):
             return None,"fallback_ambiguous_2020_source"
         if best[0]<next_[0]+15 and best[1]<=next_[1]:
             return None,"fallback_ambiguous_2020_source"
-    if best[0]<120:
+    if best[0]<55:
         return None,"fallback_low_confidence_match"
-    label="sourced_unambiguous" if len(matches)==1 else "sourced_disambiguated"
+    # A unique team-matching 2020 contract can be retained even where the
+    # annual history has an older/nonstandard team label; those are clearly
+    # flagged in the public audit, not asserted as exact source identity.
+    label=("sourced_annual_and_team" if best[0]>=120 else "sourced_contract_team_only") if len(matches)==1 else "sourced_disambiguated"
     return (best[3],best[4]),label
 
 def first_year_source(record):
@@ -317,6 +320,7 @@ def main():
         years_hist[terms[0]]+=1
         prepared.append((original,terms))
     assert sum(audit.values())==2293
+    print("Source selection by category (aggregate only):",json.dumps(dict(audit),sort_keys=True))
     sourced=sum(v for k,v in audit.items() if k.startswith("sourced"))
     assert sourced>=1200,"Insufficient annual historical coverage for trial; don't publish"
     factor,opening=scale_items(prepared)
