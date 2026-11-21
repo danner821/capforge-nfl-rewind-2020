@@ -1,0 +1,58 @@
+{
+  "version": "V21-PILOT",
+  "purpose": "Conservative first-pass CapForge coach cartoon curation using explicit portrait IDs of real 2020 players in the already accepted V19 roster, not numeric guesses. Requires in-game coach visual validation.",
+  "referenceFile": "preview/players-2020-nine-class-contracts-v19.json",
+  "sourceOfCoachAges": "preview/staff-2020-coaches-age-qa-v20.json",
+  "cohort": "2020 head-coaches only (small visual proof-of-concept); coordinators remain V20 defaults pending compatibility feedback",
+  "mappings": {
+    "GB:headCoach": {
+      "coach": "Matt LaFleur",
+      "referencePlayer": "Jimmy Garoppolo",
+      "reason": "Both commonly photographed with short dark hair and neat facial stubble; approximate cartoon candidate, not an established match",
+      "priority": "reported_wrong"
+    },
+    "LAR:headCoach": {
+      "coach": "Sean McVay",
+      "referencePlayer": "Baker Mayfield",
+      "reason": "Similar younger brown-haired short-beard look in contemporary photos; approximation",
+      "priority": "initial_pilot"
+    },
+    "ARI:headCoach": {
+      "coach": "Kliff Kingsbury",
+      "referencePlayer": "Derek Carr",
+      "reason": "Similar short dark hairstyle and neatly trimmed stubble in 2020 imagery; approximation",
+      "priority": "initial_pilot"
+    },
+    "SF:headCoach": {
+      "coach": "Kyle Shanahan",
+      "referencePlayer": "Kirk Cousins",
+      "reason": "Similar short hair and close-trimmed beard/head shape in contemporary imagery; approximation",
+      "priority": "initial_pilot"
+    },
+    "CLE:headCoach": {
+      "coach": "Kevin Stefanski",
+      "referencePlayer": "Ryan Tannehill",
+      "reason": "Short dark-brown hair, clean-cut look and light stubble; approximation",
+      "priority": "initial_pilot"
+    },
+    "CIN:headCoach": {
+      "coach": "Zac Taylor",
+      "referencePlayer": "Jared Goff",
+      "reason": "Brown-haired younger clean-shaven profile; approximation",
+      "priority": "initial_pilot"
+    },
+    "NYG:headCoach": {
+      "coach": "Joe Judge",
+      "referencePlayer": "Joe Burrow",
+      "reason": "Younger short-haired coach; player cartoon is already a user-accepted reference via Arch Manning",
+      "priority": "initial_pilot"
+    }
+  },
+  "limitations": [
+    "These are tentative source-player portrait proxies, NOT visually verified Coach IDs.",
+    "A player-compatible portrait ID might be ignored, rejected or rendered differently for CapForge staff.",
+    "Only a new disposable game with actual coach faces can validate likeness; the V16 staff file remains unchanged.",
+    "All nonselected 2020 coaches remain default until reliable face references are established.",
+    "No changes to scouts, doctors, modeled free-agent staff, or player data."
+  ]
+}
