@@ -2,6 +2,17 @@
 
 A fan-made experimental **2020 NFL historical roster** with Madden-style attributes and future real draft prospects. All files are separate from Project Ice.
 
+## Preferred in-game imports and current milestone (November 20, 2026)
+
+The user has **spot-checked multiple V25 coaching staff screens in CapForge and found no issues**. V25 is our preferred staff file; the sample was approved, not every 128-coach portrait individually reviewed. The archived V21/V23 failed experiments and V24 temporary gallery should **not** be used in a permanent game.
+
+- [Players V19 — 2020 contracts + nine draft classes](preview/players-2020-nine-class-contracts-v19.json) · prior in-game import green.
+- [Teams V2 — historical 2020 clubs](preview/teams-2020-roofs-v2.json) · prior in-game import green.
+- [Staff V25 — real 2020 coaches and video-referenced head-coach cartoons](preview/staff-2020-head-coach-video-matched-v25.json) · user-reviewed sample looks good.
+- **Next phase:** 2021 offseason contracts, cap room and free agents. [Master roadmap](docs/ROADMAP.md).
+
+V26 calculates **static 2021 rollover expectations** without editing players, teams or staff. Its [offseason preflight report](preview/v26-2021-offseason-static-preflight.json) is published after separate GitHub CI passes. This math alone is not a substitute for advancing an actual disposable CapForge game into 2021. Project Ice and existing saves remain untouched.
+
 ## V25 — actual video-referenced 2020 Head Coach portraits (TRIAL)
 
 The user recorded the **V24 gallery of labeled game portraits**. V25 is our first staff likeness version grounded in *what the actual CapForge cartoon IDs render*, rather than guessing from coach age. It assigns proposed closest-match staff-only avatars to all 32 historical 2020 head coaches.
