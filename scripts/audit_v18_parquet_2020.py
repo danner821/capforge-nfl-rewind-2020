@@ -48,7 +48,7 @@ def integer(x):
 def normalized_name(name):
     if name is None:return ""
     name=str(name).lower().replace("’","").replace("'","")
-    name=re.sub(r"\\b(jr|sr|ii|iii|iv)\\b","",name)
+    name=re.sub(r"\b(jr|sr|ii|iii|iv)\b","",name)
     return re.sub(r"[^a-z0-9]","",name)
 
 def shape(value):
