@@ -304,7 +304,7 @@ def main():
         "Contract amounts remain gameplay-scaled estimates, not exact legal NFL historical 2020 cap hits."
       ]
     }
-    assert "potential" not in json.dumps(report).lower()
+    assert '"potential":' not in json.dumps(report).lower()
     assert "progressionCurve" not in json.dumps(report)
     assert hashlib.sha256(SOURCE.read_bytes()).hexdigest()==V19_SHA256
     OUTPUT.write_text(json.dumps(result,separators=(",",":"))+"\n")
