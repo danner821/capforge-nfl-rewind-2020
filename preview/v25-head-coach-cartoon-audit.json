@@ -1,0 +1,328 @@
+{
+  "status": "V25_32_VISUALLY_REFERENCED_HC_AVATARS_CI_PASS_INGAME_QA_PENDING",
+  "trialFile": "staff-2020-head-coach-video-matched-v25.json",
+  "baseStaff": "staff-2020-valid-coach-portraits-v22.json",
+  "staffCount": 672,
+  "historicalCoachSlots": 128,
+  "headCoachesAssignedVisuallyReferencedCartoons": 32,
+  "headCoachCartoonIDsActuallyChangedFromV22": 31,
+  "video": "User provided 33-second V24 Head Coach Market scroll; actual cartoon faces were visible beside Avatar Pic#### IDs. Video not redistributed or embedded.",
+  "laFleurRepair": {
+    "oldPortrait": "portrait-0675",
+    "newPortrait": "portrait-0484",
+    "reason": "Video revealed bald, dark-bearded face for 0675 and lighter short-haired trimmed-beard face for 0484",
+    "gameReviewPending": true
+  },
+  "teamSelections": {
+    "ARI": {
+      "coach": "Kliff Kingsbury",
+      "fromV22": "portrait-0670",
+      "newStaffPortrait": "portrait-0668",
+      "sourceVideoSecondApprox": 23,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "ATL": {
+      "coach": "Dan Quinn",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0317",
+      "sourceVideoSecondApprox": 3,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "BAL": {
+      "coach": "John Harbaugh",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0669",
+      "sourceVideoSecondApprox": 23,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "BUF": {
+      "coach": "Sean McDermott",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0298",
+      "sourceVideoSecondApprox": 6,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "high",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "CAR": {
+      "coach": "Matt Rhule",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0300",
+      "sourceVideoSecondApprox": 28,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "CHI": {
+      "coach": "Matt Nagy",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0662",
+      "sourceVideoSecondApprox": 32,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "high",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "CIN": {
+      "coach": "Zac Taylor",
+      "fromV22": "portrait-0699",
+      "newStaffPortrait": "portrait-0699",
+      "sourceVideoSecondApprox": 26,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "CLE": {
+      "coach": "Kevin Stefanski",
+      "fromV22": "portrait-0677",
+      "newStaffPortrait": "portrait-0297",
+      "sourceVideoSecondApprox": 27,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "high",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "DAL": {
+      "coach": "Mike McCarthy",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0316",
+      "sourceVideoSecondApprox": 23,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "DEN": {
+      "coach": "Vic Fangio",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0312",
+      "sourceVideoSecondApprox": 33,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "DET": {
+      "coach": "Matt Patricia",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0687",
+      "sourceVideoSecondApprox": 0,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "high",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "GB": {
+      "coach": "Matt LaFleur",
+      "fromV22": "portrait-0675",
+      "newStaffPortrait": "portrait-0484",
+      "sourceVideoSecondApprox": 27,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "high",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "HOU": {
+      "coach": "Bill O'Brien",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0670",
+      "sourceVideoSecondApprox": 33,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "IND": {
+      "coach": "Frank Reich",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0307",
+      "sourceVideoSecondApprox": 3,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "JAX": {
+      "coach": "Doug Marrone",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0318",
+      "sourceVideoSecondApprox": 6,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "KC": {
+      "coach": "Andy Reid",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0311",
+      "sourceVideoSecondApprox": 3,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "high",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "LAC": {
+      "coach": "Anthony Lynn",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0310",
+      "sourceVideoSecondApprox": 12,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "LAR": {
+      "coach": "Sean McVay",
+      "fromV22": "portrait-0689",
+      "newStaffPortrait": "portrait-0677",
+      "sourceVideoSecondApprox": 15,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "LV": {
+      "coach": "Jon Gruden",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0319",
+      "sourceVideoSecondApprox": 20,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "MIA": {
+      "coach": "Brian Flores",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0675",
+      "sourceVideoSecondApprox": 33,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "MIN": {
+      "coach": "Mike Zimmer",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0486",
+      "sourceVideoSecondApprox": 18,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "NE": {
+      "coach": "Bill Belichick",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0660",
+      "sourceVideoSecondApprox": 8,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "NO": {
+      "coach": "Sean Payton",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0295",
+      "sourceVideoSecondApprox": 20,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "NYG": {
+      "coach": "Joe Judge",
+      "fromV22": "portrait-0660",
+      "newStaffPortrait": "portrait-0305",
+      "sourceVideoSecondApprox": 9,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "NYJ": {
+      "coach": "Adam Gase",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0669",
+      "sourceVideoSecondApprox": 23,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "PHI": {
+      "coach": "Doug Pederson",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0672",
+      "sourceVideoSecondApprox": 6,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "PIT": {
+      "coach": "Mike Tomlin",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0661",
+      "sourceVideoSecondApprox": 9,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "high",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "SEA": {
+      "coach": "Pete Carroll",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0309",
+      "sourceVideoSecondApprox": 9,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "SF": {
+      "coach": "Kyle Shanahan",
+      "fromV22": "portrait-0296",
+      "newStaffPortrait": "portrait-0674",
+      "sourceVideoSecondApprox": 27,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "TB": {
+      "coach": "Bruce Arians",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0688",
+      "sourceVideoSecondApprox": 18,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "low",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "TEN": {
+      "coach": "Mike Vrabel",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0485",
+      "sourceVideoSecondApprox": 33,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "low",
+      "inGameEmployedCoachFaceReviewed": false
+    },
+    "WAS": {
+      "coach": "Ron Rivera",
+      "fromV22": "CapForge default",
+      "newStaffPortrait": "portrait-0304",
+      "sourceVideoSecondApprox": 9,
+      "evidence": "label_and_avatar_observed_in_uploaded_V24_screen_recording",
+      "confidence": "medium",
+      "inGameEmployedCoachFaceReviewed": false
+    }
+  },
+  "otherRolesPreserved": {
+    "remaining96OC_DC_STcoaches": true,
+    "teamScoutsAndDoctors": true,
+    "freeAgentStaff": true,
+    "staffIdentitiesContractsSkills": true,
+    "V19PlayersTeamsV2AllDraftClasses": true
+  },
+  "confidence": {
+    "medium": 23,
+    "high": 7,
+    "low": 2
+  },
+  "knownCompatibleStaffPortraitIds": 73,
+  "sourceIDsAllSeenInHCMarketVideo": true,
+  "nextTest": "NEW disposable 2020 game V19 Players + Teams V2 + V25 Staff. Check Staff 672 green/no warning, Green Bay Matt LaFleur's card first, then other HC portraits. No inference of perfect likeness from CI.",
+  "notImplemented": "Coordinator and special teams cartoon matching; separate reference photo review needed, although the known staff ID pool is available.",
+  "limitations": [
+    "Likeness choices are subjective approximations based on small game cartoons and 2019\u201320 public coach appearance; do not represent real photos.",
+    "Video head-coach market displayed 64 face references, but not the nine additional OC-gallery avatars.",
+    "Video observation verifies which face is tied to an ID, not which face is objectively best; user in-game visual approval is still required.",
+    "No change to V19 Players, Teams V2, archived V16/V20/V22/V24 staff or any user save."
+  ]
+}
