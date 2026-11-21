@@ -2,6 +2,17 @@
 
 A fan-made experimental **2020 NFL historical roster** with Madden-style attributes and future real draft prospects. All files are separate from Project Ice.
 
+## New optional 2020 contract upgrade — V19 (CI verified, game test pending)
+
+**The updated historical 2020 player contracts have been molded to CapForge's simple structure.** This is a NEW experimental player-file version; no working files were overwritten.
+
+- **Players:** [Nine-Class historical contracts V19](preview/players-2020-nine-class-contracts-v19.json) — 6,613 players total, 2,293 2020 roster contracts updated; all 2021–2029 prospects and 2020 non-contract fields preserved exactly.
+- **Teams:** [2020 Teams V2](preview/teams-2020-roofs-v2.json) — unchanged.
+- **Staff:** [2020 Coaches V16](preview/staff-2020-coaching-v16.json) — already earned a green in-game import checkmark; no scout/doctor customization.
+- **Evidence:** [V19 game-scale contracts audit](preview/v19-simplified-contracts-audit.json) — 1,570 annual-history-backed matches and 723 disclosed modeled fallbacks, with 32 simulated 2020 payrolls ranging $186.9M–$279.2M under the reference $300M cap. Forward existing-contract obligations 2021–2024 pass cap validation.
+
+**NEXT TEST:** New disposable 2020 game → Import V19 Players, Teams V2 and Staff V16 → Validate. Check player import warnings, year-one salary cap and 2021 free agency. The V19 CI validates format and modeled cap accounting, but **does not prove actual CapForge import or later-season realism**. Keep V15 for current saves; this is not a live update to existing games.
+
 ## Current checkpoint: V16 Staff accepted; V18 contract research verified
 
 - **User CapForge verification:** V16 staff import displays a green validation checkmark. Historical staff priorities are head coaches and coordinators; **scouts and doctors will not be customized**. Structural placeholders remain as required by CapForge.
