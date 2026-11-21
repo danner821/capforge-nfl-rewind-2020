@@ -1,0 +1,51 @@
+name: Validate role-safe temporary staff portrait gallery (V24)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build_v24_role_safe_staff_gallery.py'
+      - 'scripts/validate_v24_role_safe_staff_gallery.py'
+      - '.github/workflows/v24-role-safe-staff-gallery.yml'
+  pull_request:
+    paths:
+      - 'scripts/build_v24_role_safe_staff_gallery.py'
+      - 'scripts/validate_v24_role_safe_staff_gallery.py'
+      - '.github/workflows/v24-role-safe-staff-gallery.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capforge-v24-role-safe-gallery
+  cancel-in-progress: false
+
+jobs:
+  catalog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate V24 gallery without altering any role-specific staff fields
+        run: python scripts/build_v24_role_safe_staff_gallery.py
+      - name: Verify only diagnostic free-agent names and portraits change
+        run: python scripts/validate_v24_role_safe_staff_gallery.py
+      - name: Publish separate TEST-ONLY staff pack after passing on main
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add preview/staff-portrait-gallery-role-safe-v24-TEST-ONLY.json preview/v24-staff-portrait-gallery-map.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "qa: publish corrected V24 staff visual gallery without role changes"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 2
+          done
+          echo "V24 gallery publication failed" >&2
+          exit 1
