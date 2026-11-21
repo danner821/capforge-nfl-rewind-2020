@@ -59,6 +59,9 @@ def main():
     assert all(x>=20_000_000 for x in [300_000_000-v for v in by_team.values()])
     counts=collections.Counter(p["bio"]["draftSeason"] for p in b["players"] if p["pool"]=="draftClass")
     assert all(counts[y]==480 for y in range(2021,2030))
+    for y,agg in d["gameModel"]["futureExistingRosterContractedCharges"].items():
+        assert y in ("2020","2021","2022","2023","2024")
+        assert 0<=agg["minExistingRosterContractedCharge"]<=agg["maxExistingRosterContractedCharge"]<=300_000_000
     assert d["protectedNonContractFieldsFor2020Players"] is True
     assert "progressionCurve" not in REPORT.read_text()
     assert "potential" not in d
