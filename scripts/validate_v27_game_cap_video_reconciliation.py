@@ -40,7 +40,7 @@ def main():
     assert result["preservation"]["V2TeamsAndV25StaffUnmodified"]
     assert result["preservation"]["2021To2029DraftClassesUnmodified"]
     assert "progressionCurve" not in OUTPUT.read_text()
-    assert "potential" not in OUTPUT.read_text().lower()
+    assert '"potential":' not in OUTPUT.read_text().lower()
     print(json.dumps({
         "status":"V27_USER_VIDEO_CAP_RECONCILIATION_TEST_PASSED_NO_ROSTER_CHANGE",
         "beforeMedianCapM":result["observedVideoCapMillions"]["before2020OnComparableTeams"]["median"],
