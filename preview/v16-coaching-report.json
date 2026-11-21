@@ -1,0 +1,249 @@
+{
+  "status": "EXPERIMENTAL_V16_STAFF_CHAIR_IDENTITIES_SOURCED_GAME_IMPORT_UNTESTED",
+  "season": 2020,
+  "teamCount": 32,
+  "staffRecords": 672,
+  "occupiedChairs": 224,
+  "freeAgentStaffRecords": 448,
+  "verifiedNamedLeadChairs": 128,
+  "leadChairsWithFunctionalProxyTitle": 4,
+  "teamDoctorsAndScoutsNotHistorical": 96,
+  "otherStaffFreeAgentsModeled": 448,
+  "teamNameAliases": {
+    "2018 OAK": "2020 LV",
+    "2018 WAS": "2020 Washington Football Team"
+  },
+  "teamIdIntegrityVerifiedAgainst": "teams-2020-roofs-v2.json",
+  "source_primary": "https://www.fantasyalarm.com/articles/nfl/2020-nfl-draft-guide-meet-the-new-boss/85544",
+  "source_primary_as_of": "2020-07-07",
+  "source_template": "https://raw.githubusercontent.com/jmansfield96/capforge-custom-rosters/main/staff-files/2018-staff.json",
+  "functionalProxyRoles": {
+    "NE:defCoordinator": {
+      "name": "Steve Belichick",
+      "actual_title": "Outside Linebackers Coach / Defensive Play Caller",
+      "source": "https://www.patriots.com/news/patriots-finalize-2020-coaching-staff",
+      "additional_source": "https://gohuskies.com/sports/football/roster/coaches/steve-belichick/6293"
+    },
+    "TEN:defCoordinator": {
+      "name": "Shane Bowen",
+      "actual_title": "Outside Linebackers Coach / Defensive Play Caller",
+      "source": "https://www.tennesseetitans.com/news/titans-promote-todd-downing-to-oc-shane-bowen-to-dc-as-mike-vrabel-sets-staff"
+    },
+    "PHI:offCoordinator": {
+      "name": "Press Taylor",
+      "actual_title": "Passing Game Coordinator / Quarterbacks Coach",
+      "source": "https://www.philadelphiaeagles.com/news/eagles-announce-coaching-staff-changes-for-2020"
+    },
+    "SF:offCoordinator": {
+      "name": "Mike McDaniel",
+      "actual_title": "Run Game Coordinator",
+      "source": "https://www.49ers.com/news/49ers-mike-mcdaniel-offensive-coordinator-demeco-ryans-defensive-coordinator"
+    }
+  },
+  "otherExceptions": {
+    "MIN:defCoordinator": "Adam Zimmer is one of two 2020 co-defensive coordinators; Andre Patterson also served in this role."
+  },
+  "perTeamLeadership": {
+    "ARI": {
+      "headCoach": "Kliff Kingsbury",
+      "offCoordinator": "Tom Clements",
+      "defCoordinator": "Vance Joseph",
+      "specialTeams": "Jeff Rodgers"
+    },
+    "ATL": {
+      "headCoach": "Dan Quinn",
+      "offCoordinator": "Dirk Koetter",
+      "defCoordinator": "Raheem Morris",
+      "specialTeams": "Ben Kotwica"
+    },
+    "BAL": {
+      "headCoach": "John Harbaugh",
+      "offCoordinator": "Greg Roman",
+      "defCoordinator": "Don Martindale",
+      "specialTeams": "Chris Horton"
+    },
+    "BUF": {
+      "headCoach": "Sean McDermott",
+      "offCoordinator": "Brian Daboll",
+      "defCoordinator": "Leslie Frazier",
+      "specialTeams": "Heath Farwell"
+    },
+    "CAR": {
+      "headCoach": "Matt Rhule",
+      "offCoordinator": "Joe Brady",
+      "defCoordinator": "Phil Snow",
+      "specialTeams": "Chase Blackburn"
+    },
+    "CHI": {
+      "headCoach": "Matt Nagy",
+      "offCoordinator": "Bill Lazor",
+      "defCoordinator": "Chuck Pagano",
+      "specialTeams": "Chris Tabor"
+    },
+    "CIN": {
+      "headCoach": "Zac Taylor",
+      "offCoordinator": "Brian Callahan",
+      "defCoordinator": "Lou Anarumo",
+      "specialTeams": "Darrin Simmons"
+    },
+    "CLE": {
+      "headCoach": "Kevin Stefanski",
+      "offCoordinator": "Alex Van Pelt",
+      "defCoordinator": "Joe Woods",
+      "specialTeams": "Mike Priefer"
+    },
+    "DAL": {
+      "headCoach": "Mike McCarthy",
+      "offCoordinator": "Kellen Moore",
+      "defCoordinator": "Mike Nolan",
+      "specialTeams": "John Fassel"
+    },
+    "DEN": {
+      "headCoach": "Vic Fangio",
+      "offCoordinator": "Pat Shurmur",
+      "defCoordinator": "Ed Donatell",
+      "specialTeams": "Tom McMahon"
+    },
+    "DET": {
+      "headCoach": "Matt Patricia",
+      "offCoordinator": "Darrell Bevell",
+      "defCoordinator": "Cory Undlin",
+      "specialTeams": "Brayden Coombs"
+    },
+    "GB": {
+      "headCoach": "Matt LaFleur",
+      "offCoordinator": "Nathaniel Hackett",
+      "defCoordinator": "Mike Pettine",
+      "specialTeams": "Shawn Mennenga"
+    },
+    "HOU": {
+      "headCoach": "Bill O'Brien",
+      "offCoordinator": "Tim Kelly",
+      "defCoordinator": "Anthony Weaver",
+      "specialTeams": "Brad Seely"
+    },
+    "IND": {
+      "headCoach": "Frank Reich",
+      "offCoordinator": "Nick Sirianni",
+      "defCoordinator": "Matt Eberflus",
+      "specialTeams": "Bubba Ventrone"
+    },
+    "JAX": {
+      "headCoach": "Doug Marrone",
+      "offCoordinator": "Jay Gruden",
+      "defCoordinator": "Todd Wash",
+      "specialTeams": "Joe DeCamillis"
+    },
+    "KC": {
+      "headCoach": "Andy Reid",
+      "offCoordinator": "Eric Bieniemy",
+      "defCoordinator": "Steve Spagnuolo",
+      "specialTeams": "Dave Toub"
+    },
+    "LAC": {
+      "headCoach": "Anthony Lynn",
+      "offCoordinator": "Shane Steichen",
+      "defCoordinator": "Gus Bradley",
+      "specialTeams": "George Stewart"
+    },
+    "LAR": {
+      "headCoach": "Sean McVay",
+      "offCoordinator": "Kevin O'Connell",
+      "defCoordinator": "Brandon Staley",
+      "specialTeams": "John Bonamego"
+    },
+    "LV": {
+      "headCoach": "Jon Gruden",
+      "offCoordinator": "Greg Olson",
+      "defCoordinator": "Paul Guenther",
+      "specialTeams": "Rich Bisaccia"
+    },
+    "MIA": {
+      "headCoach": "Brian Flores",
+      "offCoordinator": "Chan Gailey",
+      "defCoordinator": "Josh Boyer",
+      "specialTeams": "Danny Crossman"
+    },
+    "MIN": {
+      "headCoach": "Mike Zimmer",
+      "offCoordinator": "Gary Kubiak",
+      "defCoordinator": "Adam Zimmer",
+      "specialTeams": "Marwan Maalouf"
+    },
+    "NE": {
+      "headCoach": "Bill Belichick",
+      "offCoordinator": "Josh McDaniels",
+      "defCoordinator": "Steve Belichick",
+      "specialTeams": "Cameron Achord"
+    },
+    "NO": {
+      "headCoach": "Sean Payton",
+      "offCoordinator": "Pete Carmichael",
+      "defCoordinator": "Dennis Allen",
+      "specialTeams": "Darren Rizzi"
+    },
+    "NYG": {
+      "headCoach": "Joe Judge",
+      "offCoordinator": "Jason Garrett",
+      "defCoordinator": "Patrick Graham",
+      "specialTeams": "Thomas McGaughey"
+    },
+    "NYJ": {
+      "headCoach": "Adam Gase",
+      "offCoordinator": "Dowell Loggains",
+      "defCoordinator": "Gregg Williams",
+      "specialTeams": "Brant Boyer"
+    },
+    "PHI": {
+      "headCoach": "Doug Pederson",
+      "offCoordinator": "Press Taylor",
+      "defCoordinator": "Jim Schwartz",
+      "specialTeams": "Dave Fipp"
+    },
+    "PIT": {
+      "headCoach": "Mike Tomlin",
+      "offCoordinator": "Randy Fichtner",
+      "defCoordinator": "Keith Butler",
+      "specialTeams": "Danny Smith"
+    },
+    "SEA": {
+      "headCoach": "Pete Carroll",
+      "offCoordinator": "Brian Schottenheimer",
+      "defCoordinator": "Ken Norton Jr.",
+      "specialTeams": "Brian Schneider"
+    },
+    "SF": {
+      "headCoach": "Kyle Shanahan",
+      "offCoordinator": "Mike McDaniel",
+      "defCoordinator": "Robert Saleh",
+      "specialTeams": "Richard Hightower"
+    },
+    "TB": {
+      "headCoach": "Bruce Arians",
+      "offCoordinator": "Byron Leftwich",
+      "defCoordinator": "Todd Bowles",
+      "specialTeams": "Keith Armstrong"
+    },
+    "TEN": {
+      "headCoach": "Mike Vrabel",
+      "offCoordinator": "Arthur Smith",
+      "defCoordinator": "Shane Bowen",
+      "specialTeams": "Craig Aukerman"
+    },
+    "WAS": {
+      "headCoach": "Ron Rivera",
+      "offCoordinator": "Scott Turner",
+      "defCoordinator": "Jack Del Rio",
+      "specialTeams": "Nate Kaczor"
+    }
+  },
+  "limitations": [
+    "Only four leadership chair names per team are historical; scouting and doctor identities remain generic model templates.",
+    "Four coordinator slots are functional proxies, not formal 2020 OC/DC titles; see proxy list.",
+    "2020 role starts are used as an importer base-season marker, not factual hiring dates.",
+    "Numeric coach skills, personality, ages, scheme styles, potential and contract terms come from a generic game template; NOT historical facts.",
+    "2020 midseason staff changes and interim appointments are not modeled.",
+    "Real facial appearance and compatibility of 2020 staff import must be confirmed in disposable CapForge league."
+  ],
+  "privacy": "No staff/player hidden individual development values included"
+}
