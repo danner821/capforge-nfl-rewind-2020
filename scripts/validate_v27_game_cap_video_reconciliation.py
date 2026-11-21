@@ -30,7 +30,7 @@ def main():
     assert result["starting2020ModelVsGame"]["meanAbsoluteDifferenceSalaryPlusBonusMillions"]>=0
     for name,entry in result["perTeamAggregateEconomics"].items():
         assert entry["v19FirstYearSalaryMillions"]+entry["v19FirstYearBonusMillions"]-entry["v19FirstYearSalaryPlusBonusMillions"]<0.002
-        assert entry["rosterPlayers"]>=53
+        assert entry["importedStartingPlayers"]>=53
         assert entry["modelCapSpaceSalaryOnlyMillions"]>=entry["modelCapSpaceSalaryPlusBonusMillions"]
         assert audit["gameModel"]["openingSalaryPlusBonusByTeam"][name]/1_000_000==entry["v19FirstYearSalaryPlusBonusMillions"]
         if name in both:
