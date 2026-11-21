@@ -1,0 +1,22 @@
+{
+  "policy": "Only assign a staff portraitId after it has been visually compared against the game’s actual built-in portrait picker and verified to be closer to that coach. Do not guess ID numbers, infer an ID from demographics, or reuse unknown portrait packs.",
+  "schema": "teams.<TEAM_ABBR>.<role> = {name, portraitId, evidence, reviewerNotes}. 2020 roles: headCoach, offCoordinator, defCoordinator, specialTeams.",
+  "verifiedOverrides": {},
+  "reviewStatus": "Waiting for in-game avatar catalog evidence. Portrait IDs are not indexed publicly by real coach likeness. Empty map intentionally preserves CapForge default cartoons.",
+  "reviewTarget": {
+    "coachRoles": [
+      "headCoach",
+      "offCoordinator",
+      "defCoordinator",
+      "specialTeams"
+    ],
+    "coaches": 128
+  },
+  "outOfScope": [
+    "offScout",
+    "defScout",
+    "teamDoctor",
+    "freeAgent staff"
+  ],
+  "previousVersion": "staff-2020-coaching-v16.json"
+}
