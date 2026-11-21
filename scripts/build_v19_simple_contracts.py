@@ -32,6 +32,8 @@ TEAMS=PREVIEW/"teams-2020-roofs-v2.json"
 SIM_CAP=300_000_000
 NFL_CAP_2020=198_200_000
 SOURCE_CAP_SCALER=SIM_CAP/NFL_CAP_2020
+# nflreadr/OverTheCap historical monetary fields are in MILLIONS of dollars.
+OTC_DOLLAR_UNIT=1_000_000
 START_YEAR=2020
 MIN_SALARY=850_000
 # Aim for at least $20m of modeled headroom for all clubs at the beginning.
@@ -128,9 +130,9 @@ def source_contract_candidates(player,contracts):
         annual=annual_rows(row)
         entry=annual.get(2020)
         if not entry:continue
-        cap=money(entry.get("cap_number"))
-        base=money(entry.get("base_salary"))
-        bonus=money(entry.get("prorated_bonus"))
+        cap=money(entry.get("cap_number"))*OTC_DOLLAR_UNIT
+        base=money(entry.get("base_salary"))*OTC_DOLLAR_UNIT
+        bonus=money(entry.get("prorated_bonus"))*OTC_DOLLAR_UNIT
         if cap<300_000 and base+bonus<300_000:continue
         annual_team=matching_team(entry.get("team"),player["teamAbbr"])
         contract_team=matching_team(row.get("team"),player["teamAbbr"])
@@ -168,16 +170,16 @@ def source_contract_candidates(player,contracts):
     return (best[3],best[4]),label
 
 def first_year_source(record):
-    cap=money(record.get("cap_number"))
-    base=money(record.get("base_salary"))
-    proration=money(record.get("prorated_bonus"))
-    if cap<300_000:cap=base+proration+money(record.get("roster_bonus"))
+    cap=money(record.get("cap_number"))*OTC_DOLLAR_UNIT
+    base=money(record.get("base_salary"))*OTC_DOLLAR_UNIT
+    proration=money(record.get("prorated_bonus"))*OTC_DOLLAR_UNIT
+    if cap<300_000:cap=base+proration+money(record.get("roster_bonus"))*OTC_DOLLAR_UNIT
     if cap<300_000:return None
     # Contract-wide cap charge is the simpler game analogue. Keep known
     # prorated bonus separated, never count it twice as salary.
     bonus=min(proration,cap*0.6)
     salary=max(MIN_SALARY,cap-bonus)
-    guarantee=min(salary,money(record.get("guaranteed_salary")))
+    guarantee=min(salary,money(record.get("guaranteed_salary"))*OTC_DOLLAR_UNIT)
     return (salary,bonus,guarantee)
 
 def fallback_terms(player):
@@ -376,7 +378,7 @@ def main():
             "openingSalaryPlusBonusByTeam":dict(sorted(payroll.items())),
             "openingSalaryPlusBonusRange":{"min":min(payroll.values()),"max":max(payroll.values())},
             "yearIndexConvention":"Every starting player begins at index 0 of REMAINING contract; signedSeason=2020 is importer normalization, not historical signed date",
-            "sourceChargeMapping":"annual cap_number less source prorated_bonus -> salaryByYear; source prorated_bonus -> bonusByYear, never double counted; guarantees capped at salary",
+            "sourceChargeMapping":"OTC million-dollar annual cap_number is converted to dollars; less prorated_bonus -> salaryByYear; prorated_bonus -> bonusByYear, never double counted; guarantees capped at salary",
             "fallbackTerms":"original V15 contract estimate; 2020 recent draft picks may receive remaining four-year rookie term; otherwise conservative salary model",
             "leagueWideScaleNotExactNFL":"Common game scaling factor adjusted to keep the highest 2020 modeled team under $280M; team payrolls differ, no per-team forced equal totals"
         },
