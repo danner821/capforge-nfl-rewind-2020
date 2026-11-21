@@ -1,0 +1,76 @@
+{
+  "version": "V22-STAFF-POOL-PILOT",
+  "supersedes": "V21 player-portrait proxy experiment; seven V21 portrait IDs rejected by CapForge as not staff portraits",
+  "sourceGreenAcceptedStaffFile": "preview/staff-2020-coaching-v16.json",
+  "baseAgeCorrectedFile": "preview/staff-2020-coaches-age-qa-v20.json",
+  "independentStaffPortraitEvidence": "All seven proposed IDs are among explicit staff portrait IDs previously present in the 672-record V16 staff import that received the user's green checkmark; distinct from player-only IDs used in V21.",
+  "method": "Choose distinct accepted staff IDs used in head-coach roles by the community 2018 staff template, with closest available 2020 historical HC age. Age-role matching does not prove facial likeness, skin tone, hairstyle or other appearance. These are candidates for in-game visual QA.",
+  "communityStaffTemplate": "https://raw.githubusercontent.com/jmansfield96/capforge-custom-rosters/main/staff-files/2018-staff.json",
+  "assignments": {
+    "GB:headCoach": {
+      "coach": "Matt LaFleur",
+      "portraitId": "portrait-0675",
+      "coachAge2020": 40,
+      "referenceTemplateRole": "headCoach",
+      "referenceTemplateAge": 40,
+      "priorV21Rejected": "portrait-0798",
+      "priority": "reported_inaccurate_face"
+    },
+    "LAR:headCoach": {
+      "coach": "Sean McVay",
+      "portraitId": "portrait-0689",
+      "coachAge2020": 34,
+      "referenceTemplateRole": "headCoach",
+      "referenceTemplateAge": 36,
+      "priorV21Rejected": "portrait-0826"
+    },
+    "ARI:headCoach": {
+      "coach": "Kliff Kingsbury",
+      "portraitId": "portrait-0670",
+      "coachAge2020": 41,
+      "referenceTemplateRole": "headCoach",
+      "referenceTemplateAge": 41,
+      "priorV21Rejected": "portrait-0753"
+    },
+    "SF:headCoach": {
+      "coach": "Kyle Shanahan",
+      "portraitId": "portrait-0296",
+      "coachAge2020": 40,
+      "referenceTemplateRole": "headCoach",
+      "referenceTemplateAge": 40,
+      "priorV21Rejected": "portrait-0765"
+    },
+    "CLE:headCoach": {
+      "coach": "Kevin Stefanski",
+      "portraitId": "portrait-0677",
+      "coachAge2020": 38,
+      "referenceTemplateRole": "headCoach",
+      "referenceTemplateAge": 37,
+      "priorV21Rejected": "portrait-0520"
+    },
+    "CIN:headCoach": {
+      "coach": "Zac Taylor",
+      "portraitId": "portrait-0699",
+      "coachAge2020": 37,
+      "referenceTemplateRole": "headCoach",
+      "referenceTemplateAge": 37,
+      "priorV21Rejected": "portrait-0007"
+    },
+    "NYG:headCoach": {
+      "coach": "Joe Judge",
+      "portraitId": "portrait-0660",
+      "coachAge2020": 38,
+      "referenceTemplateRole": "headCoach",
+      "referenceTemplateAge": 42,
+      "priorV21Rejected": "portrait-0523"
+    }
+  },
+  "limitations": [
+    "CapForge accepted these IDs in the V16 staff import, but no screenshot demonstrates which cartoon face each ID renders.",
+    "Age similarity and matching headCoach role are selection heuristics, not verified facial resemblance or appearance.",
+    "Do not claim Matt LaFleur's incorrect skin-tone issue is fixed without inspecting the new game-rendered face.",
+    "V22 is a seven-person staff-only trial; 121 other coaching positions retain default faces.",
+    "Preserve names, 2020 coach ages, staff UUIDs, teams, skills, contracts, and all 96 scout/doctor and 448 free agent staff records.",
+    "Never use V21's player-only portrait ID list in a staff build."
+  ]
+}
