@@ -2,6 +2,16 @@
 
 A fan-made experimental **2020 NFL historical roster** with Madden-style attributes and future real draft prospects. All files are separate from Project Ice.
 
+## Latest: V24 staff-avatar reference gallery — TEST ONLY
+
+**CapForge confirmed V22 Staff imports with a green check, but many coach cartoons still look wrong.** V23's attempted visual gallery was **rejected with 150 errors** because it incorrectly changed scout/doctor/coordinator free agents to headCoach without removing role-specific sparse fields. **Do not use V23**.
+
+- [V24 corrected TEST-ONLY Staff gallery](preview/staff-portrait-gallery-role-safe-v24-TEST-ONLY.json) — 73 labeled cartoon portrait IDs from the proven V16 Staff-only pool. The 73 fictional diagnostic free agents retain their original roles: **64 Head Coaches and nine Offensive Coordinators**. Only names and portrait IDs changed, so previously failing role-specific fields remain valid.
+- [V24 diagnostic ID/label map](preview/v24-staff-portrait-gallery-map.json).
+- **For a new disposable game only:** combine unchanged [V19 Players](preview/players-2020-nine-class-contracts-v19.json) + [V2 Teams](preview/teams-2020-roofs-v2.json) + V24 Staff. Check Staff validation, then view Staff Free Agents: 64 named `Avatar PicXXXX` under Head Coach, nine under Offensive Coordinator. Capture the avatars next to their labels so the real 2020 staff can be matched to actual cartoon art, not guessed IDs.
+- Never use V24 for a permanent franchise. [Playable V22 Staff](preview/staff-2020-valid-coach-portraits-v22.json) remains the green import fallback, though its coach likenesses are not approved.
+- V24's role-preservation checks passed in CI; **an actual V24 CapForge game import is still the required acceptance gate**.
+
 ## V22 — staff-only portrait IDs (NEW, compatibility fix for V21 warnings)
 
 The user-tested V21 Staff import produced **seven warnings** because V21 tried to reuse **player-only** `portrait-####` IDs. CapForge rejected those seven coach portraits and substituted faces from staff identity IDs. V22 addresses that schema mismatch.
