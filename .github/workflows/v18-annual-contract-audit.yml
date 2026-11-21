@@ -1,0 +1,53 @@
+name: Audit NFL 2020 historical annual contract data (V18)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/audit_v18_parquet_2020.py'
+      - 'scripts/validate_v18_parquet_2020.py'
+      - '.github/workflows/v18-annual-contract-audit.yml'
+  pull_request:
+    paths:
+      - 'scripts/audit_v18_parquet_2020.py'
+      - 'scripts/validate_v18_parquet_2020.py'
+      - '.github/workflows/v18-annual-contract-audit.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capforge-2020-annual-contract-source
+  cancel-in-progress: false
+
+jobs:
+  audit-contract-history:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Parquet reader
+        run: python -m pip install --disable-pip-version-check pyarrow==21.0.0
+      - name: Audit available OTC annual 2020 contract source without modifying roster
+        run: python scripts/audit_v18_parquet_2020.py
+      - name: Validate privacy-safe source report
+        run: python scripts/validate_v18_parquet_2020.py
+      - name: Publish only the new V18 source report on main
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add preview/v18-parquet-contract-history-audit.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "audit: publish spoiler-free V18 annual 2020 contract source report"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 3
+          done
+          echo "Unable to publish V18 report after three attempts" >&2
+          exit 1
