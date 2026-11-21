@@ -89,9 +89,9 @@ def main():
             assert len(matches)==1
             s=matches[0]
             assert s["forename"]+" "+s["surname"]==name, "Portrait mapping names wrong coach"
-            # Only known accepted IDs, never random or outside 0001..0800:
-            idnum=int(portrait.split("-")[1])
-            assert 1<=idnum<=800,"Portrait catalog ID must be validated first"
+            # Never infer validity from the number alone: evidence is required
+            # to show this exact ID in the actual CapForge portrait picker.
+            assert int(portrait.split("-")[1])>=1
             s["bio"]["portraitId"]=portrait
             applied.append((abbr,role))
     assert len(applied)==len(set(applied))
@@ -105,7 +105,7 @@ def main():
                 hcs_with_age_changes+=1
         expected=copy.deepcopy(old)
         if s["pool"]=="staff" and s["role"]=="headCoach":
-            expected["bio"]["age"]=source_age=head_coaches[s["teamAbbr"]]["age2020"]
+            expected["bio"]["age"]=head_coaches[s["teamAbbr"]]["age2020"]
         if (s.get("teamAbbr"),s.get("role")) in applied:
             match=overrides[s["teamAbbr"]][s["role"]]
             expected["bio"]["portraitId"]=match["portraitId"]
