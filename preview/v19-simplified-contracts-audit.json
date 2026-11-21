@@ -1,0 +1,113 @@
+{
+  "status": "V19_STRUCTURAL_PASS_GAME_IMPORT_AND_FREE_AGENCY_UNTESTED",
+  "playerFile": "players-2020-nine-class-contracts-v19.json",
+  "baseFile": "players-2020-nine-class-scout-audit-v15.json",
+  "baseFileSha256": "c7dc41d52e0f6aa85282732487f4333052c74c75c9479218731f5b36e99f1a98",
+  "source": "https://github.com/nflverse/nflverse-data/releases/download/contracts/historical_contracts.parquet",
+  "sourceParquetSha256": "9ac2cff0880a8ea14d1b0118a02f4735a073a12ff768b7c4a9355c868251335d",
+  "totalPlayers": 6613,
+  "startingRosterPlayers": 2293,
+  "protectedDraftClassPlayers": 4320,
+  "protectedNonContractFieldsFor2020Players": true,
+  "contractSourceConfidence": {
+    "sourced_annual_and_team": 1246,
+    "sourced_disambiguated": 242,
+    "fallback_missing_or_mismatched_annual_source": 550,
+    "fallback_ambiguous_2020_source": 149,
+    "sourced_contract_team_only": 82,
+    "fallback_low_confidence_match": 24
+  },
+  "contractsWith2020AnnualSource": 1570,
+  "fallbackContracts": 723,
+  "remainingYearsHistogram": {
+    "1": 943,
+    "2": 521,
+    "3": 447,
+    "4": 358,
+    "5": 24
+  },
+  "gameModel": {
+    "baseSeason": 2020,
+    "gameCap": 300000000,
+    "sourceNFL2020BaseCap": 198200000,
+    "unrestrictedHistoricalConversionFactor": 1.513623,
+    "effectiveCommonGameScaleFactor": 1.18112339,
+    "minimumYearlyBaseSalary": 850000,
+    "maximumOpeningTeamSalaryPlusBonus": 280000000,
+    "openingSalaryPlusBonusByTeam": {
+      "ARI": 240320000,
+      "ATL": 242948000,
+      "BAL": 224232000,
+      "BUF": 279159000,
+      "CAR": 219700000,
+      "CHI": 250989000,
+      "CIN": 246039000,
+      "CLE": 242242000,
+      "DAL": 236905000,
+      "DEN": 239112000,
+      "DET": 227429000,
+      "GB": 251271000,
+      "HOU": 254546000,
+      "IND": 265694000,
+      "JAX": 186855000,
+      "KC": 260066000,
+      "LAC": 243268000,
+      "LAR": 228689000,
+      "LV": 267468000,
+      "MIA": 245085000,
+      "MIN": 229659000,
+      "NE": 237255000,
+      "NO": 231011000,
+      "NYG": 228376000,
+      "NYJ": 198838000,
+      "PHI": 239742000,
+      "PIT": 243021000,
+      "SEA": 243506000,
+      "SF": 249803000,
+      "TB": 252944000,
+      "TEN": 241322000,
+      "WAS": 220287000
+    },
+    "openingSalaryPlusBonusRange": {
+      "min": 186855000,
+      "max": 279159000
+    },
+    "futureExistingRosterContractedCharges": {
+      "2020": {
+        "minExistingRosterContractedCharge": 186855000,
+        "maxExistingRosterContractedCharge": 279159000
+      },
+      "2021": {
+        "minExistingRosterContractedCharge": 99630000,
+        "maxExistingRosterContractedCharge": 190045000
+      },
+      "2022": {
+        "minExistingRosterContractedCharge": 43968000,
+        "maxExistingRosterContractedCharge": 197542000
+      },
+      "2023": {
+        "minExistingRosterContractedCharge": 12683000,
+        "maxExistingRosterContractedCharge": 136557000
+      },
+      "2024": {
+        "minExistingRosterContractedCharge": 1004000,
+        "maxExistingRosterContractedCharge": 47300000
+      }
+    },
+    "yearIndexConvention": "Every starting player begins at index 0 of REMAINING contract; signedSeason=2020 is importer normalization, not historical signed date",
+    "sourceChargeMapping": "OTC million-dollar annual cap_number is converted to dollars; less prorated_bonus -> salaryByYear; prorated_bonus -> bonusByYear, never double counted; guarantees capped at salary",
+    "fallbackTerms": "original V15 contract estimate; 2020 recent draft picks may receive remaining four-year rookie term; otherwise conservative salary model",
+    "leagueWideScaleNotExactNFL": "Common game scaling factor adjusted to keep the highest 2020 modeled team under $280M; team payrolls differ, no per-team forced equal totals"
+  },
+  "limitations": [
+    "A sourced contract is a plausible 2020 player/team/annual match, not fully audited legal NFL contract accuracy.",
+    "OTC annual breakdowns and future years can reflect restructures after 2020; all imported amounts are gameplay approximations.",
+    "Some ambiguous identities or absent 2020 annual rows use a disclosed baseline estimate.",
+    "Game salary/bonus/guarantee interpretation and future free agency must be inspected in a disposable 2020 CapForge save.",
+    "DeadCap remains empty, as in V15; real historical dead-cap accuracy is not reconstructed.",
+    "Actual NFL 2020 cap $198.2M is not the game's $300M cap; all figures are game-scaled, not true historical NFL dollar amounts.",
+    "2020 starting roster includes more than 53 players per team; modeled payrolls cover the whole imported roster.",
+    "All draft picks, ratings, potentials, portraits, teams, names and staff remain unchanged."
+  ],
+  "privacy": "Only aggregate source confidence and team-level modeled totals; no individual salaries or hidden progression"
+}
