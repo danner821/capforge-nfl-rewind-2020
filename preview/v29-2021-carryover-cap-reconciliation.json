@@ -1,0 +1,156 @@
+{
+  "baseSalaryCapMillions": 300,
+  "currentYearCarryoverCapMillions": 30,
+  "deadMoneyObservation": "Zero displayed dead money for PIT/BAL in this 2021 test state; not evidence other clubs/years have zero.",
+  "draftPickAccounting": "Projected PICKS reserve is already included in COMMITTED and deducted in SPACE. Never add projected PICKS again.",
+  "economicRiskAssessment": {
+    "2020CarryoverSensitivity": "Both 2020 Market snapshots show over $30M room. A 2020 player-charge increase smaller than (2020 room minus $30M) would not by itself lower the $30M carryover if all else held constant, but repeated 2021 charges would still constrain already tight teams.",
+    "PIT2021CarryoverContributionMillions": 30,
+    "PITRoomChangeExcluding2021CarryoverForComparisonMillions": 9.4,
+    "PITSpaceChange2020To2021Millions": 39.4,
+    "blanketRaiseUnsafe": "2021 BAL has only $0.293M space even after $30M carryover, and 2022 projected BAL has $24.8M space. Increasing all retained contracts could create over-cap clubs or forced releases.",
+    "recommendation": "Do not apply universal 1.51x contracts or overwrite V19. Any separate experimental players import must audit both original year and carryover-dependent offseason plus 2022 $300M base and pick reservations. Current 2021 user save stays unchanged."
+  },
+  "effective2021CapAtMaximumCarryoverMillions": 330,
+  "evidence": "User-supplied actual expanded 2021 Payroll screenshots for PIT and BAL; no save or individual contract data copied",
+  "explicitCorrectionToV28": "Earlier V28 identified $330M displayed ceiling but could not see decomposition. V29 confirms $300M base + $30M capped carryover. Do NOT describe a 10% base cap raise.",
+  "futureProjectionNote": "2022-2026 projections use the flat $300M base cap; potential future carryover is not assumed. The game's note says new deals book roughly 7% cheaper each year out, and 2025/26 zero forecasts need not imply contractual reality after the projected horizon.",
+  "limitations": [
+    "Displayed 2021 payroll rounded to $0.1M except BAL $293K space.",
+    "No per-player 2021 transaction ledger or full individual salary/bonus details; cannot prove exact engine charge basis.",
+    "2022-26 panels are CURRENT-SAVE projections, not seasons actually simulated.",
+    "No 2020 actual Team Payroll expanded screen provided; 2020 Market CAP videos are comparative evidence, not per-player reconciliation."
+  ],
+  "lockedPreservation": {
+    "existingUserSaveAndProjectIceUnmodified": true,
+    "noPlayerRatingsOrHiddenDevelopmentDisclosed": true,
+    "originalV19PlayerFileUnmodified": true,
+    "prospects2021To2029Protected": 4320,
+    "teamsV2AndVisuallyApprovedV25StaffUnmodified": true
+  },
+  "observed2021BaseCapGrowthOverModeled2020BaseMillions": 0,
+  "status": "V29_GAME_PAYROLL_BASE_CAP_AND_CARRYOVER_VERIFIED_READ_ONLY_NO_NEW_IMPORT",
+  "teamComparisons": {
+    "BAL": {
+      "2020CapRoomBeyondMax30MCarryoverMillions": 72.7,
+      "2020MarketSpaceMillions": 102.7,
+      "2020To2021RoomChangeExcludingCarryoverForComparisonMillions": -132.407,
+      "2021ApparentRoomChangeMillions": -102.407,
+      "2021BaseCapMillions": 300.0,
+      "2021CarryoverUsedMillions": 30.0,
+      "2021CommittedMillions": 329.7,
+      "2021DeadMoneyMillions": 0.0,
+      "2021EffectiveCapMillions": 330.0,
+      "2021RoomLessCarryoverForComparisonOnlyMillions": -29.707,
+      "2021UnspentMillions": 0.293,
+      "futureYearProjection": {
+        "2021": {
+          "committedMillionsIncludesPickReserve": 329.7,
+          "isCurrentYearEffectiveCapWithCarryover": true,
+          "projectedBaseCapMillions": 300,
+          "reservedDraftPicksMillionsAlreadyIncluded": null,
+          "spaceMillions": 0.293
+        },
+        "2022": {
+          "committedMillionsIncludesPickReserve": 275.2,
+          "isCurrentYearEffectiveCapWithCarryover": false,
+          "projectedBaseCapMillions": 300,
+          "reservedDraftPicksMillionsAlreadyIncluded": 16.3,
+          "spaceMillions": 24.8
+        },
+        "2023": {
+          "committedMillionsIncludesPickReserve": 174.8,
+          "isCurrentYearEffectiveCapWithCarryover": false,
+          "projectedBaseCapMillions": 300,
+          "reservedDraftPicksMillionsAlreadyIncluded": 16.3,
+          "spaceMillions": 125.2
+        },
+        "2024": {
+          "committedMillionsIncludesPickReserve": 72.6,
+          "isCurrentYearEffectiveCapWithCarryover": false,
+          "projectedBaseCapMillions": 300,
+          "reservedDraftPicksMillionsAlreadyIncluded": 16.3,
+          "spaceMillions": 227.4
+        },
+        "2025": {
+          "committedMillionsIncludesPickReserve": 0,
+          "isCurrentYearEffectiveCapWithCarryover": false,
+          "projectedBaseCapMillions": 300,
+          "reservedDraftPicksMillionsAlreadyIncluded": null,
+          "spaceMillions": 300
+        },
+        "2026": {
+          "committedMillionsIncludesPickReserve": 0,
+          "isCurrentYearEffectiveCapWithCarryover": false,
+          "projectedBaseCapMillions": 300,
+          "reservedDraftPicksMillionsAlreadyIncluded": null,
+          "spaceMillions": 300
+        }
+      },
+      "team": "Baltimore Ravens"
+    },
+    "PIT": {
+      "2020CapRoomBeyondMax30MCarryoverMillions": 48.9,
+      "2020MarketSpaceMillions": 78.9,
+      "2020To2021RoomChangeExcludingCarryoverForComparisonMillions": 9.4,
+      "2021ApparentRoomChangeMillions": 39.4,
+      "2021BaseCapMillions": 300.0,
+      "2021CarryoverUsedMillions": 30.0,
+      "2021CommittedMillions": 211.7,
+      "2021DeadMoneyMillions": 0.0,
+      "2021EffectiveCapMillions": 330.0,
+      "2021RoomLessCarryoverForComparisonOnlyMillions": 88.3,
+      "2021UnspentMillions": 118.3,
+      "futureYearProjection": {
+        "2021": {
+          "committedMillionsIncludesPickReserve": 211.7,
+          "isCurrentYearEffectiveCapWithCarryover": true,
+          "projectedBaseCapMillions": 300,
+          "reservedDraftPicksMillionsAlreadyIncluded": null,
+          "spaceMillions": 118.3
+        },
+        "2022": {
+          "committedMillionsIncludesPickReserve": 176.6,
+          "isCurrentYearEffectiveCapWithCarryover": false,
+          "projectedBaseCapMillions": 300,
+          "reservedDraftPicksMillionsAlreadyIncluded": 15.9,
+          "spaceMillions": 123.4
+        },
+        "2023": {
+          "committedMillionsIncludesPickReserve": 132.9,
+          "isCurrentYearEffectiveCapWithCarryover": false,
+          "projectedBaseCapMillions": 300,
+          "reservedDraftPicksMillionsAlreadyIncluded": 16.3,
+          "spaceMillions": 167.1
+        },
+        "2024": {
+          "committedMillionsIncludesPickReserve": 22.9,
+          "isCurrentYearEffectiveCapWithCarryover": false,
+          "projectedBaseCapMillions": 300,
+          "reservedDraftPicksMillionsAlreadyIncluded": 16.3,
+          "spaceMillions": 277.1
+        },
+        "2025": {
+          "committedMillionsIncludesPickReserve": 0,
+          "isCurrentYearEffectiveCapWithCarryover": false,
+          "projectedBaseCapMillions": 300,
+          "reservedDraftPicksMillionsAlreadyIncluded": null,
+          "spaceMillions": 300
+        },
+        "2026": {
+          "committedMillionsIncludesPickReserve": 0,
+          "isCurrentYearEffectiveCapWithCarryover": false,
+          "projectedBaseCapMillions": 300,
+          "reservedDraftPicksMillionsAlreadyIncluded": null,
+          "spaceMillions": 300
+        }
+      },
+      "team": "Pittsburgh Steelers"
+    }
+  },
+  "v19Reconciliation": {
+    "note": "V19 originally modeled a $300M cap; V29 verifies the in-game base-cap number and 2021 carryover. Actual 2021 AI moves and contract accounting cannot be reconstructed from V19 import or these aggregate screens.",
+    "starting2020ContractScaleFactor": 1.18112339,
+    "unchanged2020V19PlayersSHA256": "c6d021d0b1573d475d3b8c399b16cdb7c4222230cfc9700093885e8958b0fdc9"
+  }
+}
