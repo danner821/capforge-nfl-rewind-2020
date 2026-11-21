@@ -41,7 +41,7 @@ def get_bytes(url):
 def integer(x):
     try:
         if x is None:return None
-        return int(float(str(x).replace(",",")))
+        return int(float(str(x).replace(",", "")))
     except (ValueError,TypeError,OverflowError):
         return None
 
