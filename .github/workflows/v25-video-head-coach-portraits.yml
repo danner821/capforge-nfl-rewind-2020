@@ -1,0 +1,53 @@
+name: Validate visual head-coach cartoons from actual V24 gallery recording (V25)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/coaches_2020_v25_video_verified_portrait_candidates.json'
+      - 'scripts/build_v25_video_matched_head_coaches.py'
+      - 'scripts/validate_v25_video_matched_head_coaches.py'
+      - '.github/workflows/v25-video-head-coach-portraits.yml'
+  pull_request:
+    paths:
+      - 'data/coaches_2020_v25_video_verified_portrait_candidates.json'
+      - 'scripts/build_v25_video_matched_head_coaches.py'
+      - 'scripts/validate_v25_video_matched_head_coaches.py'
+      - '.github/workflows/v25-video-head-coach-portraits.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capforge-v25-video-head-coaches
+  cancel-in-progress: false
+
+jobs:
+  curate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Curate 32 head-coach game cartoon IDs seen in user V24 recording
+        run: python scripts/build_v25_video_matched_head_coaches.py
+      - name: Check all selected IDs against real V24 gallery and no other staff changes
+        run: python scripts/validate_v25_video_matched_head_coaches.py
+      - name: Publish new V25 experimental Staff import and audit
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add preview/staff-2020-head-coach-video-matched-v25.json preview/v25-head-coach-cartoon-audit.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "build: publish V25 head-coach cartoon matches from user video"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 2
+          done
+          echo "V25 publish failed" >&2
+          exit 1

@@ -1,0 +1,241 @@
+{
+  "version": "V25",
+  "basedOn": "preview/staff-2020-valid-coach-portraits-v22.json",
+  "evidence": "User-provided 33.2-second V24 CapForge Head Coach Market screen recording on 2026-11-20; avatar names Pic#### visibly adjacent to faces. Timestamp seconds are approximate sampling positions.",
+  "externalReference": "Contemporary 2019-2020 NFL coach press/team portraits and 2020 preseason coaching assignments; selections are approximate cartoon likenesses, not exact face reproductions.",
+  "priority": "All 32 headCoach positions; no coordinator role edits until their avatars are separately visually reviewed",
+  "notForPermanentSaveUntilCapForgeQA": true,
+  "curations": {
+    "ARI": {
+      "portraitId": "portrait-0668",
+      "videoSecond": 23,
+      "visualRationale": "Light complexion, short dark hair, clean-cut silhouette; closest available younger coach approximation",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "ATL": {
+      "portraitId": "portrait-0317",
+      "videoSecond": 3,
+      "visualRationale": "Light complexion, closely shaved head, defined dark facial hair",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "BAL": {
+      "portraitId": "portrait-0669",
+      "videoSecond": 23,
+      "visualRationale": "Light complexion, short brown hair, mature clean-shaven look",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "BUF": {
+      "portraitId": "portrait-0298",
+      "videoSecond": 6,
+      "visualRationale": "Fair complexion and shaved head match 2020 McDermott's distinctive look",
+      "confidence": "high",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "CAR": {
+      "portraitId": "portrait-0300",
+      "videoSecond": 28,
+      "visualRationale": "Fair complexion, short lighter hair and mature clean-shaven look",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "CHI": {
+      "portraitId": "portrait-0662",
+      "videoSecond": 32,
+      "visualRationale": "Fair complexion, dark coiffed hair and substantial dark beard",
+      "confidence": "high",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "CIN": {
+      "portraitId": "portrait-0699",
+      "videoSecond": 26,
+      "visualRationale": "Light complexion, short dark hair, clean-shaven younger face",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "CLE": {
+      "portraitId": "portrait-0297",
+      "videoSecond": 27,
+      "visualRationale": "Fair complexion, neat dark hair and trimmed dark beard",
+      "confidence": "high",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "DAL": {
+      "portraitId": "portrait-0316",
+      "videoSecond": 23,
+      "visualRationale": "Older fair complexion, short silver hair and clean-shaven face",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "DEN": {
+      "portraitId": "portrait-0312",
+      "videoSecond": 33,
+      "visualRationale": "Older fair complexion, receding hair and dark-gray mustache",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "DET": {
+      "portraitId": "portrait-0687",
+      "videoSecond": 0,
+      "visualRationale": "Fair complexion, dark hair and prominent full dark beard",
+      "confidence": "high",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "GB": {
+      "portraitId": "portrait-0484",
+      "videoSecond": 27,
+      "visualRationale": "Fair complexion, short dark hair and neat trimmed dark stubble; fixes clearly mismatched V22 bald dark-beard cartoon",
+      "confidence": "high",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "HOU": {
+      "portraitId": "portrait-0670",
+      "videoSecond": 33,
+      "visualRationale": "Fair complexion, receding dark hair and no prominent beard",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "IND": {
+      "portraitId": "portrait-0307",
+      "videoSecond": 3,
+      "visualRationale": "Mature fair complexion, salt-and-pepper hair and gray facial hair",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "JAX": {
+      "portraitId": "portrait-0318",
+      "videoSecond": 6,
+      "visualRationale": "Fair complexion, short light-brown hair and mature clean-cut face",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "KC": {
+      "portraitId": "portrait-0311",
+      "videoSecond": 3,
+      "visualRationale": "Older fair complexion, short white hair and prominent light mustache",
+      "confidence": "high",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "LAC": {
+      "portraitId": "portrait-0310",
+      "videoSecond": 12,
+      "visualRationale": "Dark complexion, close-cropped/bald head and short mustache-beard",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "LAR": {
+      "portraitId": "portrait-0677",
+      "videoSecond": 15,
+      "visualRationale": "Fair complexion, neatly styled dark hair and youthful appearance; beard detail approximate",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "LV": {
+      "portraitId": "portrait-0319",
+      "videoSecond": 20,
+      "visualRationale": "Fair complexion, reddish-brown short hair and clean-shaven look",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "MIA": {
+      "portraitId": "portrait-0675",
+      "videoSecond": 33,
+      "visualRationale": "Dark complexion, bald head and full dark beard; distinguish from light-haired LaFleur",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "MIN": {
+      "portraitId": "portrait-0486",
+      "videoSecond": 18,
+      "visualRationale": "Older fair complexion, sparse silver hair and clean-shaven face",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "NE": {
+      "portraitId": "portrait-0660",
+      "videoSecond": 8,
+      "visualRationale": "Older fair complexion, unkempt gray hair and gray beard; beard longer than historical",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "NO": {
+      "portraitId": "portrait-0295",
+      "videoSecond": 20,
+      "visualRationale": "Light complexion, short brown-blond hair and clean-shaven face",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "NYG": {
+      "portraitId": "portrait-0305",
+      "videoSecond": 9,
+      "visualRationale": "Fair complexion, medium short brown hair and younger clean-cut face",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "NYJ": {
+      "portraitId": "portrait-0669",
+      "videoSecond": 23,
+      "visualRationale": "Fair complexion, short brown hair and clean-shaven face",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "PHI": {
+      "portraitId": "portrait-0672",
+      "videoSecond": 6,
+      "visualRationale": "Fair complexion, neat dark hair and clean-cut face",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "PIT": {
+      "portraitId": "portrait-0661",
+      "videoSecond": 9,
+      "visualRationale": "Dark complexion, shaved head and short dark facial hair",
+      "confidence": "high",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "SEA": {
+      "portraitId": "portrait-0309",
+      "videoSecond": 9,
+      "visualRationale": "Mature fair complexion, light gray short hair and clean-shaven face",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "SF": {
+      "portraitId": "portrait-0674",
+      "videoSecond": 27,
+      "visualRationale": "Fair complexion, short dark hair and clean-cut expression",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "TB": {
+      "portraitId": "portrait-0688",
+      "videoSecond": 18,
+      "visualRationale": "Older fair complexion, balding scalp and light gray hair; glasses/beard not available",
+      "confidence": "low",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "TEN": {
+      "portraitId": "portrait-0485",
+      "videoSecond": 33,
+      "visualRationale": "Fair complexion with salt-and-pepper short hair and dark-gray beard, mature look",
+      "confidence": "low",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    },
+    "WAS": {
+      "portraitId": "portrait-0304",
+      "videoSecond": 9,
+      "visualRationale": "Medium-light complexion, short dark hair and mustache",
+      "confidence": "medium",
+      "reviewStatus": "PROVISIONAL_VISUAL_MATCH_NEEDS_INGAME_COACH_CARD_QA"
+    }
+  },
+  "limitations": [
+    "A 512-pixel-wide phone screen recording resolves small cartoon heads but cannot prove detailed facial resemblance.",
+    "A portrait visible under staff Head Coach free agents is known to be staff-pool compatible; applying it to an employed coach still needs new import check.",
+    "The 2020 celebrity photos were used only for real-world general appearance; their image files are not included or copied into the game.",
+    "All 96 OC/DC/ST coaching chairs remain unchanged pending image review; scouts/doctors and free agents are untouched.",
+    "Duplicate staff portrait IDs may be reused if closest; do not require unique portraits at expense of resemblance."
+  ]
+}

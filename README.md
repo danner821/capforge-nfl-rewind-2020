@@ -2,6 +2,15 @@
 
 A fan-made experimental **2020 NFL historical roster** with Madden-style attributes and future real draft prospects. All files are separate from Project Ice.
 
+## V25 — actual video-referenced 2020 Head Coach portraits (TRIAL)
+
+The user recorded the **V24 gallery of labeled game portraits**. V25 is our first staff likeness version grounded in *what the actual CapForge cartoon IDs render*, rather than guessing from coach age. It assigns proposed closest-match staff-only avatars to all 32 historical 2020 head coaches.
+
+- [V25 Staff (32 Head Coach cartoon proposals)](preview/staff-2020-head-coach-video-matched-v25.json): 672 staff entries; starts from the known-green V22 staff and changes **only the 32 HC portrait IDs**, including Matt LaFleur to `portrait-0484` instead of the incorrect `portrait-0675`.
+- [V25 visual sourcing and preservation audit](preview/v25-head-coach-cartoon-audit.json): 32 name/team mappings, observed video seconds, confidence and unchanged-data proof. No raw user video is distributed.
+- Keep [V19 Players](preview/players-2020-nine-class-contracts-v19.json) and [V2 Teams](preview/teams-2020-roofs-v2.json) unchanged. **V25 is not yet game accepted**: use in a new disposable 2020 game, check Staff 672 green, then inspect LaFleur and other coaches. Other 96 coordinator/ST coach portraits still use defaults.
+- All 96 scouts/doctors and 448 free agent staff, 2020 HC ages, staff attributes and contracts unchanged. [V22](preview/staff-2020-valid-coach-portraits-v22.json) remains the most recently in-game green Staff reference.
+
 ## Latest: V24 staff-avatar reference gallery — TEST ONLY
 
 **CapForge confirmed V22 Staff imports with a green check, but many coach cartoons still look wrong.** V23's attempted visual gallery was **rejected with 150 errors** because it incorrectly changed scout/doctor/coordinator free agents to headCoach without removing role-specific sparse fields. **Do not use V23**.
