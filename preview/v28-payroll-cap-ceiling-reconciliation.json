@@ -1,0 +1,89 @@
+{
+  "2021CapCeilingInGameMillions": 330.0,
+  "contrasting2021Clubs": {
+    "BALMinusPITCommittedMillions": 118.0,
+    "BALMinusPITUnexplainedAdditionalCommitmentMillions": 50.199,
+    "BALMinusPITV19SurvivingContractsMillions": 67.801,
+    "interpretation": "The imported 2020 contract survivor gap is already large, but neither the balance nor its unexplained residual can be attributed to specific free-agent moves without the 2021 game transaction/payroll ledger."
+  },
+  "limitations": [
+    "2021 screenshot amounts rounded; one team's $293K space is more precise than $329.7M committed.",
+    "A 2021 franchise has AI signings, releases, rookie deals and possibly dead cap not contained in the original V19 2020 snapshot.",
+    "Survivor salary+bonus is imported contract math, not verified actual 2021 charge per player; difference is unassigned rather than proved FA spend.",
+    "No salary, roster, development, rating, portrait, future draft, coaching or staff change is made by V28."
+  ],
+  "nextAction": {
+    "candidateGuardrails": "Any later separately versioned contract trial should explicitly model 2021 $330M, avoid initial 2020 over-cap, allow rookie signings, preserve V19 noncontract fields and all 4,320 draft prospects, and be validated in a separate new game.",
+    "decision": "Do not publish an unsafe V28 salary-adjusted Players file yet; the screen establishes the 2021 ceiling and team commitments but not which import salary/bonus/dead-cap fields contribute.",
+    "evidenceNeeded": "If available, expand Payroll's full cap panel for PIT/BAL to record base, bonus, dead money, full cap ceiling and player count; preserve current 2021 save."
+  },
+  "preservation": {
+    "2021To2029ProspectsProtectedByExistingV19File": 4320,
+    "projectIceUnmodified": true,
+    "teamsV2StaffV25AndAllExistingSavesUnmodified": true,
+    "v19OriginalPlayersSHA256": "c6d021d0b1573d475d3b8c399b16cdb7c4222230cfc9700093885e8958b0fdc9"
+  },
+  "relativeToV19Modeled2020Cap": {
+    "V19Assumed2020CapMillions": 300.0,
+    "absoluteDifferenceMillions": 30,
+    "differencePercent": 10,
+    "qualification": "The V19 $300M cap is an importer modeling assumption; this is not standalone proof of CapForge's 2020 game cap or a uniform yearly growth rule."
+  },
+  "scope": "PIT and BAL 2021 actual CapForge Payroll screenshots vs original unmodified V19 historical contracts and V27 2020/21 trade-market observations",
+  "status": "V28_REAL_2021_PAYROLL_CEILING_VERIFIED_NO_CONTRACT_IMPORT",
+  "teams": {
+    "BAL": {
+      "club": "Baltimore Ravens",
+      "displayed2021CommittedMillions": 329.7,
+      "displayed2021SpaceMillions": 0.293,
+      "observed2020MarketCapRoomMillions": 102.7,
+      "observed2020To2021CapRoomChangeMillions": -102.407,
+      "observedCapCeilingMillions": 329.993,
+      "observedCommitmentMinusV19SurvivorsMillions": 162.269,
+      "positionPercentagesConsistentWith330M": [
+        {
+          "displayedCapChargeMillions": 81.4,
+          "displayedPctOfCap": 24.7,
+          "position": "EDGE",
+          "recomputedPctOf330M": 24.7
+        },
+        {
+          "displayedCapChargeMillions": 34.4,
+          "displayedPctOfCap": 10.4,
+          "position": "OT",
+          "recomputedPctOf330M": 10.4
+        }
+      ],
+      "v19Existing2020ContractsCarriedTo2021BonusMillions": 42.34,
+      "v19Existing2020ContractsCarriedTo2021SalaryMillions": 125.091,
+      "v19Year2ImportedSurvivorSalaryPlusBonusMillions": 167.431
+    },
+    "PIT": {
+      "club": "Pittsburgh Steelers",
+      "displayed2021CommittedMillions": 211.7,
+      "displayed2021SpaceMillions": 118.3,
+      "freeTreemapTileIsUnusedCapNotExpense": true,
+      "observed2020MarketCapRoomMillions": 78.9,
+      "observed2020To2021CapRoomChangeMillions": 39.4,
+      "observedCapCeilingMillions": 330.0,
+      "observedCommitmentMinusV19SurvivorsMillions": 112.07,
+      "positionPercentagesConsistentWith330M": [
+        {
+          "displayedCapChargeMillions": 49.5,
+          "displayedPctOfCap": 15,
+          "position": "QB",
+          "recomputedPctOf330M": 15.0
+        },
+        {
+          "displayedCapChargeMillions": 72,
+          "displayedPctOfCap": 21.8,
+          "position": "DL",
+          "recomputedPctOf330M": 21.8
+        }
+      ],
+      "v19Existing2020ContractsCarriedTo2021BonusMillions": 31.679,
+      "v19Existing2020ContractsCarriedTo2021SalaryMillions": 67.951,
+      "v19Year2ImportedSurvivorSalaryPlusBonusMillions": 99.63
+    }
+  }
+}
