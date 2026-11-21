@@ -1,0 +1,55 @@
+name: Build 2020 simplified CapForge contracts (V19)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build_v19_simple_contracts.py'
+      - 'scripts/validate_v19_simple_contracts.py'
+      - '.github/workflows/v19-simple-contracts.yml'
+  pull_request:
+    paths:
+      - 'scripts/build_v19_simple_contracts.py'
+      - 'scripts/validate_v19_simple_contracts.py'
+      - '.github/workflows/v19-simple-contracts.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capforge-v19-contract-2020
+  cancel-in-progress: false
+
+jobs:
+  build-2020-game-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned Parquet reader
+        run: python -m pip install --disable-pip-version-check pyarrow==21.0.0
+      - name: Generate separate 2020 historical source-informed simple V19 contract trial
+        run: python scripts/build_v19_simple_contracts.py
+      - name: Validate exact V15 roster integrity, contract years, game cap and no hidden-data report
+        run: |
+          python scripts/validate_v19_simple_contracts.py
+          python scripts/validate_capforge_roster.py preview/players-2020-nine-class-contracts-v19.json
+      - name: Publish ONLY versioned V19 player file and source-safe contract audit
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add preview/players-2020-nine-class-contracts-v19.json preview/v19-simplified-contracts-audit.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "build: publish separate V19 simplified historical 2020 contract preview"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 3
+          done
+          echo "Unable to publish V19 previews" >&2
+          exit 1
