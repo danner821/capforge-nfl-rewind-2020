@@ -2,6 +2,20 @@
 
 A fan-made experimental **2020 NFL historical roster** with Madden-style attributes and future real draft prospects. All files are separate from Project Ice.
 
+## Optional 2020 historical coaching staffs — V16
+
+V16 was published after passing main-branch CI. It is a **separate, optional Staff import**, not a revision to the user-approved V15 Players file.
+
+- [Staff V16 — 2020 historical coaches](preview/staff-2020-coaching-v16.json) — 32 clubs with historical 2020 preseason HC/OC/DC/ST identities, preserving 7 CapForge chairs per team.
+- [Spoiler-free V16 staff provenance and exceptions](preview/v16-coaching-report.json) — four functional play-caller proxies where official OC/DC titles were absent, generic scouts/doctors and simulated ages, skills, styles and contract terms.
+- Players: [Nine-Class V15](preview/players-2020-nine-class-scout-audit-v15.json), Teams: [V2](preview/teams-2020-roofs-v2.json).
+
+**Staff V16 has not been tested in the CapForge app.** In a NEW disposable game, use Players V15 + Teams V2 + Staff V16 and check validation warnings and coach/team assignments. If Staff V16 fails, use **Staff Default** without altering V15. The user already approved the initial V15 2027–2029 boards/visible portraits; do not require re-review. Long-horizon simulation to 2029 remains untested.
+
+## 2020 historical contract correction (work in progress)
+
+The V13 salary audit proved all starting player contracts were algorithmic placeholders. V17 audits the nflverse/OverTheCap historic contract source and match coverage **without changing V15**. NFL 2020 actual salary cap was $198.2M, versus the simulator's approximate $300M model cap; historical per-year salary cap charges and proration must be reconciled, not copied blindly. [Full ordered roadmap](docs/ROADMAP.md).
+
 ## Latest version: V15, 2028–2029 scouting audit (2026-11-20)
 
 The user approved **the 2027 draft board and Arch Manning's in-game cartoon portrait**. V15 preserves those and every 2020–2027 V12 player record **exactly**, while expanding prospective 2028 and 2029 scouting coverage. The verified main-branch CI report checks **54 featured 2028 prospects**, **46 early 2029 candidates** based on actual 2026 college freshmen, and 480 player identities in every draft year 2021–2029. This is NOT a forecast of future NFL declarations or final draft picks.
