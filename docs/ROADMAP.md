@@ -29,7 +29,7 @@ _Last reviewed: 2026-11-20. Single source of truth: current main branch, version
 - 2020 contract replacement remains open issue #8. Do not advance to final franchise freeze without sourced contracts and multi-season validation.
 
 ## Current user action
-The 2028/29 V15 visual checkpoint is approved. Next, test the optional **V16 staff file** once CI publishes it alongside the protected V15 nine-class player file `preview/players-2020-nine-class-scout-audit-v15.json` in a disposable 2020 CapForge save with **Teams V2** and **Staff Default**. V15 includes all 2020–2027 V12 records unchanged, including user-approved 2027 prospects and Arch's portrait. Check the warning panel and 2028/2029 boards. The user already approved the 2027 board and Arch Manning's portrait; do **not** ask them to reapprove it.
+The user approved the visible V15 2027–2029 draft boards and portraits. The **next CapForge test** is a NEW disposable 2020 save using **V15 Nine-Class Players + Teams V2 + optional V16 Staff** after its CI publication. Check V16 Staff import warnings and the 2020 club coaching names. If V16 Staff fails, switch back to **Staff Default** without changing the approved V15 players. Separately, the nine-season progression test remains unverified; do not require another 2027/2028/2029 initial board review unless the importer changes.
 
 ## Rules that remain locked
 1. Never overwrite or delete the working V6–V12 exports or user's saves.
