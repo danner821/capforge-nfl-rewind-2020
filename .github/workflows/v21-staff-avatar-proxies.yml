@@ -1,0 +1,53 @@
+name: Curate first CapForge 2020 coach portrait pilot from accepted player cartoon IDs (V21)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/coaches_2020_v21_player_avatar_proxies.json'
+      - 'scripts/build_v21_staff_avatar_proxies.py'
+      - 'scripts/validate_v21_staff_avatar_proxies.py'
+      - '.github/workflows/v21-staff-avatar-proxies.yml'
+  pull_request:
+    paths:
+      - 'data/coaches_2020_v21_player_avatar_proxies.json'
+      - 'scripts/build_v21_staff_avatar_proxies.py'
+      - 'scripts/validate_v21_staff_avatar_proxies.py'
+      - '.github/workflows/v21-staff-avatar-proxies.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capforge-v21-staff-avatars
+  cancel-in-progress: false
+
+jobs:
+  curate-staff-proxies:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Copy accepted roster cartoon IDs into separate experimental coach file
+        run: python scripts/build_v21_staff_avatar_proxies.py
+      - name: Check accepted player portrait references and exact V20 staff preservation
+        run: python scripts/validate_v21_staff_avatar_proxies.py
+      - name: Publish only experimental V21 staff import and evidence report on main
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add preview/staff-2020-coach-portrait-proxies-v21.json preview/v21-coach-portrait-proxy-report.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "build: publish experimental V21 player-cartoon coach portraits"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 2
+          done
+          echo "V21 publication failed" >&2
+          exit 1
