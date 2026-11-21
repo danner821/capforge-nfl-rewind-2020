@@ -1,0 +1,114 @@
+{
+  "version": "V29_REAL_GAME_EXPANDED_PAYROLL_EVIDENCE",
+  "provenance": "User-supplied Nov 20, 2026 screenshots; Pittsburgh and Baltimore 2021 team Players>Payroll expanded full cap panel; store only aggregate transcriptions",
+  "saveSeason": 2021,
+  "historicalCapInterpretation": "The two current 2021 effective caps equal $300M base + $30M carryover, NOT a $330M base salary cap or 10% annual increase",
+  "annualCapNote": "Cap flat at $300M; new deals book ~7% cheaper each year out",
+  "teams": {
+    "PIT": {
+      "name": "Pittsburgh Steelers",
+      "currentYear": {
+        "baseCapMillions": 300,
+        "carryoverMillions": 30,
+        "carryoverMaxMillions": 30,
+        "effectiveCapMillions": 330,
+        "committedMillions": 211.7,
+        "deadMoneyMillions": 0,
+        "spaceMillions": 118.3
+      },
+      "projectedBySeason": {
+        "2021": {
+          "committedMillions": 211.7,
+          "picksMillions": null,
+          "capMillions": 300,
+          "spaceMillions": 118.3
+        },
+        "2022": {
+          "committedMillions": 176.6,
+          "picksMillions": 15.9,
+          "capMillions": 300,
+          "spaceMillions": 123.4
+        },
+        "2023": {
+          "committedMillions": 132.9,
+          "picksMillions": 16.3,
+          "capMillions": 300,
+          "spaceMillions": 167.1
+        },
+        "2024": {
+          "committedMillions": 22.9,
+          "picksMillions": 16.3,
+          "capMillions": 300,
+          "spaceMillions": 277.1
+        },
+        "2025": {
+          "committedMillions": 0,
+          "picksMillions": null,
+          "capMillions": 300,
+          "spaceMillions": 300
+        },
+        "2026": {
+          "committedMillions": 0,
+          "picksMillions": null,
+          "capMillions": 300,
+          "spaceMillions": 300
+        }
+      }
+    },
+    "BAL": {
+      "name": "Baltimore Ravens",
+      "currentYear": {
+        "baseCapMillions": 300,
+        "carryoverMillions": 30,
+        "carryoverMaxMillions": 30,
+        "effectiveCapMillions": 330,
+        "committedMillions": 329.7,
+        "deadMoneyMillions": 0,
+        "spaceMillions": 0.293
+      },
+      "projectedBySeason": {
+        "2021": {
+          "committedMillions": 329.7,
+          "picksMillions": null,
+          "capMillions": 300,
+          "spaceMillions": 0.293
+        },
+        "2022": {
+          "committedMillions": 275.2,
+          "picksMillions": 16.3,
+          "capMillions": 300,
+          "spaceMillions": 24.8
+        },
+        "2023": {
+          "committedMillions": 174.8,
+          "picksMillions": 16.3,
+          "capMillions": 300,
+          "spaceMillions": 125.2
+        },
+        "2024": {
+          "committedMillions": 72.6,
+          "picksMillions": 16.3,
+          "capMillions": 300,
+          "spaceMillions": 227.4
+        },
+        "2025": {
+          "committedMillions": 0,
+          "picksMillions": null,
+          "capMillions": 300,
+          "spaceMillions": 300
+        },
+        "2026": {
+          "committedMillions": 0,
+          "picksMillions": null,
+          "capMillions": 300,
+          "spaceMillions": 300
+        }
+      }
+    }
+  },
+  "instructionsFromScreen": {
+    "picks": "PICKS is part of COMMITTED; SPACE is already net of it",
+    "carryover": "2021 $30.0M / $30.0M MAX for both teams. 2022+ projected table shows $300M base cap, not additional carryover.",
+    "noDetailedPerPlayerBonusBreakdown": "No breakdown of every individual salary and bonus was presented; do not infer imported contract charge semantics from the aggregate screen."
+  }
+}
