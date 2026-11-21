@@ -1,0 +1,492 @@
+{
+  "status": "V24_ROLE_SAFE_STAFF_GALLERY_CI_PASS_GAME_IMPORT_PENDING_TEST_ONLY",
+  "purpose": "Expose 73 accepted CapForge staff avatar IDs as labeled temporary free agents without violating per-role sparse fields",
+  "failedPreviousVersion": "staff-portrait-reference-gallery-v23-TEST-ONLY.json",
+  "fixedIssue": "V23 changed free-agent scouts and team doctors into headCoach roles but left incompatible role-specific fields, causing 150 importer errors",
+  "baseStaffFile": "staff-2020-valid-coach-portraits-v22.json",
+  "testOnlyStaffFile": "staff-portrait-gallery-role-safe-v24-TEST-ONLY.json",
+  "sourcePreviouslyAcceptedStaff": "staff-2020-coaching-v16.json",
+  "totalStaff": 672,
+  "employedStaffUnchanged": 224,
+  "unchangedFictionalFreeAgents": 375,
+  "labeledDiagnosticFreeAgents": 73,
+  "roleDistribution": {
+    "headCoach": 64,
+    "offCoordinator": 9
+  },
+  "portraitToMarketLabel": {
+    "portrait-0675": {
+      "displayName": "Avatar Pic0675",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0689": {
+      "displayName": "Avatar Pic0689",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0670": {
+      "displayName": "Avatar Pic0670",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0296": {
+      "displayName": "Avatar Pic0296",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0677": {
+      "displayName": "Avatar Pic0677",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0699": {
+      "displayName": "Avatar Pic0699",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0660": {
+      "displayName": "Avatar Pic0660",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0295": {
+      "displayName": "Avatar Pic0295",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0297": {
+      "displayName": "Avatar Pic0297",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0298": {
+      "displayName": "Avatar Pic0298",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0299": {
+      "displayName": "Avatar Pic0299",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0300": {
+      "displayName": "Avatar Pic0300",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0301": {
+      "displayName": "Avatar Pic0301",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0302": {
+      "displayName": "Avatar Pic0302",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0303": {
+      "displayName": "Avatar Pic0303",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0304": {
+      "displayName": "Avatar Pic0304",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0305": {
+      "displayName": "Avatar Pic0305",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0306": {
+      "displayName": "Avatar Pic0306",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0307": {
+      "displayName": "Avatar Pic0307",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0308": {
+      "displayName": "Avatar Pic0308",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0309": {
+      "displayName": "Avatar Pic0309",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0310": {
+      "displayName": "Avatar Pic0310",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0311": {
+      "displayName": "Avatar Pic0311",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0312": {
+      "displayName": "Avatar Pic0312",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0313": {
+      "displayName": "Avatar Pic0313",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0314": {
+      "displayName": "Avatar Pic0314",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0315": {
+      "displayName": "Avatar Pic0315",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0316": {
+      "displayName": "Avatar Pic0316",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0317": {
+      "displayName": "Avatar Pic0317",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0318": {
+      "displayName": "Avatar Pic0318",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0319": {
+      "displayName": "Avatar Pic0319",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0483": {
+      "displayName": "Avatar Pic0483",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0484": {
+      "displayName": "Avatar Pic0484",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0485": {
+      "displayName": "Avatar Pic0485",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0486": {
+      "displayName": "Avatar Pic0486",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0487": {
+      "displayName": "Avatar Pic0487",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0568": {
+      "displayName": "Avatar Pic0568",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0573": {
+      "displayName": "Avatar Pic0573",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0577": {
+      "displayName": "Avatar Pic0577",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0661": {
+      "displayName": "Avatar Pic0661",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0662": {
+      "displayName": "Avatar Pic0662",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0663": {
+      "displayName": "Avatar Pic0663",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0664": {
+      "displayName": "Avatar Pic0664",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0665": {
+      "displayName": "Avatar Pic0665",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0666": {
+      "displayName": "Avatar Pic0666",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0667": {
+      "displayName": "Avatar Pic0667",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0668": {
+      "displayName": "Avatar Pic0668",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0669": {
+      "displayName": "Avatar Pic0669",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0671": {
+      "displayName": "Avatar Pic0671",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0672": {
+      "displayName": "Avatar Pic0672",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0673": {
+      "displayName": "Avatar Pic0673",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0674": {
+      "displayName": "Avatar Pic0674",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0676": {
+      "displayName": "Avatar Pic0676",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0678": {
+      "displayName": "Avatar Pic0678",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0679": {
+      "displayName": "Avatar Pic0679",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0680": {
+      "displayName": "Avatar Pic0680",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0681": {
+      "displayName": "Avatar Pic0681",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0682": {
+      "displayName": "Avatar Pic0682",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0683": {
+      "displayName": "Avatar Pic0683",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0684": {
+      "displayName": "Avatar Pic0684",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0685": {
+      "displayName": "Avatar Pic0685",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0686": {
+      "displayName": "Avatar Pic0686",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0687": {
+      "displayName": "Avatar Pic0687",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0688": {
+      "displayName": "Avatar Pic0688",
+      "role": "headCoach",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0690": {
+      "displayName": "Avatar Pic0690",
+      "role": "offCoordinator",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0691": {
+      "displayName": "Avatar Pic0691",
+      "role": "offCoordinator",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0692": {
+      "displayName": "Avatar Pic0692",
+      "role": "offCoordinator",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0693": {
+      "displayName": "Avatar Pic0693",
+      "role": "offCoordinator",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0694": {
+      "displayName": "Avatar Pic0694",
+      "role": "offCoordinator",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0695": {
+      "displayName": "Avatar Pic0695",
+      "role": "offCoordinator",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0696": {
+      "displayName": "Avatar Pic0696",
+      "role": "offCoordinator",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0697": {
+      "displayName": "Avatar Pic0697",
+      "role": "offCoordinator",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    },
+    "portrait-0698": {
+      "displayName": "Avatar Pic0698",
+      "role": "offCoordinator",
+      "pool": "freeAgent",
+      "visualReview": "PENDING_IN_GAME"
+    }
+  },
+  "priorityPortraitsFirstInHeadCoachRole": [
+    "portrait-0675",
+    "portrait-0689",
+    "portrait-0670",
+    "portrait-0296",
+    "portrait-0677",
+    "portrait-0699",
+    "portrait-0660"
+  ],
+  "preservation": {
+    "allEmployed2020CoachesAndTeamPersonnel": true,
+    "allStaffRoles": true,
+    "allSkillsStylesDevelopmentContracts": true,
+    "onlyThreeFieldsEditedInDiagnostics": [
+      "forename",
+      "surname",
+      "bio.portraitId"
+    ],
+    "V19PlayersAndV2Teams": true,
+    "existingUserSaves": true
+  },
+  "instructions": [
+    "Use a NEW throwaway 2020 game; V19 Players + V2 Teams + V24 TEST-ONLY Staff.",
+    "Check Staff shows 672 with zero errors before starting.",
+    "Open Staff free-agent market. Start in Head Coach and look for Avatar Pic#### (64 entries).",
+    "Switch to Offensive Coordinator for the remaining 9 Avatar Pic#### entries.",
+    "Send screenshots or a slow recording with avatar faces and their Pic#### names visible.",
+    "Do not use this staff file in a real long-term franchise save. Switch back to playable V22."
+  ],
+  "limitations": [
+    "V24 is schema-preserving under the known-good V22 rows, but actual CapForge import has NOT yet been verified.",
+    "V24 changes 73 fictional free agents only to expose visual IDs; it fixes no actual coach likeness.",
+    "A complete face-to-ID visual reference is still required before curation.",
+    "Market layout/sorting and display of all diagnostic free agents requires in-game confirmation."
+  ]
+}
