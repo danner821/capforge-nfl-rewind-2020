@@ -221,7 +221,7 @@ def scale_items(prepared):
     def total(items,factor):
         amount=0
         for v in items:
-            salary,bonus,_=v[0]
+            salary,bonus,_=v[1][0]
             amount+=max(MIN_SALARY,round1k(salary*factor))
             amount+=round1k(bonus*factor)
         return amount
