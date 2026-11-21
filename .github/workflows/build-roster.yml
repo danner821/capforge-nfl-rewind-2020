@@ -40,6 +40,8 @@ jobs:
         run: python scripts/build_v12_future.py
       - name: Generate V15 audited 2028–2029 prospective draft coverage
         run: python scripts/build_v15_future_audit.py
+      - name: Generate separate 2020 historical coaching staff V16 preview
+        run: python scripts/build_v16_historical_staff.py
       - name: Check generated JSON
         run: |
           python scripts/validate_capforge_roster.py preview/players-2020-three-class.json preview/players-2020-four-class-test.json preview/players-2020-extended-experimental.json preview/players-2020-four-class-history-v8.json preview/players-2020-six-class-history-v8.json preview/players-2020-four-class-authentic-v9.json preview/players-2020-six-class-authentic-v9.json preview/players-2020-seven-class-projection-v10.json preview/players-2020-nine-class-projection-v10.json preview/players-2020-seven-class-scoutfix-v12.json preview/players-2020-nine-class-scoutfix-v12.json preview/players-2020-nine-class-scout-audit-v15.json preview/players-2020-seven-class-mockfix-v11.json preview/players-2020-nine-class-mockfix-v11.json
@@ -55,6 +57,8 @@ jobs:
         run: python scripts/validate_v12_future.py
       - name: Validate V15 2028–29 prospects, portrait audit and approved 2027 preservation
         run: python scripts/validate_v15_future_audit.py
+      - name: Validate V16 historical coaching names, team IDs and CapForge staff layout
+        run: python scripts/validate_v16_historical_staff.py
       - name: Validate V11 consensus names, warnings and curated QB portraits
         run: python scripts/validate_v11_mockfix.py
       - name: Audit modeled 2020 contracts and historical coaching staff gap (spoiler-free)
