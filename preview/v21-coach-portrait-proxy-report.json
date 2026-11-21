@@ -1,0 +1,67 @@
+{
+  "status": "V21_SOURCE_PLAYER_IDS_ASSIGNED_STAFF_COMPATIBILITY_AND_LIKENESS_UNVERIFIED",
+  "sourceStaffFile": "staff-2020-coaches-age-qa-v20.json",
+  "sourcePlayerFile": "players-2020-nine-class-contracts-v19.json",
+  "outputStaffFile": "staff-2020-coach-portrait-proxies-v21.json",
+  "version": "V21-PILOT",
+  "coachSlots": 128,
+  "coachPortraitProxyAssignments": 7,
+  "unreviewedDefaultCoachPortraits": 121,
+  "assignments": {
+    "GB:headCoach": {
+      "coach": "Matt LaFleur",
+      "referencePlayer": "Jimmy Garoppolo",
+      "portraitId": "portrait-0798",
+      "reviewStatus": "UNVERIFIED_STAFF_CARTOON_APPROXIMATION_NEEDS_GAME_VISUAL_REVIEW"
+    },
+    "LAR:headCoach": {
+      "coach": "Sean McVay",
+      "referencePlayer": "Baker Mayfield",
+      "portraitId": "portrait-0826",
+      "reviewStatus": "UNVERIFIED_STAFF_CARTOON_APPROXIMATION_NEEDS_GAME_VISUAL_REVIEW"
+    },
+    "ARI:headCoach": {
+      "coach": "Kliff Kingsbury",
+      "referencePlayer": "Derek Carr",
+      "portraitId": "portrait-0753",
+      "reviewStatus": "UNVERIFIED_STAFF_CARTOON_APPROXIMATION_NEEDS_GAME_VISUAL_REVIEW"
+    },
+    "SF:headCoach": {
+      "coach": "Kyle Shanahan",
+      "referencePlayer": "Kirk Cousins",
+      "portraitId": "portrait-0765",
+      "reviewStatus": "UNVERIFIED_STAFF_CARTOON_APPROXIMATION_NEEDS_GAME_VISUAL_REVIEW"
+    },
+    "CLE:headCoach": {
+      "coach": "Kevin Stefanski",
+      "referencePlayer": "Ryan Tannehill",
+      "portraitId": "portrait-0520",
+      "reviewStatus": "UNVERIFIED_STAFF_CARTOON_APPROXIMATION_NEEDS_GAME_VISUAL_REVIEW"
+    },
+    "CIN:headCoach": {
+      "coach": "Zac Taylor",
+      "referencePlayer": "Jared Goff",
+      "portraitId": "portrait-0007",
+      "reviewStatus": "UNVERIFIED_STAFF_CARTOON_APPROXIMATION_NEEDS_GAME_VISUAL_REVIEW"
+    },
+    "NYG:headCoach": {
+      "coach": "Joe Judge",
+      "referencePlayer": "Joe Burrow",
+      "portraitId": "portrait-0523",
+      "reviewStatus": "UNVERIFIED_STAFF_CARTOON_APPROXIMATION_NEEDS_GAME_VISUAL_REVIEW"
+    }
+  },
+  "staffRowCount": 672,
+  "allCoachNamesRolesTeamsIdentifiersPreserved": true,
+  "allCoachAgesSkillsPersonalityContractsPreserved": true,
+  "scoutsDoctorsFreeAgentsPreserved": true,
+  "playerRostersTeamsAndDraftClassesUntouched": true,
+  "uncertainty": [
+    "Player portrait IDs have passed CapForge Player import; that does not guarantee Coach importer allows or correctly renders them.",
+    "Resemblance is a proposed human-selected approximation, not based on visually comparing actual CapForge art.",
+    "This pilot targets seven known named 2020 head coaches; other 121 coaching chairs keep CapForge default avatars.",
+    "Do not call this a final portrait correction until a disposable-game import and face review pass.",
+    "Keep V16 (in-game green) and V20 (age corrected) as separate fallbacks. Never update saves in-place."
+  ],
+  "nextInGameCheck": "Create NEW disposable 2020 game with Players V19, Teams V2, Staff V21. Confirm Staff green, then view Green Bay head coach Matt LaFleur first, and other six coach cards. Report any wrong face or warning."
+}
