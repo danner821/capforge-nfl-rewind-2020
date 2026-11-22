@@ -1,0 +1,45 @@
+{
+  "release": "V33_USER_APPROVED_PERMANENT_FRANCHISE_RECOMMENDATION",
+  "releasedDate": "2026-11-21",
+  "scope": "CapForge NFL Rewind starting season 2020 roster-only league import; not game-engine modification",
+  "fileSelection": [
+    {
+      "slot": "Players",
+      "version": "V30",
+      "path": "preview/players-2020-nine-class-contracts-v30-TEST.json",
+      "blobSHA": "b85317e2c467da7ac370062debf0bf665c63a10b",
+      "url": "https://raw.githubusercontent.com/danner821/capforge-nfl-rewind-2020/main/preview/players-2020-nine-class-contracts-v30-TEST.json"
+    },
+    {
+      "slot": "Teams",
+      "version": "V2",
+      "path": "preview/teams-2020-roofs-v2.json",
+      "blobSHA": "b54938f32614faeac0f5336621864d691c369b3c",
+      "url": "https://raw.githubusercontent.com/danner821/capforge-nfl-rewind-2020/main/preview/teams-2020-roofs-v2.json"
+    },
+    {
+      "slot": "Staff",
+      "version": "V25",
+      "path": "preview/staff-2020-head-coach-video-matched-v25.json",
+      "blobSHA": "2e843a0728b7be9416fb2f9fc3289cad0ebe34b1",
+      "url": "https://raw.githubusercontent.com/danner821/capforge-nfl-rewind-2020/main/preview/staff-2020-head-coach-video-matched-v25.json"
+    }
+  ],
+  "reportedGameValidation": [
+    "All three imports user-reported green and 2020 league successfully launched.",
+    "2020 Week-1 PIT, BAL, JAX payroll and cap screenshots reviewed, all legal and base $300M.",
+    "2021 Week-1 PIT, BAL, JAX payroll + updated rosters reviewed; season rollover verified.",
+    "User explicitly stated same disposable game simulated through 2024 and everything looked great.",
+    "After request for remaining 2027–2029 spot check, user replied 'Everything looks good! Am I ready to roll?' Treat as positive overall acceptance, not independently captured year-by-year video confirmation."
+  ],
+  "limitations": [
+    "2027, 2028 and 2029 draft-board screens were not supplied in the current latest user turn; user reports everything looked good, but no late-year screenshots were independently audited.",
+    "Direct visual evidence of each free-agent acquisition/draft selection or transaction history was not supplied; season rollover and user simulation reports suffice for practical release readiness, not a formal game-engine verification.",
+    "Latest 'TEST' suffix in V30 file is an immutable/versioned name retained to preserve the EXACT file already imported and accepted. It is the recommended production Players file; do not regenerate or rename and risk unnecessary import drift.",
+    "Real-game franchise behavior after 2024 is not guaranteed by static CI; user remains free to report anomalies.",
+    "Existing disposable saves, original V19 fallback, V2 teams, V25 staff and Project Ice unchanged."
+  ],
+  "status": "READY_TO_START_PERMANENT_2020_FRANCHISE_WITH_KNOWN_LIMITATIONS",
+  "instructions": "Start a NEW permanent 2020 franchise in CapForge, import exactly these three raw URLs in matching slots, confirm green, begin and preserve the new game save. Do not use test save as permanent unless user deliberately chooses it.",
+  "releasePolicy": "Freeze V30/V2/V25 as selected. Any later improvements must be separately versioned and optional; never overwrite these files or assume existing franchise saves update retroactively."
+}

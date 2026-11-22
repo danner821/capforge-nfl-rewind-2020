@@ -4,6 +4,14 @@ _Last reviewed: 2026-11-20. Single source of truth: current main branch, version
 
 
 
+## V33 — User-approved recommended permanent 2020 CapForge franchise stack (2026-11-21)
+
+- User confirmed their V30 disposable franchise simulated successfully through **2024**, then replied **"Everything looks good! Am I ready to roll?"** to the remaining late-horizon check. Interpret this as **user approval to begin the permanent game** with current working files; **do not claim independently inspected 2027/2028/2029 screens**, since no such new screenshots were included. Tradeoff is acceptable for practical launch; no unrealistic guarantee every future season will be bug-free.
+- **FINAL SELECTED IMPORTS (do not rebuild or rename):** Players `preview/players-2020-nine-class-contracts-v30-TEST.json` (existing `TEST` filename remains because it is the actual approved imported file), Teams `preview/teams-2020-roofs-v2.json`, Staff `preview/staff-2020-head-coach-video-matched-v25.json`. They passed green CapForge validation per user, game launch, 2020/2021 real payroll screens, 2021 roster transitions, and user-tested through 2024. All **nine 480-prospect 2021–29 draft classes** remain intact in verified import. No new roster change is necessary.
+- **PRACTICAL RELEASE STATUS: READY for new permanent 2020 franchise**, with honest limitation: user's positive late-years report is not independently screened. Recommended steps: new game, set starting season 2020, import all three **raw.githubusercontent.com** versioned paths, confirm green, save. Don't accidentally continue the disposable testing save as the new permanent franchise.
+- Release manifest `data/v33-final-franchise-import-manifest.json` plus copyable URLs `docs/FINAL_FRANCHISE_IMPORTS.md`; immutable original V19 fallback, approved player ratings/portraits/coach avatars, all existing saves and Project Ice unchanged.
+- Any later actual-game issue should lead to **new optional versions**, never overwrites/retroactive changes to this stable tested stack. No further forced simulation testing needed for user to start real franchise.
+
 ## 2026-11-21: V30 disposable franchise user-simmed successfully through the 2024 season
 
 - User message: **"I summed up to 2024 and everything looks great!"** In project context this means the same disposable V30 starting-2020 franchise has now been simulated through 2024, with **no problem reported**. Treat as **USER-REPORTED MULTI-SEASON GAME ACCEPTANCE**, not a screenshot-verified 2024 payroll or exhaustive draft/FA inspection.
@@ -87,7 +95,7 @@ _Last reviewed: 2026-11-20. Single source of truth: current main branch, version
 | 8 | Historical 2020 coaching identities and portraits (V25) | **USER-APPROVED IN-GAME SPOT CHECKS** | User inspected multiple teams' coaching staffs after V25 and found no incorrect faces or staff issues; all 32 head-coach avatars were curated from recorded CapForge gallery. No claim every OC/DC/ST face was individually reviewed | Freeze V25 as preferred Staff; only address specific newly reported exceptions, don't repeat a full portrait overhaul |
 | 9 | Accurate 2020 Week 1 depth, injuries and transactions | **NOT STARTED** | Madden 21-derived snapshot is not guaranteed exact Week 1 | Audit 32 rosters against contemporary 2020 team records, preserve cap legality |
 | 10 | 2021 offseason and long-term franchise regression | **USER 2021 SIM WORKED; ECONOMY NEEDS TARGETED VALIDATION** | Draft/free agency ran through 2021; mean 30-team OVR rose only 0.4; GB −7, TB −6, NO −5 should be spot-checked for depth/free-agent changes. Some teams ended below $10M space, while PIT had $118M. V27 measured mismatch to import model, root cause not fully known | Actual PIT/BAL 2021 expanded Payroll reviewed in V29; derive protected multi-year contract-sensitivity test, then advance saved test to 2022–2029 |
-| 11 | Final freeze for permanent 2020 dynasty | **NOT READY** | Requires all essential game validations and history realism, not just green CI | Versioned stable players+teams+staff URLs; preserve old working exports and backups |
+| 11 | Final freeze for permanent 2020 dynasty | **READY FOR USER TO START — V33 SELECTED IMPORTS** | V30 + V2 + V25 user-reported green, 2020–2021 actual cap screens and game rollover, smooth through 2024 per user, later feedback positive | Keep selected imports immutable and start a fresh real 2020 franchise; user should report any late-game anomalies |
 
 ## V27 VERIFIED result — precise economy findings
 
