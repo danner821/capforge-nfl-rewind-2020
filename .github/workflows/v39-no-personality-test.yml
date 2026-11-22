@@ -1,0 +1,62 @@
+name: V39 isolated optional personality omission (disposable import only)
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'scripts/build_v39_no_personality_test.py'
+      - 'scripts/validate_v39_no_personality_test.py'
+      - '.github/workflows/v39-no-personality-test.yml'
+      - 'docs/ROADMAP.md'
+      - 'docs/LIVE_HANDOFF.md'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build_v39_no_personality_test.py'
+      - 'scripts/validate_v39_no_personality_test.py'
+      - '.github/workflows/v39-no-personality-test.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capforge-v39-no-personality-test
+  cancel-in-progress: false
+
+jobs:
+  build-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Syntax-check isolated test and independent validator
+        run: python -m py_compile scripts/build_v39_no_personality_test.py scripts/validate_v39_no_personality_test.py
+      - name: Build new V39 experimental import exclusively from protected V36
+        run: python scripts/build_v39_no_personality_test.py
+      - name: Independently check every nonpersonality player field
+        run: python scripts/validate_v39_no_personality_test.py
+      - name: Validate 32 club lineups, schema and nine imported draft classes
+        run: python scripts/validate_capforge_roster.py preview/players-2020-nine-class-no-personality-v39-TEST.json
+      - name: Ensure previous imports, staff and teams remain untouched
+        run: |
+          git diff --exit-code -- preview/players-2020-nine-class-editor-compatible-growth-v36-TEST.json preview/players-2020-nine-class-draft-history-v34-TEST.json preview/teams-2020-roofs-v2.json preview/staff-2020-head-coach-video-matched-v25.json
+          test -f preview/players-2020-nine-class-no-personality-v39-TEST.json
+          test -f preview/v39-no-personality-import-audit.json
+      - name: Publish separate V39 trial and audit only after passing main CI
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add preview/players-2020-nine-class-no-personality-v39-TEST.json preview/v39-no-personality-import-audit.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "build: publish protected V39 no-personality TEST import"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 2
+          done
+          echo "V39 separate candidate publication failed" >&2
+          exit 1
