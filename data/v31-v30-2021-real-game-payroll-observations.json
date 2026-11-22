@@ -1,0 +1,67 @@
+{
+  "version": "V31_2021_WEEK1_V30_REAL_GAME_PAYROLL_SCREENS",
+  "source": "20.566667-second Nov 21 2026 CapForge mobile recording supplied by user immediately after V30 Week-1 2020 payroll test, showing PIT, BAL, JAX 2021 Week-1 Payroll and team rosters; raw video not published",
+  "season": 2021,
+  "gameLocation": "League > Week 1 > 2021 season; Team > Players > Payroll; all three clubs at 0-0",
+  "sameV30TestSave": "Strongly contextual: user advanced the same disposable V30 test save after assistant requested progression, no separate save identity verification in video",
+  "baseCapM": 300,
+  "carryoverM": 30,
+  "maxCarryoverM": 30,
+  "effectiveCapM": 330,
+  "teamScreens": {
+    "PIT": {
+      "team": "Pittsburgh Steelers",
+      "teamOVR": 79,
+      "defenseOVR": 82,
+      "offenseOVR": 77,
+      "committedM": 293.3,
+      "spaceM": 36.7,
+      "deadMoneyM": 0,
+      "year2022": {
+        "committedM": 232.4,
+        "spaceM": 67.6,
+        "pickReserveAlreadyCommittedM": 9.2
+      }
+    },
+    "BAL": {
+      "team": "Baltimore Ravens",
+      "teamOVR": 87,
+      "defenseOVR": 84,
+      "offenseOVR": 88,
+      "committedM": 317,
+      "spaceM": 13,
+      "deadMoneyM": 5.2,
+      "year2022": {
+        "committedM": 255.9,
+        "spaceM": 44.1,
+        "pickReserveAlreadyCommittedM": 18.9
+      }
+    },
+    "JAX": {
+      "team": "Jacksonville Jaguars",
+      "teamOVR": 76,
+      "defenseOVR": 76,
+      "offenseOVR": 76,
+      "committedM": 212.1,
+      "spaceM": 117.9,
+      "deadMoneyM": 9,
+      "year2022": {
+        "committedM": 171.8,
+        "spaceM": 128.2,
+        "pickReserveAlreadyCommittedM": 25.9
+      }
+    }
+  },
+  "rosterExamples": {
+    "PIT": "Tua Tagovailoa appears as a 76 OVR starting QB; Ben Roethlisberger is a 76 OVR reserve/rotation QB in the screen. Demonstrates substantial roster change, not proof of how or when each transaction took place.",
+    "BAL": "Lamar Jackson appears as a 95 OVR starter and J.K. Dobbins as an 84 OVR RB starter; does not independently prove all drafted players imported."
+  },
+  "limits": [
+    "Week-1 2021 and roster changes are directly visible, so 2020→2021 season rollover is proven for this tested V30 league. The footage does not show each offseason UI step, free agency signing, or actual draft board/pick results. Don't claim a full FA/draft mechanics acceptance independently.",
+    "2022 space numbers are future-year forecasts shown in 2021, not verified 2022 after simulation.",
+    "2021 cap is the $300M base plus $30M max carryover; 2022 projection rows show $300M base with PICKS already in committed.",
+    "Jacksonville remains liquid ($117.9M space) in 2021; this may reflect AI decisions but this footage does not reveal a cap-engine failure.",
+    "Dead money BAL $5.2M and JAX $9.0M in 2021; no individual release ledger, so do not infer causal transactions from displayed amounts."
+  ],
+  "nextAcceptance": "Confirm 2021 draft prospects in an actual board/roster, if not already seen, then accelerate same disposable V30 game to 2024, 2027, and 2029 with spot checks of class persistence and cap/roster stability. Current 2021 season simulation passed at opening stage, but not permanent dynasty launch certification."
+}
