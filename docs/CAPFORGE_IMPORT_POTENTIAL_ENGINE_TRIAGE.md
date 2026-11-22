@@ -67,3 +67,23 @@ No message to external developer has been sent by this repo; this is a ready-to-
 ## Keep frozen
 
 **V34** remains the user-confirmed trade-value fix and **V36** remains a failed experimental-growth comparator; no player, coach, team, rating, portrait, salary, hidden potential, draft-class, existing save or Project Ice change is warranted without further evidence.
+
+
+## V41 — NEW verified user fact: failed V39 test was in ARCADE
+
+The user answered **"Arcade"** in direct response to the question **"Were you running these V39 tests in Arcade or Dynasty mode?"** following the failed V39 import test. This confirms the latest V39 regression occurred in **Arcade**. Earlier V34/V36 game-mode settings are not independently known and should not be retroactively asserted.
+
+**Consequence:** Dynasty staff READ/READ PACE does not explain the latest V39 result. Arcade is documented as showing true player ratings. The same symptom continuing after removal of authored `progressionCurve` (V36) and `personality` (V39) makes an **app-side new-franchise import hydration / derived-development-state difference** the leading hypothesis, not a demonstrated source-field schema error. The imported potential is correct in roster preview; no-change editor Save changes the playable player behavior. The app's definition of editor Future Growth may still be a dynamic projection, and the proprietary engine is not available here, so avoid asserting conclusively that the internal true potential field is overwritten.
+
+**No new Arcade test or speculative version needed to pursue developer inquiry.** Request developer inspect: (1) raw `development.ovr` and `potential` after parser validation; (2) player normalization when team preview becomes a live 2020 Arcade league; (3) tier/growth cache and true internal ceiling before/after Player Editor **Save Changes with no changes**; (4) whether Talent Market or other Arcade mechanics intentionally modify this; (5) supported schema or once-per-league, all-player initialization that also handles later draft classes without 6,613 manual saves.
+
+Suggested support subject: **CapForge Arcade custom roster import loses player's development state between preview and playable save; no-change Player Editor Save fixes it**
+
+Reproduction using **V39** (latest failed, exact Arcade mode confirmed), V2 Teams and V25 Staff:
+- https://raw.githubusercontent.com/danner821/capforge-nfl-rewind-2020/main/preview/players-2020-nine-class-no-personality-v39-TEST.json
+- https://raw.githubusercontent.com/danner821/capforge-nfl-rewind-2020/main/preview/teams-2020-roofs-v2.json
+- https://raw.githubusercontent.com/danner821/capforge-nfl-rewind-2020/main/preview/staff-2020-head-coach-video-matched-v25.json
+- 2020 Regular Season, **Arcade**. Before creating franchise: Bills preview Josh Allen card Franchise. After new franchise: Starter/Impact; without Editor Save, future-growth projection falls (previous controlled tests about 99 to 86 by midyear), while no-change Editor Save restores Franchise and sustained expected growth in A/B control. Latest V39 failed with same problem; don't misrepresent as fresh video of a full season.
+- Relevant tracked [Issue #41](https://github.com/danner821/capforge-nfl-rewind-2020/issues/41) and versioned V36/V39 static protection audits.
+
+**Do not ask the user to repeat a mode-controlled Arcade test. Do not direct mass manual player saves, or change roster inputs. No external developer contact has been made.** Keep permanent release blocked until supported app-level correction or validated schema fix.
