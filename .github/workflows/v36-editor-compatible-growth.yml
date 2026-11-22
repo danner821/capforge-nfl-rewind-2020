@@ -1,0 +1,55 @@
+name: V36 test compatibility of imported growth without custom progressionCurve
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'scripts/build_v36_editor_compatible_growth.py'
+      - 'scripts/validate_v36_editor_compatible_growth.py'
+      - '.github/workflows/v36-editor-compatible-growth.yml'
+      - 'docs/ROADMAP.md'
+      - 'docs/LIVE_HANDOFF.md'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build_v36_editor_compatible_growth.py'
+      - 'scripts/validate_v36_editor_compatible_growth.py'
+      - '.github/workflows/v36-editor-compatible-growth.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capforge-v36-growth-import
+  cancel-in-progress: false
+
+jobs:
+  build-validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate V36 strictly remove custom curves from V34
+        run: python scripts/build_v36_editor_compatible_growth.py
+      - name: Independent V36 source-protection and potential preservation tests
+        run: python scripts/validate_v36_editor_compatible_growth.py
+      - name: All-team CapForge format validation
+        run: python scripts/validate_capforge_roster.py preview/players-2020-nine-class-editor-compatible-growth-v36-TEST.json
+      - name: Only publish the versioned trial after success on main
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add preview/players-2020-nine-class-editor-compatible-growth-v36-TEST.json preview/v36-progression-import-compatibility-audit.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "build: publish V36 growth-import compatibility test without custom curves"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 2
+          done
+          echo "V36 test candidate publication failed" >&2
+          exit 1
