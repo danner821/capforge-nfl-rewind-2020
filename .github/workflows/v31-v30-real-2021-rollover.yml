@@ -1,0 +1,53 @@
+name: Audit real V30 2021 CapForge rollover (V31)
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'data/v31-v30-2021-real-game-payroll-observations.json'
+      - 'scripts/audit_v31_v30_2021_cap_rollover.py'
+      - 'scripts/validate_v31_v30_2021_cap_rollover.py'
+      - '.github/workflows/v31-v30-real-2021-rollover.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'data/v31-v30-2021-real-game-payroll-observations.json'
+      - 'scripts/audit_v31_v30_2021_cap_rollover.py'
+      - 'scripts/validate_v31_v30_2021_cap_rollover.py'
+      - '.github/workflows/v31-v30-real-2021-rollover.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capforge-v31-observed-season-rollover
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compare observed V30 Week-1 2020 and Week-1 2021 payrolls
+        run: python scripts/audit_v31_v30_2021_cap_rollover.py
+      - name: Validate game observation, no speculative FA and preserved import hashes
+        run: python scripts/validate_v31_v30_2021_cap_rollover.py
+      - name: Publish read-only audit after passing on main
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add preview/v31-v30-real-2021-cap-rollover-audit.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "audit: publish observed V30 2021 season-rollover payroll results"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 2
+          done
+          echo "V31 audit publication failed" >&2
+          exit 1
