@@ -1,0 +1,66 @@
+{
+  "alternativeHypothesis": "The app import path fails to initialize other derived player data even without a curve, in which case only a CapForge app update/fix can produce equivalent no-op editor save at scale.",
+  "baseSeason": 2020,
+  "draftProspects": 4320,
+  "draftProspectsPerYear": {
+    "2021": 480,
+    "2022": 480,
+    "2023": 480,
+    "2024": 480,
+    "2025": 480,
+    "2026": 480,
+    "2027": 480,
+    "2028": 480,
+    "2029": 480
+  },
+  "gameTestProtocol": [
+    "Create a NEW disposable 2020 CapForge game with V36 Players and unchanged V2 Teams/V25 Staff, verify all three validation checks green.",
+    "Without opening or saving ANY player editor, read Josh Allen QB initial player card potential tier, 99 ceiling if shown, Trade Center value, and current OVR.",
+    "Sim through midseason and end of 2020; WITHOUT saving Josh Allen, inspect his future growth ceiling again, player card tier, and actual OVR progression. Compare against the user's original V34 99->86 unsaved and V34 no-op-save 99-stable controls.",
+    "Check at least two other initially mis-labeled high-potential players; no editor save before sim.",
+    "If V36 retains intended ceilings/development without editor saves, accept V36 after checking rookies trade values and 2021 class. If not, do not launch real franchise; escalate to CapForge developer with controlled reproduction and leave protected V34/V30 unchanged."
+  ],
+  "hypothesis": "Nonstandard 31-entry custom progression curves in source import cause runtime 99->86 ceiling drop; editor no-op save normalizes them. Public comparable CapForge imports omit the curve. Removing it may let the engine honor numeric potential via normal initialization.",
+  "inputFile": "players-2020-nine-class-draft-history-v34-TEST.json",
+  "limitations": [
+    "Github CI checks JSON structural parity, not CapForge player-growth engine behavior.",
+    "Unknown proprietary app logic; do not assume no-op Save is equivalent to removing progressionCurve.",
+    "There is no bulk in-game player-editor save API in this repository, and existing imported save data is not retroactively rewritten by a new Players URL.",
+    "Using an immutable V36 test file changes the growth-curve configuration by design, but not the authored numeric OVR/ceiling or any of 4,320 future prospect identities."
+  ],
+  "newV36GitBlobSHA1": "c0bfebadba5116312449b33076eee0eeecab2a27",
+  "originalV34GitBlobSHA1": "b602623bd6e238e2d29ea893773a3c32b21c691a",
+  "originalV34SHA256": "f853f75363c7e92a97db2b248d8a7984ed03cd9b147a920445a0e163f7f33fdf",
+  "outputFile": "players-2020-nine-class-editor-compatible-growth-v36-TEST.json",
+  "playersAlreadyWithoutCurve": {
+    "draftClass": 302
+  },
+  "playersWithNonstandard31EntryCurveRemoved": {
+    "draftClass": 4018,
+    "roster": 2293
+  },
+  "playersWithOriginalNumericalPotentialPreserved": {
+    "draftClass": 4320,
+    "roster": 2293
+  },
+  "protected": {
+    "ProjectIceUnchanged": true,
+    "V25StaffSHA256": "a1c23ba1ef85cde8299e2952a5b9b9c553e89a9638d44e245e56a42c80516062",
+    "V2TeamsSHA256": "2a2e380b7a2ad2583a77479a19f2fddb8fc819531f23aa6ed8f0a52f6950b26f",
+    "V34Immutable": true,
+    "all6613PlayerIdsTeamsAndPoolUnchanged": true,
+    "allDraftNumbersIncludingCorrectedV34Identical": true,
+    "allFacePortraitsAndBiographiesIdentical": true,
+    "allFutureDraftClasses480PerYearPresent": true,
+    "allPlayerContractsAndCapChargesIdentical": true,
+    "everyAttributeRatingIdentical": true,
+    "playerNumericOVRAndPotentialIdentical": true
+  },
+  "publicCapForge2018ExampleGitBlobSHA1": "056228d27bb892b0cce49d511db4e521cd5f35f6",
+  "publicCapForge2026ExampleGitBlobSHA1": "9c35138d93b5065b577cfe07521da49503a1e456",
+  "rosterPlayers": 2293,
+  "sourceOnlyFieldsRemoved": [
+    "development.progressionCurve"
+  ],
+  "status": "V36_EXPERIMENTAL_EDITOR_COMPATIBLE_GROWTH_IMPORT_BUILT_NOT_GAME_VERIFIED"
+}
