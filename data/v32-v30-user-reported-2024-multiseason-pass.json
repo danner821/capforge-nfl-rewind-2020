@@ -1,0 +1,25 @@
+{
+  "version": "V32_V30_2024_MULTI_SEASON_USER_ACCEPTANCE",
+  "reportedAt": "2026-11-21",
+  "userFeedback": "I summed up to 2024 and everything looks great!",
+  "interpretation": "In the same disposable V30 test franchise started in season 2020, simulation advanced through 2024 with no problem reported by the user.",
+  "evidenceType": "direct user report; no attached screenshots or recording for 2024",
+  "previousGrounding": "V30 2020 and 2021 Week-1 payroll screens, user-reported green imports, actual 2021 rollover; see V31 and V30 source records",
+  "acceptance": "2020-2024 multi-season progression USER-REPORTED PASS",
+  "limits": [
+    "No individually reviewed 2024 payroll or 2024 draft-board screenshot",
+    "No explicit per-year confirmation of draft/FA transactions beyond reported smooth progression",
+    "2027-2029 prospective classes not yet tested in a long-horizon game",
+    "Not yet certified as a permanent franchise import"
+  ],
+  "immutableStack": {
+    "players": "preview/players-2020-nine-class-contracts-v30-TEST.json",
+    "teams": "preview/teams-2020-roofs-v2.json",
+    "staff": "preview/staff-2020-head-coach-video-matched-v25.json",
+    "all4320FutureProspectsProtected": true,
+    "oldV19PlayersUnchanged": true,
+    "ProjectIceUnchanged": true,
+    "noNewRostersOrContractsEmitted": true
+  },
+  "nextStep": "Continue SAME disposable V30 franchise to late-years 2027-2029; spot-check 2027/2028/2029 imported draft boards and absence of league/game failure, then approve V30 stack for permanent franchise if sound."
+}
