@@ -4,6 +4,13 @@ _Last reviewed: 2026-11-20. Single source of truth: current main branch, version
 
 
 
+## V38 — read-only schema comparison after V36 failed (2026-11-21)
+
+- **New engineering check only; no new Players file.** `scripts/audit_v38_public_import_schema.py` validates the exact frozen V36/V2/V25 imports, compares player/development schema-key presence against the pinned published 2018/2026 CapForge roster examples, and writes **only aggregate, spoiler-free schema diagnostics** to `preview/v38-public-import-development-schema-audit.json` after passing main CI. Dedicated workflow `.github/workflows/v38-public-import-schema-forensics.yml`.
+- **Motivation:** The user demonstrated that V36 no-op editor Save changes playable growth behavior even though the preview reads the raw ceiling. Another speculative import or mass player edits are not warranted. Compare known accepted importer shapes before proposing a schema-specific test.
+- **A schema match is not an engine fix.** Neither GitHub Actions nor this roster repository runs CapForge's proprietary new-league initialization, staff reads, player editor or season progression. Interpret mismatches as hypotheses, not proven defects.
+- **Decisive remaining in-game discriminator:** a **single disposable Arcade** save with unchanged V36 Players / V2 Teams / V25 Staff and **no editor Save**, compare Bills preview, Week 1 and mid-2020 Josh Allen card plus editor Future Growth (Cancel/Back). Dynasty may display staff reads; if true Arcade growth still drops, escalate reproducible app-side hydration issue. Preserve all historic files, 4,320 prospects, and Project Ice. Permanent release remains blocked pending mode-controlled verification.
+
 ## V37 investigation only — **V36 in-game failed**, new-game preview vs Dynasty staff read must be isolated (2026-11-21)
 
 - User repeated **V36** exact A/B. Before choosing team, **NEW GAME → VIEW TEAM Bills preview shows Josh Allen QB as Franchise**. After starting career, actual player card shows **Starter or Impact**. In the unsaved branch, "future growth" falls **99 → ~86 by midseason / year end**; in a separate otherwise-identical save, opening Josh's editor and clicking **Save Changes with no edits** instantly restores Franchise badge and **99 sustained through year-end**, with better development. User described "same problem happened" on V36 as on V34.
