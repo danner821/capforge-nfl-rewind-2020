@@ -4,6 +4,15 @@ _Last reviewed: 2026-11-20. Single source of truth: current main branch, version
 
 
 
+## V36 published and CI green — custom-curve omission experiment, **actual game NOT YET tested** (2026-11-21)
+
+- V34 user A/B is **CONFIRMED MECHANICAL BUG**, not just Impact vs Franchise badge: Josh Allen QB unsaved **99→86 future ceiling** by midseason/end season and inadequate growth; identical new V34 save + immediate **no-op editor Save** maintained future ceiling **99** and proper development through one season. This blocks recommending V34 for a permanent save without bulk fix.
+- GitHub exact-blob audit: V34 Josh Allen `development.ovr=77`, `development.potential=99`, but the original `scripts/build_2020.py` added a **custom 31-entry `progressionCurve`**. 6,311 of 6,613 V34 records have that field (2,293 starting rosters + 4,018 future prospects), 302 are already without it. Public working 2018 (2,514 players) and 2026 (2,051 players) CapForge roster examples have zero custom `progressionCurve` fields.
+- **V36 optional test file PUBLISHED** `preview/players-2020-nine-class-editor-compatible-growth-v36-TEST.json`, with independent `preview/v36-progression-import-compatibility-audit.json`. The only intended JSON change is deleting `development.progressionCurve`; all numeric `development.ovr`, `potential`, every ratings key, portrait, contract, 2020 drafted-pick repair, 2021–29 480-person classes unchanged. V34/V30 files immutable and protected.
+- PR [#43](https://github.com/danner821/capforge-nfl-rewind-2020/pull/43) merged; V36 dedicated CI PR + main GitHub Actions **PASS**. GitHub structural checks cannot simulate the proprietary CapForge engine.
+- **Mandatory 1-season real-game regression test:** start disposable 2020 V36 Players + V2 Teams + V25 Staff; without opening/saving Josh Allen's editor before sim, observe his initial badge and future ceiling; sim until midseason and end 2020; inspect future ceiling AND actual OVR growth. Check one other high-growth imported player. Also confirm Joe Burrow & Justin Jefferson still have legitimate trade values. If no-op editor saves are still required, **DO NOT make user click 2,293+4,320 cards**; escalate as proprietary engine import normalization defect and seek developer bulk import fix. If natural development stays appropriate, then V36 may be accepted for actual franchise after 2021 prospect spot-check.
+- Test instructions: `docs/V36_GROWTH_IMPORT_TEST.md`. Track controlled A/B at [Issue #41](https://github.com/danner821/capforge-nfl-rewind-2020/issues/41). **Do not call V36 a proven fix yet.** New Players imports do NOT retroactively update existing games. No Project Ice change.
+
 ## V36 — CRITICAL: user confirms V34 unsaved development DROPS; editor save preserves potential (2026-11-21)
 
 - User ran **controlled two-save 2020 Josh Allen QB comparison**, holding the imported V34 stack constant:
