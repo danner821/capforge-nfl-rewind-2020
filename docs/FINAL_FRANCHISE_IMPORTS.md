@@ -35,3 +35,8 @@ Start **New Game → 2020 season**, paste each direct raw URL in the correspondi
 For provenance see `data/v33-final-franchise-import-manifest.json`, `preview/v30-contract-calibration-audit.json`, `preview/v31-v30-real-2021-cap-rollover-audit.json`, and `docs/LIVE_HANDOFF.md`.
 
 **Release freeze:** Future tweaks must create new optional versioned files instead of overwriting these confirmed working imports.
+
+
+## V34 follow-up — new trade-value test candidate (NOT YET game approved)
+
+See [V34 draft-pick repair test](V34_DRAFT_PICK_REPAIR_TEST.md). The old V33 final recommendation remains suspended until the new V34 file is checked for rookie trade values and the potential badge. Do not replace the V30 file in place or assume an existing save updates automatically.
