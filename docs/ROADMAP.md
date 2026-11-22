@@ -4,6 +4,14 @@ _Last reviewed: 2026-11-20. Single source of truth: current main branch, version
 
 
 
+## V41 — Arcade explicitly confirmed; V39 game-side regression is not Dynasty staff READ (2026-11-21)
+
+- User directly answered **"Arcade"** when asked which mode they used for the **V39** failed Josh Allen import/development test. This positively resolves the last mode ambiguity for **V39** (do not assume V34/V36 mode unless independently confirmed).
+- Arcade's true-rating display removes Dynasty staff READ as the explanation for the latest V39 difference between Buffalo's Franchise roster preview and Starter/Impact playable save. Previously reported A/B outcomes show **no-change Player Editor Save** stabilizes Josh Allen's expected growth; V39 still failed without it. Distinguish displayed Future Growth projection from persistent true internal potential until CapForge developer confirms internals.
+- **Stop repeated import variants and do not request a redundant Arcade test.** The controlled V39 Arcade report is sufficient to escalate a reproducible potential/initialization issue to the app developer. Investigate **new-game import hydration vs no-op Player Editor Save**; determine supported bulk initialization or schema contract, including 2021–2029 draft classes.
+- **No mass manual editor Save Changes** for 2,293 starting players or 4,320 future prospects. Maintain [blocking Issue #41](https://github.com/danner821/capforge-nfl-rewind-2020/issues/41) and [developer-ready triage](CAPFORGE_IMPORT_POTENTIAL_ENGINE_TRIAGE.md). No external message sent; developer contact requires user's action/approval.
+- All existing versioned Players, Teams V2, Staff V25, approved portraits and contracts, nine draft classes, user saves and Project Ice remain unchanged. **Permanent franchise release remains blocked.** No new import link or verified gameplay fix is ready.
+
 ## V40 — V39 in-game FAILED; stop roster-guessing and reject mass manual editor saves (2026-11-21)
 
 - Latest user test: V39 Players (no `personality`) + original Teams V2/Staff V25 **still causes the same Josh Allen playable-franchise development problem** seen with V34 and V36. This is **in-game user feedback**, not a GitHub Actions regression. V39 is **REJECTED for permanent franchise**. V39 is preserved as immutable diagnostic evidence.
