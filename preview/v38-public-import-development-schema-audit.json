@@ -1,0 +1,139 @@
+{
+  "V36GameGrowthTestUserReportedFailed": true,
+  "baseSeason": 2020,
+  "comparison": {
+    "publishedDevelopmentKeysAbsentFromV36": [],
+    "publishedPlayerKeysAbsentFromV36": [],
+    "v36DevelopmentKeysAbsentFromBothPublishedExamples": [],
+    "v36PlayerKeysAbsentFromBothPublishedExamples": [
+      "personality"
+    ]
+  },
+  "frozenSourceFilesSha256": {
+    "players-2020-nine-class-editor-compatible-growth-v36-TEST.json": "b9df92c367c3c50ec02b4f146741dc82b49e32fec42675e16eff9409a29c3cb0",
+    "staff-2020-head-coach-video-matched-v25.json": "a1c23ba1ef85cde8299e2952a5b9b9c553e89a9638d44e245e56a42c80516062",
+    "teams-2020-roofs-v2.json": "2a2e380b7a2ad2583a77479a19f2fddb8fc819531f23aa6ed8f0a52f6950b26f"
+  },
+  "frozenV36GitBlobSha1": "c0bfebadba5116312449b33076eee0eeecab2a27",
+  "importValidationPreviouslyReportedGreen": true,
+  "interpretation": "Schema-key overlap is only input compatibility evidence. It cannot establish true or staff-read potential, dynamic future growth, engine normalization at career creation, or the effect of editor Save.",
+  "mutations": "None: no new Players version, no potential or other player edits.",
+  "nextDiscriminator": "In a disposable ARCADE 2020 V36/V2/V25 import without editor Save, compare the Bills preview, Week 1 card/editor Future Growth and midseason true ratings. If the true 99 ceiling falls there, ask CapForge developer to inspect new-game vs editor-save hydration.",
+  "ourV36Shape": {
+    "developmentFieldPresence": {
+      "ovr": 6613,
+      "potential": 6613
+    },
+    "developmentShapes": {
+      "ovr,potential": 6613
+    },
+    "hasRatingsObjectCounts": {
+      "True": 6613
+    },
+    "playerCount": 6613,
+    "playerFieldPresence": {
+      "bio": 6613,
+      "contract": 6613,
+      "development": 6613,
+      "forename": 6613,
+      "iden": 6613,
+      "personality": 6311,
+      "pool": 6613,
+      "position": 6613,
+      "ratings": 6613,
+      "surname": 6613,
+      "teamAbbr": 2293,
+      "teamId": 2293
+    },
+    "poolCounts": {
+      "draftClass": 4320,
+      "roster": 2293
+    },
+    "rootKeys": [
+      "deadCap",
+      "meta",
+      "players",
+      "schemaVersion"
+    ]
+  },
+  "publishedSamples": {
+    "published2018": {
+      "developmentFieldPresence": {
+        "ovr": 2514,
+        "potential": 2414
+      },
+      "developmentShapes": {
+        "ovr": 100,
+        "ovr,potential": 2414
+      },
+      "frozenGitBlobSha1": "056228d27bb892b0cce49d511db4e521cd5f35f6",
+      "hasRatingsObjectCounts": {
+        "True": 2514
+      },
+      "playerCount": 2514,
+      "playerFieldPresence": {
+        "bio": 2514,
+        "contract": 1663,
+        "development": 2514,
+        "forename": 2514,
+        "iden": 2514,
+        "pool": 2514,
+        "position": 2514,
+        "ratings": 2514,
+        "surname": 2514,
+        "teamAbbr": 1663,
+        "teamId": 1663
+      },
+      "poolCounts": {
+        "freeAgent": 851,
+        "roster": 1663
+      },
+      "rootKeys": [
+        "meta",
+        "players",
+        "schemaVersion"
+      ],
+      "sourceUrl": "https://raw.githubusercontent.com/jmansfield96/capforge-custom-rosters/main/player-files/madden-2018-players.json"
+    },
+    "published2026": {
+      "developmentFieldPresence": {
+        "ovr": 2051,
+        "potential": 760
+      },
+      "developmentShapes": {
+        "ovr": 1291,
+        "ovr,potential": 760
+      },
+      "frozenGitBlobSha1": "9c35138d93b5065b577cfe07521da49503a1e456",
+      "hasRatingsObjectCounts": {
+        "True": 2051
+      },
+      "playerCount": 2051,
+      "playerFieldPresence": {
+        "bio": 2051,
+        "contract": 1696,
+        "development": 2051,
+        "forename": 2051,
+        "iden": 2051,
+        "pool": 2051,
+        "position": 2051,
+        "ratings": 2051,
+        "surname": 2051,
+        "teamAbbr": 1696,
+        "teamId": 1696
+      },
+      "poolCounts": {
+        "freeAgent": 355,
+        "roster": 1696
+      },
+      "rootKeys": [
+        "deadCap",
+        "meta",
+        "players",
+        "schemaVersion"
+      ],
+      "sourceUrl": "https://raw.githubusercontent.com/jmansfield96/capforge-custom-rosters/main/player-files/madden-27-players.json"
+    }
+  },
+  "status": "V38_STATIC_SCHEMA_FORENSICS_ONLY__ENGINE_BEHAVIOR_NOT_VERIFIED"
+}
