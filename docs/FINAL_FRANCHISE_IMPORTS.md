@@ -40,3 +40,8 @@ For provenance see `data/v33-final-franchise-import-manifest.json`, `preview/v30
 ## V34 follow-up — new trade-value test candidate (NOT YET game approved)
 
 See [V34 draft-pick repair test](V34_DRAFT_PICK_REPAIR_TEST.md). The old V33 final recommendation remains suspended until the new V34 file is checked for rookie trade values and the potential badge. Do not replace the V30 file in place or assume an existing save updates automatically.
+
+
+## V36 growth blocker follow-up (NOT YET APPROVED)
+
+The old V33/V34 launch guidance is **on hold** because actual V34 imported player potential declined unless the editor was saved. See [the separate V36 one-season growth test](V36_GROWTH_IMPORT_TEST.md). Do not launch a new permanent save until automatic player development works in the V36 test without editing player cards.
