@@ -4,6 +4,14 @@ _Last reviewed: 2026-11-20. Single source of truth: current main branch, version
 
 
 
+## V34 user trade test PASSED; potential label no-op-save glitch remains (2026-11-21)
+
+- User reports **V34 now shows all 2020 rookies' trade values correctly**, and **Joe Burrow now shows Franchise potential without manual editor save**. This clears the V34 real-game *rookie trade-value* regression gate on the user's tested sample; do not conflate this with an exhaustive veteran trade audit.
+- Newly isolated **Josh Allen potential badge issue**: the V34 imported player card shows **Impact**, but user sees up to **99 OVR** potential in player editor. Merely pressing **Save Changes** with **no intentional edits** changes the card badge to **Franchise**. This strongly suggests derived-tier cache/import refresh; cannot prove no impact on growth, scouting, trade valuation or other runtime computations. Not proven to auto-update with sim.
+- Source builder produces numeric `development.potential` and `progressionCurve`; V34 deliberately preserved all such records unchanged. Do not replace or inflate potential or alter player curves to fix an unverified game UI effect. CapForge engine is not editable from our repo.
+- **Diagnostic tracked at [Issue #41](https://github.com/danner821/capforge-nfl-rewind-2020/issues/41).** Test unsaved high-potential player card before editor Save, simulate some weeks/season without saving, compare same card badge, numeric editor ceiling, trade valuation, then no-op Save. If only badge updates, likely visual. If mechanics change, contact CapForge developer or document engine limitation.
+- **Status:** V34 Players + V2 Teams + V25 Staff remain frozen as best available corrected import; rookie trade values user-tested and green, potential-label no-op refresh remains **unresolved**, so do not imply game has automatically fixed it. Existing saves cannot consume new player imports; preserve all V30/V34 files and nine draft classes.
+
 ## V34 published — authentic draftNum repair, pending real-game trade/potential check (2026-11-21)
 
 - User discovered an actual **critical trade-value exploit** in the earlier V30 franchise: 2020 rookies Joe Burrow/Justin Jefferson and other players imported with `bio.draftNum=-1`. Changing Burrow to overall pick **#1** in the actual CapForge player editor increased trade value **~6 → ~4,100**. Burrow also showed **Impact** potential before editor save, **Franchise** after; this second display-refresh symptom has **NOT** been proven caused by draftNum.
