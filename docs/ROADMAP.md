@@ -4,6 +4,14 @@ _Last reviewed: 2026-11-20. Single source of truth: current main branch, version
 
 
 
+## V38 published read-only schema audit — exact field-level findings (2026-11-21)
+
+- **Main CI passed and report was published:** [V38 aggregate development-schema comparison](../preview/v38-public-import-development-schema-audit.json), merged via [PR #46](https://github.com/danner821/capforge-nfl-rewind-2020/pull/46). Compared immutable V36 (6,613 players) with pinned public 2018 (2,514) and 2026 (2,051) CapForge rosters. All four PR workflows passed (historical build, V30, V36, V38); main V38 published its report.
+- V36's `development` keys **exactly overlap the published examples' names**: `ovr` and `potential`. No novel development keys, no missing public development keys. V36 explicitly supplies potential for **6,613/6,613**; public 2018 supplies it for **2,414/2,514**, public 2026 for **760/2,051**. These are **aggregate presence counts**, not individual hidden talent disclosures.
+- Exactly **one** extra top-level V36 player key absent from both public samples: `personality`. This does **not** establish that the field is invalid or causes the bug; CapForge has already accepted the full import, and we have no engine validation that omitting personality would preserve future growth. **Do not silently drop it or publish V39 without a controlled hypothesis/game test.**
+- **Conclusion:** A static `development` key-name mismatch is not supported by these sources. Still unresolved whether new-game initialization copies true imported `potential` or produces a separate inferred/staff-read curve. The previous no-op editor Save A/B strongly warrants app-side hydration investigation.
+- **Next actual-game test remains one Arcade 2020 disposable V36/V2/V25 save, no editor Save**, comparing preview, Week 1 and midseason; then use [Issue #41](https://github.com/danner821/capforge-nfl-rewind-2020/issues/41) to escalate to CapForge developer if Arcade true growth falls. Keep permanent-franchise approval blocked and all player/team/staff releases unchanged.
+
 ## V38 — read-only schema comparison after V36 failed (2026-11-21)
 
 - **New engineering check only; no new Players file.** `scripts/audit_v38_public_import_schema.py` validates the exact frozen V36/V2/V25 imports, compares player/development schema-key presence against the pinned published 2018/2026 CapForge roster examples, and writes **only aggregate, spoiler-free schema diagnostics** to `preview/v38-public-import-development-schema-audit.json` after passing main CI. Dedicated workflow `.github/workflows/v38-public-import-schema-forensics.yml`.
