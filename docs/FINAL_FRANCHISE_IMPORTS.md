@@ -1,6 +1,6 @@
-# CapForge NFL Rewind 2020 — recommended permanent franchise imports
+# CapForge NFL Rewind 2020 — historical V33 stack (temporary trade-value issue)
 
-**Status: Ready for actual franchise play, with user-reported testing and noted limitations.**
+**STATUS UPDATE 2026-11-21: V33 launch recommendation temporarily suspended.** A critical issue was found: the 2020 source import assigns `draftNum: -1` even to historically drafted rookies and veterans, producing artificially low trade values. See `docs/LIVE_HANDOFF.md` V34. A separately versioned, draft-history-only V34 Players candidate is being developed and must pass an actual in-game trade-value and potential-badge check before new permanent games. The three URLs below remain the historical V33 stack and are retained for rollback, **not recommended for a new permanent start**.
 
 **Use this exact import stack**. The V30 Players file still ends in `-TEST.json` because this is the specific unchanged version the user tested successfully in CapForge; the name does not mean a new file is required.
 

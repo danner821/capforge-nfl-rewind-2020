@@ -1,0 +1,55 @@
+name: V34 repair authentic NFL draft positions in 2020 CapForge roster
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'data/nfl-draft-2000-2020-pfr-frozen.csv'
+      - 'scripts/build_v34_verified_draft_history.py'
+      - 'scripts/validate_v34_verified_draft_history.py'
+      - '.github/workflows/v34-rookie-draft-provenance.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'data/nfl-draft-2000-2020-pfr-frozen.csv'
+      - 'scripts/build_v34_verified_draft_history.py'
+      - 'scripts/validate_v34_verified_draft_history.py'
+      - '.github/workflows/v34-rookie-draft-provenance.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capforge-v34-pick-history-repair
+  cancel-in-progress: false
+
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build V34 separate only-draftNum Players from frozen V30
+        run: python scripts/build_v34_verified_draft_history.py
+      - name: Independently verify PFR pick matches and all non-draftNum protected
+        run: python scripts/validate_v34_verified_draft_history.py
+      - name: Validate CapForge roster structure and 9 draft classes
+        run: python scripts/validate_capforge_roster.py preview/players-2020-nine-class-draft-history-v34-TEST.json
+      - name: Publish immutable candidate and aggregate report only after main passes
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add preview/players-2020-nine-class-draft-history-v34-TEST.json preview/v34-historical-draft-history-audit.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "build: publish V34 draft-value repair in separate protected Players import"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 2
+          done
+          echo "V34 candidate publishing failed" >&2
+          exit 1
