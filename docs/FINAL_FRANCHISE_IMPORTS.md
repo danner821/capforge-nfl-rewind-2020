@@ -45,3 +45,6 @@ See [V34 draft-pick repair test](V34_DRAFT_PICK_REPAIR_TEST.md). The old V33 fin
 ## V36 growth blocker follow-up (NOT YET APPROVED)
 
 The old V33/V34 launch guidance is **on hold** because actual V34 imported player potential declined unless the editor was saved. See [the separate V36 one-season growth test](V36_GROWTH_IMPORT_TEST.md). Do not launch a new permanent save until automatic player development works in the V36 test without editing player cards.
+
+
+**2026-11-21 follow-up: V36 failed the in-game Josh Allen A/B too.** Do NOT start a permanent game using V36 pending a controlled Arcade-vs-Dynasty diagnosis and/or confirmation from the CapForge developer. See [runtime developer triage](CAPFORGE_IMPORT_POTENTIAL_ENGINE_TRIAGE.md). The current import stack is preserved, no new JSON version has been proposed.
