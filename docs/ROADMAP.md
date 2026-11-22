@@ -4,6 +4,14 @@ _Last reviewed: 2026-11-20. Single source of truth: current main branch, version
 
 
 
+## V40 — V39 in-game FAILED; stop roster-guessing and reject mass manual editor saves (2026-11-21)
+
+- Latest user test: V39 Players (no `personality`) + original Teams V2/Staff V25 **still causes the same Josh Allen playable-franchise development problem** seen with V34 and V36. This is **in-game user feedback**, not a GitHub Actions regression. V39 is **REJECTED for permanent franchise**. V39 is preserved as immutable diagnostic evidence.
+- Three hypotheses have now been tested: original V34 fields; V36 removes every nonstandard custom `progressionCurve`; V39 additionally removes authored optional `personality`. All failed to keep the expected development without no-op Player Editor Save. Do **not** create V40 Players or silently inflate numeric potentials. [Issue #41](https://github.com/danner821/capforge-nfl-rewind-2020/issues/41) updated.
+- **No bulk manual editor workaround.** Verified starting pool has 2,293 rostered NFL players + 4,320 nine-class prospects. The Josh Allen-specific A/B does not prove every player is affected (Joe Burrow was reported correct in V34), but hundreds/thousands of manual Save Changes are not a valid or proven robust path. Our repo cannot call the proprietary app's editor or rehydrate an existing save.
+- **Next discriminator before definitive engine attribution:** one fresh *disposable Arcade* 2020 V36/V2/V25 save, **no editor Save**, record Bills preview, Week 1 and midseason Josh Allen card/Future Growth/actual OVR. Arcade uses true ratings; Dynasty card can reflect staff reads and READ PACE, so prior game mode must be separated from raw true growth. If Arcade still loses true numeric ceiling or depends on no-op editor Save, developer must inspect new-game import hydration vs editor-save normalization and offer supported bulk initialization or schema guidance.
+- Preserve V30/V34/V36/V39 and approved V2/V25; all nine 480-player classes, contracts, historic picks, portraits, existing saves and Project Ice remain unchanged. **Permanent 2020 franchise launch remains blocked** until no-editor-save natural development is demonstrated in the intended game mode.
+
 ## V39 OPTIONAL TEST — isolated authored personality omission (2026-11-21)
 
 - The [V38 published schema audit](../preview/v38-public-import-development-schema-audit.json) found **6,311 custom top-level `personality` objects** in V36 but zero across the two pinned published 2018/2026 community imports (4,565 players); no new `development` field names in V36. This is **the first concrete additional source-format difference** identified after V36 custom `progressionCurve` removal failed actual in-game testing. It is NOT proof of causation or an official invalid field.
