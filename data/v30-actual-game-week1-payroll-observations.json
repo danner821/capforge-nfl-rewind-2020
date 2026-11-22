@@ -1,0 +1,58 @@
+{
+  "version": "V30_IN_GAME_2020_WEEK1_OPENING_PAYROLL_VERIFIED",
+  "source": "User-supplied 17.8-second CapForge screen recording, November 21 2026, showing PIT BAL JAX 2020 Team > Players > Payroll, plus reported all-green imports. User video itself is not redistributed.",
+  "importedFiles": [
+    "preview/players-2020-nine-class-contracts-v30-TEST.json",
+    "preview/teams-2020-roofs-v2.json",
+    "preview/staff-2020-head-coach-video-matched-v25.json"
+  ],
+  "importerValidation": "User reported all imports green; importer validation screen not shown in supplied recording",
+  "realGameStatus": "League successfully created, Week 1 2020 at 0-0, three selected teams' full payroll observed",
+  "year": 2020,
+  "baseCapMillions": 300,
+  "carryoverMillions": 0,
+  "carryoverMaxMillions": 30,
+  "teams": {
+    "PIT": {
+      "committed": 246.8,
+      "space": 53.2,
+      "dead": 0,
+      "estimated2021Space": 171.3,
+      "teamOvr": 80,
+      "v30PreGameIllustrativeSpace": 50,
+      "gameSpaceMinusIllustrative": 3.2,
+      "priorV19MarketSpace": 78.9,
+      "actualVersusOldMarketSpace": -25.7
+    },
+    "BAL": {
+      "committed": 210.3,
+      "space": 89.7,
+      "dead": 0,
+      "estimated2021Space": 137.8,
+      "teamOvr": 84,
+      "v30PreGameIllustrativeSpace": 88.186,
+      "gameSpaceMinusIllustrative": 1.514,
+      "priorV19MarketSpace": 102.7,
+      "actualVersusOldMarketSpace": -13
+    },
+    "JAX": {
+      "committed": 195,
+      "space": 105,
+      "dead": 14.1,
+      "estimated2021Space": 162,
+      "teamOvr": 75,
+      "v30PreGameIllustrativeSpace": 98.077,
+      "gameSpaceMinusIllustrative": 6.923,
+      "priorV19MarketSpace": 114.3,
+      "actualVersusOldMarketSpace": -9.3
+    }
+  },
+  "importantLimitations": [
+    "V30 projected estimates relied on V19 Market > Trade Center CAP and source-file accounting, whereas actual new V30 figures are Team > Players > Payroll; not same franchise or necessarily identical display semantics.",
+    "Jacksonville shows $14.1M dead money in new test game despite empty imported deadCap array. Source of dead money cannot be determined from recording.",
+    "The $171.3M PIT / $137.8M BAL / $162.0M JAX 2021 spaces are future-year projections shown in 2020, not results of a 2021 AI offseason.",
+    "No V30 2021 draft or free agency simulation observed. No 2022–2029 game survival or permanent-franchise acceptance asserted.",
+    "No player, team, staff, prospect, save or Project Ice file was changed by this evidence record."
+  ],
+  "nextAcceptance": "Advance the same disposable V30 game through the 2021 draft and free agency, then inspect PIT/BAL/JAX 2021 Payroll, team transactions, cap legality and presence of 2021 rookies."
+}
