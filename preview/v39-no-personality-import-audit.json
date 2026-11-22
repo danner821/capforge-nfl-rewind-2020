@@ -1,0 +1,49 @@
+{
+  "frozenV36GitBlobSha1": "c0bfebadba5116312449b33076eee0eeecab2a27",
+  "frozenV36Sha256": "b9df92c367c3c50ec02b4f146741dc82b49e32fec42675e16eff9409a29c3cb0",
+  "futureProspects": 4320,
+  "futureProspectsBySeason": {
+    "2021": 480,
+    "2022": 480,
+    "2023": 480,
+    "2024": 480,
+    "2025": 480,
+    "2026": 480,
+    "2027": 480,
+    "2028": 480,
+    "2029": 480
+  },
+  "gameTestRequired": "Create a NEW disposable 2020 game using V39 Players and unchanged V2 Teams and V25 Staff, with EXACTLY the same mode/settings as the previous V36 failed test. Do not Save Changes in Josh Allen's editor. Compare Bills preview, Week 1, midpoint and end of 2020 future-growth and actual OVR against the prior untouched V36 outcome. If same failure, halt further speculative imports and perform the V36 ARCADE mode-controlled discriminator.",
+  "hypothesis": "The custom personality object absent from both published sample imports could influence a player initialization path. Omitting it may or may not affect the runtime discrepancy; this is not a verified cause.",
+  "newV39GitBlobSha1": "b69f4643932460e0369765e0d7d49f9e361420e4",
+  "onlyChangedPlayerField": "personality",
+  "outputFile": "players-2020-nine-class-no-personality-v39-TEST.json",
+  "personalityEntriesRemovedByPool": {
+    "draftClass": 4018,
+    "roster": 2293
+  },
+  "protected": {
+    "ProjectIceUnchanged": true,
+    "V25StaffSha256": "a1c23ba1ef85cde8299e2952a5b9b9c553e89a9638d44e245e56a42c80516062",
+    "V2TeamsSha256": "2a2e380b7a2ad2583a77479a19f2fddb8fc819531f23aa6ed8f0a52f6950b26f",
+    "V36PlayersImmutable": true,
+    "all6613IdsPositionsTeamAssignmentsUnchanged": true,
+    "allContractsAndHistoricalDraftPicksUnchanged": true,
+    "allFutureProspectRecordsPreservedExceptPersonality": true,
+    "allPlayerDevelopmentNumericFieldsUnchanged": true,
+    "allPortraitsAndBiographiesUnchanged": true,
+    "everyPlayerRatingUnchanged": true,
+    "nine480PlayerDraftClassesPreserved": true
+  },
+  "publishedReferencesHaveThisPlayerField": false,
+  "rosteredPlayers": 2293,
+  "sourceFile": "players-2020-nine-class-editor-compatible-growth-v36-TEST.json",
+  "sourceV38SchemaAudit": "v38-public-import-development-schema-audit.json",
+  "status": "V39_EXPERIMENTAL_IMPORT_NOT_TESTED_IN_CAPFORGE",
+  "warnings": [
+    "Changing imported personality information may alter actual in-game behavior even though all development potential numbers are identical.",
+    "A schema-compatible JSON import and passing CI cannot establish CapForge growth behavior.",
+    "No imported player or existing save can be updated retroactively.",
+    "Do not recommend permanent launch without no-editor-save in-game success."
+  ]
+}
