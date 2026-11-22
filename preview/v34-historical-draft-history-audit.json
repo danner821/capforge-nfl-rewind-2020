@@ -1,0 +1,81 @@
+{
+  "2020RookieDraftNumbersCorrected": 236,
+  "actual2020DraftSelectionsInSource": 255,
+  "allHistoricalRosterDraftNumbersCorrected": 1352,
+  "baseVersion": "V30 Players + unchanged V2 Teams + unchanged V25 Staff",
+  "draftSourceSelections": 5350,
+  "draftSourceYears": "2000-2020",
+  "frozenSourceFile": "data/nfl-draft-2000-2020-pfr-frozen.csv",
+  "futureDraftClassCounts": {
+    "2021": 480,
+    "2022": 480,
+    "2023": 480,
+    "2024": 480,
+    "2025": 480,
+    "2026": 480,
+    "2027": 480,
+    "2028": 480,
+    "2029": 480
+  },
+  "futureDraftProspectsUnchanged": 4320,
+  "historicalDraftSource": "https://github.com/pwendel3/NFL_Draft_Dashboard/blob/main/pfr_draft_complete_2000_2025.csv",
+  "knownPublic2020DraftPositionSanity": {
+    "CeeDee Lamb": 17,
+    "Chase Young": 2,
+    "Joe Burrow": 1,
+    "Justin Jefferson": 22,
+    "Tua Tagovailoa": 5
+  },
+  "limitations": [
+    "The user's 2020 Joe Burrow trade-value experiment is single-player evidence, not a confirmed app formula.",
+    "A drafted but unrecognized player may retain -1; do not invent picks for undrafted or ambiguous identities.",
+    "Historical draftSeason was inferred from Madden years pro in earlier V30 and is not independently rewritten here; source-year mismatches are intentionally skipped.",
+    "Real-game 2020 rookie trade values and potential tier label must be tested with a new disposable V34 league before replacing V30 in a permanent franchise.",
+    "The potential-tier discrepancy may be a game editor refresh/import serialization issue separate from missing draftNum; do not alter hidden player progression blindly.",
+    "V34 import changes starting roster provenance only; an existing CapForge save cannot be updated with the Players file."
+  ],
+  "newPlayersFile": "players-2020-nine-class-draft-history-v34-TEST.json",
+  "potentialDisplayConcern": {
+    "actualGamePotentialDisplayCorrectionConfirmed": false,
+    "nextGameTest": "Import V34 into a disposable 2020 game and compare trade value/potential badge BEFORE touching edit, then verify after optionally saving without potential change.",
+    "underlyingDevelopmentValuesUnchangedByV34": true,
+    "userObserved": "Burrow potential badge Impact before editor save and Franchise after manual edit/save"
+  },
+  "safeguards": [
+    "Only bio.draftNum fields of source-verified already-drafted 2020 roster players are changed.",
+    "No inferred draft selections for undrafted/unmatched/ambiguous or position/age-inconsistent players.",
+    "All future draftClass records 2021-2029 remain byte-equivalent at record level, with -1 pre-draft until simulation chooses teams/picks.",
+    "All player attribute ratings, potential, development/progressionCurve, portraits, team IDs, contracts, and cap source files remain unchanged.",
+    "V30 user-approved contract file retained as rollback, separate V34 TEST file produced, existing saves cannot be retroactively fixed by an import."
+  ],
+  "source2020CapForgeRoster": "players-2020-nine-class-contracts-v30-TEST.json",
+  "sourceV30SHA256": "3ce570c1fe22e86acf3b0ddd150479ede2b1085511a9b836ac7be62295f8ce4a",
+  "sourceVerifiedBySeasonCounts": {
+    "2000": 1,
+    "2001": 1,
+    "2004": 5,
+    "2005": 5,
+    "2006": 4,
+    "2007": 4,
+    "2008": 7,
+    "2009": 10,
+    "2010": 28,
+    "2011": 39,
+    "2012": 43,
+    "2013": 60,
+    "2014": 83,
+    "2015": 100,
+    "2016": 141,
+    "2017": 172,
+    "2018": 198,
+    "2019": 215,
+    "2020": 236
+  },
+  "status": "V34_PFR_DRAFT_HISTORY_REPAIRED_IMPORT_CANDIDATE_NOT_YET_TESTED_INSIDE_GAME",
+  "unchangedRosterdPlayerCount": 2293,
+  "unmappedRosterReasonCounts": {
+    "ambiguous_same_name_and_year": 4,
+    "no_name_in_given_draft_year_likely_udfa_or_mismatch": 830,
+    "position_mismatch_requires_manual_review": 107
+  }
+}
