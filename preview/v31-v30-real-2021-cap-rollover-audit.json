@@ -1,0 +1,76 @@
+{
+  "2022AndFutureActualGameplayVerified": false,
+  "allThreeTeamsCapPositive": true,
+  "capInterpretation": "2021 $300M base + $30M capped carryover; 2022 projected $300M base, draft pick reserve already inside committed.",
+  "game2021Week1Observed": true,
+  "limitations": [
+    "Week-1 2021 and roster changes are directly visible, so 2020\u21922021 season rollover is proven for this tested V30 league. The footage does not show each offseason UI step, free agency signing, or actual draft board/pick results. Don't claim a full FA/draft mechanics acceptance independently.",
+    "2022 space numbers are future-year forecasts shown in 2021, not verified 2022 after simulation.",
+    "2021 cap is the $300M base plus $30M max carryover; 2022 projection rows show $300M base with PICKS already in committed.",
+    "Jacksonville remains liquid ($117.9M space) in 2021; this may reflect AI decisions but this footage does not reveal a cap-engine failure.",
+    "Dead money BAL $5.2M and JAX $9.0M in 2021; no individual release ledger, so do not infer causal transactions from displayed amounts."
+  ],
+  "nextAction": "Confirm 2021 draft prospects in an actual board/roster, if not already seen, then accelerate same disposable V30 game to 2024, 2027, and 2029 with spot checks of class persistence and cap/roster stability. Current 2021 season simulation passed at opening stage, but not permanent dynasty launch certification.",
+  "preservedHashes": {
+    "V25StaffSHA256": "a1c23ba1ef85cde8299e2952a5b9b9c553e89a9638d44e245e56a42c80516062",
+    "V2TeamsSHA256": "2a2e380b7a2ad2583a77479a19f2fddb8fc819531f23aa6ed8f0a52f6950b26f",
+    "V30PlayersSHA256": "3ce570c1fe22e86acf3b0ddd150479ede2b1085511a9b836ac7be62295f8ce4a"
+  },
+  "protectedVersions": "Original V19 Players, current V30 Players, V2 Teams, V25 Staff, all nine 2021-29 draft classes and Project Ice untouched by read-only V31 audit.",
+  "rosterEvidence": {
+    "BAL": "Lamar Jackson appears as a 95 OVR starter and J.K. Dobbins as an 84 OVR RB starter; does not independently prove all drafted players imported.",
+    "PIT": "Tua Tagovailoa appears as a 76 OVR starting QB; Ben Roethlisberger is a 76 OVR reserve/rotation QB in the screen. Demonstrates substantial roster change, not proof of how or when each transaction took place."
+  },
+  "scope": "Real V30 Week-1 2021 team screenshots vs previously observed real V30 Week-1 2020 team screens. No game engine access or individual FA/draft ledger.",
+  "specificFAAndDraftMechanicsIndependentlyVerified": false,
+  "status": "V31_USER_VIDEO_V30_2020_TO_2021_SEASON_ROLLOVER_OBSERVED_ALL_THREE_TEAM_CAPS_LEGAL",
+  "teamComparisons": {
+    "BAL": {
+      "2020To2021SpaceChangeM": -76.7,
+      "2020Week1AvailableM": 89.7,
+      "2020Week1CommittedM": 210.3,
+      "2020Week1DeadMoneyM": 0,
+      "2021EffectiveCapM": 330,
+      "2021TeamOverall": 87,
+      "2021Week1AvailableM": 13,
+      "2021Week1CommittedM": 317,
+      "2021Week1DeadMoneyM": 5.2,
+      "2022ProjectedAvailableM": 44.1,
+      "2022ProjectedDraftPicksIncludedInCommittedM": 18.9,
+      "notComparableTo2021ProjectedAsOf2020": "Actual 2021 payroll reflects unknown AI activity and is not the 2020 forward preview",
+      "team": "Baltimore Ravens"
+    },
+    "JAX": {
+      "2020To2021SpaceChangeM": 12.9,
+      "2020Week1AvailableM": 105,
+      "2020Week1CommittedM": 195,
+      "2020Week1DeadMoneyM": 14.1,
+      "2021EffectiveCapM": 330,
+      "2021TeamOverall": 76,
+      "2021Week1AvailableM": 117.9,
+      "2021Week1CommittedM": 212.1,
+      "2021Week1DeadMoneyM": 9,
+      "2022ProjectedAvailableM": 128.2,
+      "2022ProjectedDraftPicksIncludedInCommittedM": 25.9,
+      "notComparableTo2021ProjectedAsOf2020": "Actual 2021 payroll reflects unknown AI activity and is not the 2020 forward preview",
+      "team": "Jacksonville Jaguars"
+    },
+    "PIT": {
+      "2020To2021SpaceChangeM": -16.5,
+      "2020Week1AvailableM": 53.2,
+      "2020Week1CommittedM": 246.8,
+      "2020Week1DeadMoneyM": 0,
+      "2021EffectiveCapM": 330,
+      "2021TeamOverall": 79,
+      "2021Week1AvailableM": 36.7,
+      "2021Week1CommittedM": 293.3,
+      "2021Week1DeadMoneyM": 0,
+      "2022ProjectedAvailableM": 67.6,
+      "2022ProjectedDraftPicksIncludedInCommittedM": 9.2,
+      "notComparableTo2021ProjectedAsOf2020": "Actual 2021 payroll reflects unknown AI activity and is not the 2020 forward preview",
+      "team": "Pittsburgh Steelers"
+    }
+  },
+  "v30PermanentFranchiseCertified": false,
+  "v30PlayersRecordsStillProtected": true
+}
