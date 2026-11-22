@@ -4,6 +4,15 @@ _Last reviewed: 2026-11-20. Single source of truth: current main branch, version
 
 
 
+## 2026-11-21: V30 disposable franchise user-simmed successfully through the 2024 season
+
+- User message: **"I summed up to 2024 and everything looks great!"** In project context this means the same disposable V30 starting-2020 franchise has now been simulated through 2024, with **no problem reported**. Treat as **USER-REPORTED MULTI-SEASON GAME ACCEPTANCE**, not a screenshot-verified 2024 payroll or exhaustive draft/FA inspection.
+- Earlier verified V30 actual 2020 and 2021 Week-1 team Payroll screens remain on record, alongside user-reported all-green import and correct 2021 roster changes. Full CapForge engine is not in repository; these are user game observations.
+- This extends gameplay survival coverage **2020→2024** across multiple offseasons. It **does not prove** every 2021–24 draft prospect appeared or was drafted, that every 2024 cap was legal, or that the future 2027–2029 draft boards were checked individually. There is no new video/screenshot supplied with this message.
+- **NO PLAYER OR CONTRACT CHANGES WARRANTED.** Keep frozen functional stack **V30 TEST Players** `preview/players-2020-nine-class-contracts-v30-TEST.json`, **V2 Teams** `preview/teams-2020-roofs-v2.json`, **V25 Staff** `preview/staff-2020-head-coach-video-matched-v25.json`, all nine 480-prospect classes, original V19 fall-back and current saved test games intact.
+- The only worthwhile remaining **final franchise preparation acceptance** is to continue the same disposable save through ~2027 and ~2029, spot-check actual **2027, 2028, 2029 draft boards / prospects**, ensure no missing classes or game-breaking progression, and sanity-check league payroll/cap. **Do not demand a new 2020 restart or new salary calibration** absent a concrete failing in-game symptom. When later classes pass, freeze the V30/V2/V25 URLs as the recommended permanent-franchise stack.
+- Source is a user report, not independently audited game footage. No Project Ice edits or external data edits.
+
 ## V31 — V30 REAL 2020→2021 SEASON ROLLOVER VERIFIED (2026-11-21)
 
 - New user-supplied **20.57-second actual CapForge recording** shows league **Week 1, 2021 season** (all displayed teams 0–0) after the existing disposable V30 2020 start, with changed 2021 player rosters and expanded Payroll screens for PIT/BAL/JAX. **Season transition and playable rosters verified in game**. The footage does **not** separately document 2021 draft board, draft selections or free-agent signing stage; do not overstate these as independently verified.
