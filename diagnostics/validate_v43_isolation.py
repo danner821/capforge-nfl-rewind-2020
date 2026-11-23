@@ -24,7 +24,7 @@ def read(path: Path) -> dict:
     return json.loads(path.read_text())
 
 def git_hash(data: bytes) -> str:
-    return hashlib.sha1(b"blob " + str(len(data)).encode() + b"\\0" + data).hexdigest()
+    return hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
 
 def is_josh(p: dict) -> bool:
     return (p["forename"], p["surname"], p["position"], p["teamAbbr"]) == (
