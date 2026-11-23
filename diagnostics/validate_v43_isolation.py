@@ -47,7 +47,7 @@ def check() -> None:
 
     for label, path in (("A", A), ("B", B)):
         data = read(path)
-        assert all(k == data[k] for k in ("schemaVersion", "meta", "deadCap"))
+        assert all(source[k] == data[k] for k in ("schemaVersion", "meta", "deadCap"))
         assert len(data["players"]) == len(source["players"])
         josh_count = 0
         for original, edited in zip(source["players"], data["players"]):
