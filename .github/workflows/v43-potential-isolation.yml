@@ -1,0 +1,29 @@
+name: V43 diagnostic potential isolation validation
+on:
+  pull_request:
+    paths:
+      - 'preview/players-2020-v43-*-TEST.json'
+      - 'diagnostics/validate_v43_isolation.py'
+      - '.github/workflows/v43-potential-isolation.yml'
+      - 'docs/V43_LAST_RESORT_DEVELOPMENT_ISOLATION.md'
+  push:
+    branches:
+      - diagnostics/v43-last-ditch-potential-isolation
+    paths:
+      - 'preview/players-2020-v43-*-TEST.json'
+      - 'diagnostics/validate_v43_isolation.py'
+      - '.github/workflows/v43-potential-isolation.yml'
+      - 'docs/V43_LAST_RESORT_DEVELOPMENT_ISOLATION.md'
+permissions:
+  contents: read
+jobs:
+  validate:
+    name: Validate immutable-source potential-only changes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check V43 tests against frozen V42-A source
+        run: python diagnostics/validate_v43_isolation.py
