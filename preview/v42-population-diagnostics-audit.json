@@ -1,0 +1,64 @@
+{
+  "status": "V42_STATIC_VALIDATED_GAME_UNVERIFIED",
+  "purpose": "Distinguish total imported-player count from high-potential cap and distant-year effects",
+  "source": {
+    "name": "players-2020-nine-class-no-personality-v39-TEST.json",
+    "gitBlob": "b69f4643932460e0369765e0d7d49f9e361420e4",
+    "controlUserReportedArcadeFailure": true
+  },
+  "scenarios": {
+    "A": {
+      "file": "players-2020-v42-A-nfl-only-TEST.json",
+      "total": 2293,
+      "roster": 2293,
+      "future": 0,
+      "totalPotential90plus": 186
+    },
+    "B": {
+      "file": "players-2020-v42-B-2021-2023-full-TEST.json",
+      "total": 3733,
+      "roster": 2293,
+      "future": 1440,
+      "totalPotential90plus": 233
+    },
+    "C": {
+      "file": "players-2020-v42-C-nine-class-160-TEST.json",
+      "total": 3733,
+      "roster": 2293,
+      "future": 1440,
+      "totalPotential90plus": 262
+    },
+    "D": {
+      "file": "players-2020-nine-class-no-personality-v39-TEST.json",
+      "total": 6613,
+      "roster": 2293,
+      "future": 4320,
+      "totalPotential90plus": 262
+    }
+  },
+  "eliteFuture90plusByYear": {
+    "2021": 18,
+    "2022": 17,
+    "2023": 12,
+    "2024": 6,
+    "2025": 0,
+    "2026": 12,
+    "2027": 10,
+    "2028": 1,
+    "2029": 0
+  },
+  "allFuturePotential85plusRetainedInC": 203,
+  "allFuturePotential90plusRetainedInC": 76,
+  "allFutureClassPositionsRetainedInC": true,
+  "all2020RosterRecordsIdentical": true,
+  "playerRecordsNeverAltered": true,
+  "allPlayerPotentialOVRAndRatingsUnchanged": true,
+  "allContractsDraftHistoryPortraitsAndBiographiesUnchanged": true,
+  "noPermanentFilesChanged": true,
+  "limitations": [
+    "Static validation cannot test proprietary CapForge runtime",
+    "Test C includes only 160 prospects per draft, below standard 224 NFL draft picks; game may generate filler or reject classes",
+    "Tests require equal Arcade/Talent Market settings and no Player Editor Save",
+    "Even successful 3-game test does not establish multiseason stability"
+  ]
+}

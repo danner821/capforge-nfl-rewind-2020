@@ -1,0 +1,30 @@
+name: V42 player population diagnostic subset validation
+
+on:
+  push:
+    branches: [main, experiment/v42-population-limit-2020]
+    paths:
+      - 'preview/players-2020-v42-*'
+      - 'diagnostics/validate_v42_population.py'
+      - 'docs/V42_PLAYER_POPULATION_TEST.md'
+      - '.github/workflows/v42-population-diagnostics.yml'
+  pull_request:
+    paths:
+      - 'preview/players-2020-v42-*'
+      - 'diagnostics/validate_v42_population.py'
+      - 'docs/V42_PLAYER_POPULATION_TEST.md'
+      - '.github/workflows/v42-population-diagnostics.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify V42 experimental imports are safe exact subsets of frozen V39
+        run: python diagnostics/validate_v42_population.py
