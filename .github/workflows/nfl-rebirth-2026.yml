@@ -1,0 +1,25 @@
+name: NFL Rebirth 2026 static import validation
+
+on:
+  push:
+    branches:
+      - feature/nfl-rebirth-2026-draft-day-v1
+    paths:
+      - 'preview/nfl-rebirth-2026-fantasy-draft-v1-TEST.json'
+      - 'scripts/validate_nfl_rebirth_2026.py'
+      - '.github/workflows/nfl-rebirth-2026.yml'
+  pull_request:
+    paths:
+      - 'preview/nfl-rebirth-2026-fantasy-draft-v1-TEST.json'
+      - 'scripts/validate_nfl_rebirth_2026.py'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Rebirth 2026 import fixture
+        run: python3 scripts/validate_nfl_rebirth_2026.py
