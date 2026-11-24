@@ -45,6 +45,7 @@ def main():
     for team in by_abbr:
         group = [p for p in fictional if p["teamAbbr"] == team]
         assert collections.Counter(p["position"] for p in group) == positions
+        assert len({p["surname"] for p in group}) >= 40, "Fictional names lack variety for " + team
         for p in group:
             assert p["teamId"] == by_abbr[team]["teamId"]
             assert p["development"]["ovr"] >= 58
