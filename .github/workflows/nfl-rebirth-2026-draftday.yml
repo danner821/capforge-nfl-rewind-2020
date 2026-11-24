@@ -1,0 +1,34 @@
+name: NFL Rebirth 2026 Draft Day roster integrity
+
+on:
+  push:
+    branches: [experiment/nfl-rebirth-2026-fantasy-draft]
+    paths:
+      - 'preview/players-2026-nfl-rebirth-480-fantasy-draft-TEST.json'
+      - 'preview/teams-2026-nfl-rebirth-TEST.json'
+      - 'preview/nfl-rebirth-2026-draft-manifest.json'
+      - 'scripts/validate_2026_nfl_rebirth.py'
+      - 'docs/NFL_REBIRTH_2026_DRAFT_DAY_TEST.md'
+      - '.github/workflows/nfl-rebirth-2026-draftday.yml'
+  pull_request:
+    paths:
+      - 'preview/players-2026-nfl-rebirth-480-fantasy-draft-TEST.json'
+      - 'preview/teams-2026-nfl-rebirth-TEST.json'
+      - 'preview/nfl-rebirth-2026-draft-manifest.json'
+      - 'scripts/validate_2026_nfl_rebirth.py'
+      - 'docs/NFL_REBIRTH_2026_DRAFT_DAY_TEST.md'
+      - '.github/workflows/nfl-rebirth-2026-draftday.yml'
+
+jobs:
+  static-roster-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check fictional rosters, draft prospects, free agents and uniqueness
+        run: python scripts/validate_2026_nfl_rebirth.py
